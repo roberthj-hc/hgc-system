@@ -1,0 +1,35 @@
+# frontend + backend
+node_modules/
+**/node_modules/
+
+# backend build
+hgc-back/dist/
+hgc-back/build/
+
+# next.js
+hgc-front/.next/
+hgc-front/out/
+.next/
+out/
+
+# env files
+.env
+.env.local
+.env.*.local
+hgc-back/.env
+hgc-front/.env.local
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# os files
+.DS_Store
+
+# ts
+*.tsbuildinfo
+next-env.d.ts
+
+# test coverage
+coverage/
