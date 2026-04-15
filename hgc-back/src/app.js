@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const { getStgPedidos } = require("./analytics/data_mining/stg_pedidos.query");
+const { getChurnFeatures } = require("./analytics/data_mining/churn_features.query");
 
 const app = express();
 
@@ -12,13 +12,16 @@ app.get("/", (req, res) => {
   res.send("API running");
 });
 
-app.get("/pedidos", async (req, res) => {
+app.get("/api/clients", async (req, res) => {
   try {
-    const data = await getStgPedidos();
+    const data = await getChurnFeatures();
     res.json(data);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
+const mlRoutes = require("./analytics/ml.routes");
+
+app.use("/api/ml", mlRoutes);
 
 module.exports = app;

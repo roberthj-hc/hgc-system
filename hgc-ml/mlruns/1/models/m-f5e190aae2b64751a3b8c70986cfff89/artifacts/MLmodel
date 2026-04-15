@@ -1,0 +1,24 @@
+artifact_path: file:C:/Users/Robert/Documents/DAT 372 - Business Intelligence/Proyecto
+  1/HGC/hgc-system/hgc-ml/mlruns/1/models/m-f5e190aae2b64751a3b8c70986cfff89/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.11.1
+model_id: m-f5e190aae2b64751a3b8c70986cfff89
+model_size_bytes: 2101
+model_uuid: m-f5e190aae2b64751a3b8c70986cfff89
+prompts: null
+run_id: 76ce3d8132614b038f772246846ac244
+utc_time_created: '2026-04-14 20:48:16.128755'

@@ -44,8 +44,13 @@ const data = {
       title: "Proyecciones",
       icon: IconTrendingUp,
       items: [
-        { title: "Forecast", url: "#" },
-        { title: "Escenarios", url: "#" },
+        { title: "Segmentación de Clientes", url: "/system/predictions/segmentation" },
+        { title: "Valor de Vida (CLV)", url: "/system/predictions/clv" },
+        { title: "Ausentismo Laboral", url: "/system/predictions/absenteeism" },
+        { title: "Canibalización (Labs)", url: "/system/predictions/cannibalization" },
+        { title: "Propensión a Upselling", url: "/system/predictions/upselling" },
+        { title: "Fuga de Clientes (Legacy)", url: "/system/predictions/legacy-churn" },
+        { title: "Tiempos de Delivery", url: "/system/predictions/delivery" },
       ],
     },
     {
