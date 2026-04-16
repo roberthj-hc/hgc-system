@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: obt_churn_prediction
+    description: "Dataset supervisado para predecir la probabilidad de que un cliente abandone el negocio."
+    columns:
+      - name: id_cliente_nk
+        description: "Llave de negocio del cliente"
+      - name: target_es_churn
+        description: "Variable target binaria. 1 si el cliente no ha comprado en más de 90 días, 0 en caso contrario."
+
+  - name: obt_customer_segmentation
+    description: "Dataset no supervisado de segmentación (K-Means/RFM). Sin target."
+    
+  - name: obt_customer_lifetime_value
+    description: "Dataset supervisado de regresión para predecir el LTV."
+    columns:
+      - name: target_clv_historico
+        description: "Total histórico gastado por el cliente, utilizado como target para modelos de regresión."
+
+  - name: obt_employee_absenteeism
+    description: "Dataset supervisado para predecir si un empleado tendrá ausentismo o problemas de puntualidad."
+    columns:
+      - name: target_alto_riesgo_ausentismo
+        description: "Binario: 1 si tiene más de 3 faltas acumuladas."
+
+  - name: obt_delivery_time_prediction
+    description: "Dataset supervisado para predecir los tiempos y finalización de deliveries."

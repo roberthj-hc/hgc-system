@@ -12,8 +12,9 @@ hgc-front/out/
 .next/
 out/
 
-# env files
+# env & config files
 .env
+dbt/profiles.yml
 .env.local
 .env.*.local
 hgc-back/.env
