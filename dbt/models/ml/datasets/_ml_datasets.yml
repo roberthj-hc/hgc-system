@@ -26,3 +26,41 @@ models:
 
   - name: obt_delivery_time_prediction
     description: "Dataset supervisado para predecir los tiempos y finalización de deliveries."
+
+  - name: obt_inventory_optimization
+    description: "Dataset para optimización de inventario basado en modelo Newsvendor probabilístico. Calcula la cantidad óptima de compra minimizando quiebres de stock y desperdicio."
+    columns:
+      - name: id_insumo_nk
+        description: "Llave de negocio del insumo"
+      - name: feature_demanda_promedio_diaria
+        description: "Demanda promedio diaria histórica del insumo (μ)"
+      - name: feature_demanda_desviacion_std
+        description: "Desviación estándar de la demanda diaria (σ)"
+      - name: feature_demanda_esperada_lt
+        description: "Demanda esperada durante el lead time (μ_LT = μ × LT)"
+      - name: feature_desviacion_demanda_lt
+        description: "Desviación de demanda durante lead time (σ_LT = σ × √LT)"
+
+  - name: obt_price_elasticity
+    description: "Dataset de series temporales diarias para análisis de elasticidad de precios y simulación de escenarios de pricing con modelos VAR multivariados."
+    columns:
+      - name: feature_precio_efectivo
+        description: "Precio promedio efectivo de venta del día"
+      - name: feature_cantidad_vendida
+        description: "Cantidad total vendida en el día"
+      - name: feature_margen_estimado
+        description: "Margen estimado del día (revenue neto - costo)"
+      - name: feature_variacion_precio_pct
+        description: "Variación porcentual del precio efectivo vs precio base"
+
+  - name: obt_operational_demand
+    description: "Dataset diario para predicción de demanda operativa en cocina. Incluye características de tiempo, rezagos y estadísticas móviles para modelos probabilísticos."
+    columns:
+      - name: target_cantidad_total
+        description: "Cantidad total de producto vendida en el día (variable a predecir)"
+      - name: feature_lag_1_dia
+        description: "Cantidad vendida el día anterior"
+      - name: feature_rolling_avg_7d
+        description: "Promedio móvil de ventas de los últimos 7 días"
+      - name: feature_rolling_std_7d
+        description: "Desviación estándar móvil de ventas de los últimos 7 días (input para incertidumbre)"

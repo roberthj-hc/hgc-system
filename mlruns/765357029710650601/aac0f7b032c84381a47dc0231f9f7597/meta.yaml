@@ -1,0 +1,14 @@
+artifact_uri: file:///c:/Users/Nick/Documents/Dat372 - BI/HGC/hgc-system/mlruns/765357029710650601/aac0f7b032c84381a47dc0231f9f7597/artifacts
+end_time: 1776340600586
+entry_point_name: ''
+experiment_id: '765357029710650601'
+lifecycle_stage: active
+run_id: aac0f7b032c84381a47dc0231f9f7597
+run_name: Operational_Demand_Full_Pipeline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1776340596080
+status: 3
+tags: []
+user_id: Nick

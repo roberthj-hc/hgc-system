@@ -1,0 +1,16 @@
+creation_timestamp: 1776340600450
+current_stage: None
+deployment_job_state: null
+description: null
+last_updated_timestamp: 1776340600450
+model_id: m-3098b41b23ed46f3a987c003b904de81
+name: OperationalDemandModel
+run_id: aac0f7b032c84381a47dc0231f9f7597
+run_link: null
+source: models:/m-3098b41b23ed46f3a987c003b904de81
+status: READY
+status_message: null
+storage_location: file:///c:/Users/Nick/Documents/Dat372 - BI/HGC/hgc-system/mlruns/765357029710650601/models/m-3098b41b23ed46f3a987c003b904de81/artifacts
+user_id: null
+version: 1
+workspace: default

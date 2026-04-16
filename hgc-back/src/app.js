@@ -21,7 +21,9 @@ app.get("/api/clients", async (req, res) => {
   }
 });
 const mlRoutes = require("./analytics/ml.routes");
+const operationalDemandRoutes = require("./analytics/operationalDemand");
 
 app.use("/api/ml", mlRoutes);
+app.use("/api/operational-demand", operationalDemandRoutes);
 
 module.exports = app;

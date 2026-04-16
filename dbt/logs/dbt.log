@@ -5313,3 +5313,2843 @@ from HGC_DW.features.feat_clientes_comportamiento
 [0m23:56:54.664725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C661B9190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C1092BB30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C1092BBF0>]}
 [0m23:56:54.665238 [debug] [MainThread]: Flushing usage events
 [0m23:56:55.567958 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:17:59.186109 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF4B2F9400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF4BB81A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF4D273D90>]}
+
+
+============================== 02:17:59.191151 | d1bba3bc-87f8-42eb-815a-04f8b6b9ffb5 ==============================
+[0m02:17:59.191151 [info ] [MainThread]: Running with dbt=1.11.8
+[0m02:17:59.191794 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --profiles-dir dbt', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m02:17:59.203466 [info ] [MainThread]: dbt version: 1.11.8
+[0m02:17:59.203952 [info ] [MainThread]: python version: 3.13.13
+[0m02:17:59.204456 [info ] [MainThread]: python path: c:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\.venv\Scripts\python.exe
+[0m02:17:59.204922 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m02:17:59.205595 [info ] [MainThread]: Using profiles dir at dbt
+[0m02:17:59.206059 [info ] [MainThread]: Using profiles.yml file at dbt\profiles.yml
+[0m02:17:59.206499 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\dbt_project.yml
+[0m02:17:59.319533 [info ] [MainThread]: Configuration:
+[0m02:17:59.320114 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m02:17:59.320544 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m02:17:59.320964 [info ] [MainThread]: Required dependencies:
+[0m02:17:59.321405 [debug] [MainThread]: Executing "git --help"
+[0m02:17:59.354627 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:17:59.355063 [debug] [MainThread]: STDERR: "b''"
+[0m02:17:59.355442 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:17:59.355887 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m02:17:59.356286 [info ] [MainThread]: [31m1 check failed:[0m
+[0m02:17:59.356670 [info ] [MainThread]: dbt looked for a profiles.yml file in dbt\profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m02:17:59.357619 [debug] [MainThread]: Command `dbt debug` failed at 02:17:59.357496 after 0.32 seconds
+[0m02:17:59.358061 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF4B5BD220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF4D453890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF4D30BAC0>]}
+[0m02:17:59.358464 [debug] [MainThread]: Flushing usage events
+[0m02:18:00.447538 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:24:04.082460 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024526F096A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024523C9C050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000245277AFB10>]}
+
+
+============================== 02:24:04.087102 | d0ad7e5f-b7cc-4885-b617-a46b27f81538 ==============================
+[0m02:24:04.087102 [info ] [MainThread]: Running with dbt=1.11.8
+[0m02:24:04.087619 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m02:24:04.103637 [info ] [MainThread]: dbt version: 1.11.8
+[0m02:24:04.104049 [info ] [MainThread]: python version: 3.13.13
+[0m02:24:04.104365 [info ] [MainThread]: python path: c:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\.venv\Scripts\python.exe
+[0m02:24:04.104657 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m02:24:04.110937 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m02:24:04.111688 [debug] [MainThread]: Command `dbt debug` failed at 02:24:04.111575 after 0.20 seconds
+[0m02:24:04.112013 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024529090180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024529036C30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002452900EF10>]}
+[0m02:24:04.112367 [debug] [MainThread]: Flushing usage events
+[0m02:24:04.935183 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:24:14.390692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260308DD6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002603217DD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002603217F390>]}
+
+
+============================== 02:24:14.394979 | da2f6781-d530-4dc4-8835-c6b28f4719e7 ==============================
+[0m02:24:14.394979 [info ] [MainThread]: Running with dbt=1.11.8
+[0m02:24:14.395489 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --profiles-dir .', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m02:24:14.407293 [info ] [MainThread]: dbt version: 1.11.8
+[0m02:24:14.407676 [info ] [MainThread]: python version: 3.13.13
+[0m02:24:14.407983 [info ] [MainThread]: python path: c:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\.venv\Scripts\python.exe
+[0m02:24:14.408284 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m02:24:17.214675 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m02:24:17.215375 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m02:24:17.215711 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m02:24:17.285727 [info ] [MainThread]: Using profiles dir at .
+[0m02:24:17.286151 [info ] [MainThread]: Using profiles.yml file at .\profiles.yml
+[0m02:24:17.286461 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\dbt_project.yml
+[0m02:24:17.287184 [info ] [MainThread]: adapter type: snowflake
+[0m02:24:17.287495 [info ] [MainThread]: adapter version: 1.11.4
+[0m02:24:17.398451 [info ] [MainThread]: Configuration:
+[0m02:24:17.398869 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m02:24:17.399188 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m02:24:17.399496 [info ] [MainThread]: Required dependencies:
+[0m02:24:17.399831 [debug] [MainThread]: Executing "git --help"
+[0m02:24:18.475480 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m02:24:18.475977 [debug] [MainThread]: STDERR: "b''"
+[0m02:24:18.476405 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m02:24:18.476733 [info ] [MainThread]: Connection:
+[0m02:24:18.477050 [info ] [MainThread]:   account: ORUOZJY-WX15051
+[0m02:24:18.477347 [info ] [MainThread]:   user: darkar7
+[0m02:24:18.477635 [info ] [MainThread]:   database: HGC_DW
+[0m02:24:18.477922 [info ] [MainThread]:   warehouse: HGC_WH_DBT
+[0m02:24:18.478208 [info ] [MainThread]:   role: rol_hgc_dbt
+[0m02:24:18.478493 [info ] [MainThread]:   schema: SILVER
+[0m02:24:18.478777 [info ] [MainThread]:   authenticator: None
+[0m02:24:18.479077 [info ] [MainThread]:   oauth_client_id: None
+[0m02:24:18.479376 [info ] [MainThread]:   query_tag: None
+[0m02:24:18.479670 [info ] [MainThread]:   client_session_keep_alive: False
+[0m02:24:18.479956 [info ] [MainThread]:   host: None
+[0m02:24:18.480240 [info ] [MainThread]:   port: None
+[0m02:24:18.480525 [info ] [MainThread]:   proxy_host: None
+[0m02:24:18.480808 [info ] [MainThread]:   proxy_port: None
+[0m02:24:18.481093 [info ] [MainThread]:   protocol: None
+[0m02:24:18.481376 [info ] [MainThread]:   connect_retries: 1
+[0m02:24:18.481689 [info ] [MainThread]:   connect_timeout: None
+[0m02:24:18.481973 [info ] [MainThread]:   retry_on_database_errors: False
+[0m02:24:18.482256 [info ] [MainThread]:   retry_all: False
+[0m02:24:18.482540 [info ] [MainThread]:   insecure_mode: False
+[0m02:24:18.482823 [info ] [MainThread]:   reuse_connections: True
+[0m02:24:18.483108 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m02:24:18.483394 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m02:24:18.483843 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m02:24:18.826481 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m02:24:18.883418 [debug] [MainThread]: Using snowflake connection "debug"
+[0m02:24:18.883774 [debug] [MainThread]: On debug: select 1 as id
+[0m02:24:18.884055 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:24:22.712426 [debug] [MainThread]: SQL status: SUCCESS 1 in 3.828 seconds
+[0m02:24:22.716329 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m02:24:22.718106 [info ] [MainThread]: [32mAll checks passed![0m
+[0m02:24:22.721390 [debug] [MainThread]: Command `dbt debug` succeeded at 02:24:22.720876 after 8.43 seconds
+[0m02:24:22.722851 [debug] [MainThread]: Connection 'debug' was left open.
+[0m02:24:22.724227 [debug] [MainThread]: On debug: Close
+[0m02:24:22.978259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260350035C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026033CF44D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000260336FF130>]}
+[0m02:24:22.980109 [debug] [MainThread]: Flushing usage events
+[0m02:24:23.782592 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:24:56.533877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA10DD6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA197DD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA197F390>]}
+
+
+============================== 02:24:56.537770 | caa4ac52-4753-476c-8de1-cf71aec49be1 ==============================
+[0m02:24:56.537770 [info ] [MainThread]: Running with dbt=1.11.8
+[0m02:24:56.538334 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'invocation_command': 'dbt run --profiles-dir . --select int_demanda_insumos feat_inventario_demanda obt_inventory_optimization', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m02:24:56.874058 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m02:24:56.874485 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m02:24:56.874796 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m02:24:57.088397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA13BD220>]}
+[0m02:24:57.151569 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA5020C00>]}
+[0m02:24:57.152427 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m02:24:57.482353 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m02:24:57.690906 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 59 files changed.
+[0m02:24:57.691548 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\intermediate\int_demanda_insumos.sql
+[0m02:24:57.691881 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\ml\features\feat_inventario_demanda.sql
+[0m02:24:57.692193 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\ml\datasets\obt_inventory_optimization.sql
+[0m02:24:57.692614 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\_ml_datasets.yml
+[0m02:24:57.692983 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\pivot.sql
+[0m02:24:57.693345 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\web\get_url_host.sql
+[0m02:24:57.693978 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\jinja_helpers\_is_relation.sql
+[0m02:24:57.694340 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_single_value.sql
+[0m02:24:57.694648 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\unpivot.sql
+[0m02:24:57.695009 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\relationships_where.sql
+[0m02:24:57.695319 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_filtered_columns_in_relation.sql
+[0m02:24:57.695672 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_column_values.sql
+[0m02:24:57.695975 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\equality.sql
+[0m02:24:57.696330 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\accepted_range.sql
+[0m02:24:57.696732 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_tables_by_prefix_sql.sql
+[0m02:24:57.697203 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_table_types_sql.sql
+[0m02:24:57.697556 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_tables_by_pattern_sql.sql
+[0m02:24:57.697946 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\obt_customer_lifetime_value.sql
+[0m02:24:57.698310 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\jinja_helpers\log_info.sql
+[0m02:24:57.698668 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\safe_add.sql
+[0m02:24:57.699033 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\mutually_exclusive_ranges.sql
+[0m02:24:57.699341 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_relations_by_prefix.sql
+[0m02:24:57.699790 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\generate_series.sql
+[0m02:24:57.700123 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\nullcheck_table.sql
+[0m02:24:57.702778 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\date_spine.sql
+[0m02:24:57.705045 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_relations_by_pattern.sql
+[0m02:24:57.706028 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\obt_delivery_time_prediction.sql
+[0m02:24:57.706972 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\not_null_proportion.sql
+[0m02:24:57.707875 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\deduplicate.sql
+[0m02:24:57.708268 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\obt_employee_absenteeism.sql
+[0m02:24:57.708635 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\surrogate_key.sql
+[0m02:24:57.709008 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\not_empty_string.sql
+[0m02:24:57.709798 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\get_query_results_as_dict.sql
+[0m02:24:57.710792 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\features\feat_clientes_comportamiento.sql
+[0m02:24:57.711167 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\features\feat_pedidos_entrega.sql
+[0m02:24:57.711542 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\obt_customer_segmentation.sql
+[0m02:24:57.711903 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\safe_subtract.sql
+[0m02:24:57.712264 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\fewer_rows_than.sql
+[0m02:24:57.712622 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\not_constant.sql
+[0m02:24:57.712981 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\equal_rowcount.sql
+[0m02:24:57.713339 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\sequential_values.sql
+[0m02:24:57.713746 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\jinja_helpers\pretty_time.sql
+[0m02:24:57.714059 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\jinja_helpers\pretty_log_format.sql
+[0m02:24:57.714421 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\cardinality_equality.sql
+[0m02:24:57.714777 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\unique_combination_of_columns.sql
+[0m02:24:57.715126 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\features\feat_empleados_perfil.sql
+[0m02:24:57.715485 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\at_least_one.sql
+[0m02:24:57.715844 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\recency.sql
+[0m02:24:57.716272 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\web\get_url_parameter.sql
+[0m02:24:57.716634 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\not_accepted_values.sql
+[0m02:24:57.717004 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\obt_churn_prediction.sql
+[0m02:24:57.717372 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\width_bucket.sql
+[0m02:24:57.717693 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\union.sql
+[0m02:24:57.718055 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\nullcheck.sql
+[0m02:24:57.718415 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\web\get_url_path.sql
+[0m02:24:57.719826 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\generate_surrogate_key.sql
+[0m02:24:57.720184 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\safe_divide.sql
+[0m02:24:57.720534 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\groupby.sql
+[0m02:24:57.720893 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\jinja_helpers\_is_ephemeral.sql
+[0m02:24:57.721286 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\sql\haversine_distance.sql
+[0m02:24:57.721638 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\generic_tests\expression_is_true.sql
+[0m02:24:57.722000 [debug] [MainThread]: Partial parsing: updated file: dbt_utils://macros\jinja_helpers\slugify.sql
+[0m02:24:58.417688 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA5052F50>]}
+[0m02:24:58.538055 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m02:24:58.541691 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m02:24:58.557690 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA5054F50>]}
+[0m02:24:58.558111 [info ] [MainThread]: Found 80 models, 5 snapshots, 36 sources, 638 macros
+[0m02:24:58.558499 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA58C5390>]}
+[0m02:24:58.561817 [info ] [MainThread]: 
+[0m02:24:58.562152 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:24:58.562445 [info ] [MainThread]: 
+[0m02:24:58.562892 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:24:58.566907 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m02:24:58.577906 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m02:24:58.580404 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m02:24:58.636992 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m02:24:58.637509 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m02:24:58.637805 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:24:58.638410 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m02:24:58.638751 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m02:24:58.639185 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m02:24:58.639575 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:24:58.639987 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m02:24:58.640558 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:25:00.093406 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.453 seconds
+[0m02:25:00.099109 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.460 seconds
+[0m02:25:00.121488 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.484 seconds
+[0m02:25:00.128366 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_snapshots'
+[0m02:25:00.139441 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_snapshots"
+[0m02:25:00.139764 [debug] [ThreadPool]: On list_HGC_DW_snapshots: show objects in HGC_DW.snapshots
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_snapshots"} */;
+[0m02:25:00.140034 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:25:00.140491 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_GOLD'
+[0m02:25:00.142632 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_GOLD"
+[0m02:25:00.142944 [debug] [ThreadPool]: On list_HGC_DW_GOLD: show objects in HGC_DW.GOLD
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_GOLD"} */;
+[0m02:25:00.143224 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:25:00.143921 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_features'
+[0m02:25:00.145587 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_features"
+[0m02:25:00.145887 [debug] [ThreadPool]: On list_HGC_DW_features: show objects in HGC_DW.features
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_features"} */;
+[0m02:25:00.146165 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:25:00.148073 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_SILVER'
+[0m02:25:00.152861 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_SILVER"
+[0m02:25:00.153207 [debug] [ThreadPool]: On list_HGC_DW_SILVER: show objects in HGC_DW.SILVER
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_SILVER"} */;
+[0m02:25:00.153483 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:25:00.877424 [debug] [ThreadPool]: SQL status: SUCCESS 41 in 0.724 seconds
+[0m02:25:00.881059 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_HGC_DW_SILVER, now list_HGC_DW_training_datasets)
+[0m02:25:00.882903 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_training_datasets"
+[0m02:25:00.883199 [debug] [ThreadPool]: On list_HGC_DW_training_datasets: show objects in HGC_DW.training_datasets
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_training_datasets"} */;
+[0m02:25:00.890521 [debug] [ThreadPool]: SQL status: SUCCESS 29 in 0.747 seconds
+[0m02:25:01.154009 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.270 seconds
+[0m02:25:01.538114 [debug] [ThreadPool]: SQL status: SUCCESS 3 in 1.392 seconds
+[0m02:25:01.859350 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.719 seconds
+[0m02:25:01.863357 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA5CDED00>]}
+[0m02:25:01.868711 [debug] [Thread-2 (]: Began running node model.my_new_project.int_demanda_insumos
+[0m02:25:01.869166 [info ] [Thread-2 (]: 1 of 3 START sql view model SILVER.int_demanda_insumos ......................... [RUN]
+[0m02:25:01.869762 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.my_new_project.int_demanda_insumos'
+[0m02:25:01.870082 [debug] [Thread-2 (]: Began compiling node model.my_new_project.int_demanda_insumos
+[0m02:25:01.879004 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_new_project.int_demanda_insumos"
+[0m02:25:01.880301 [debug] [Thread-2 (]: Began executing node model.my_new_project.int_demanda_insumos
+[0m02:25:01.906039 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_new_project.int_demanda_insumos"
+[0m02:25:01.909658 [debug] [Thread-2 (]: Using snowflake connection "model.my_new_project.int_demanda_insumos"
+[0m02:25:01.910322 [debug] [Thread-2 (]: On model.my_new_project.int_demanda_insumos: create or replace   view HGC_DW.SILVER.int_demanda_insumos
+  
+  
+  
+  
+  as (
+    /*
+    INTERMEDIATE: int_demanda_insumos
+    ---------------------------------
+    Consolida el consumo diario de insumos por almacén.
+    Cruza movimientos de salida con datos de insumos, stock y lead time de compras.
+    
+    Fuentes (Silver):
+      - stg_mysql__movimientos_inventario (salidas = consumo)
+      - stg_mysql__insumos (nombre, unidad, costo)
+      - stg_mysql__stock (punto reorden, stock min/max)
+      - stg_mysql__ordenes_compra + detalle_oc (lead time)
+      - stg_mysql__recetas_bom (relación producto-insumo)
+*/
+
+with movimientos_salida as (
+    -- Solo movimientos de SALIDA representan consumo/demanda real
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+        cast(fecha_hora_movimiento as date) as fecha_consumo,
+        sum(cantidad_movimiento) as cantidad_consumida_dia,
+        count(*) as num_movimientos_dia
+    from HGC_DW.SILVER.stg_mysql__movimientos_inventario
+    where tipo_movimiento = 'SALIDA'
+    group by 1, 2, 3
+),
+
+insumos as (
+    select
+        id_insumo_nk,
+        nombre_insumo,
+        unidad_medida,
+        costo_unitario,
+        activo
+    from HGC_DW.SILVER.stg_mysql__insumos
+),
+
+stock_actual as (
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+        cantidad_actual,
+        punto_reorden,
+        stock_minimo,
+        stock_maximo
+    from HGC_DW.SILVER.stg_mysql__stock
+),
+
+lead_time_compras as (
+    -- Lead time = días entre fecha_pedido y fecha_recepción_esperada por insumo
+    select
+        doc.id_insumo_nk,
+        avg(datediff(day, oc.fecha_pedido, oc.fecha_recepcion_esperada)) as lead_time_promedio_dias,
+        count(distinct oc.id_oc_nk) as total_ordenes_compra,
+        avg(doc.precio_unitario_compra) as precio_compra_promedio
+    from HGC_DW.SILVER.stg_mysql__detalle_oc doc
+    join HGC_DW.SILVER.stg_mysql__ordenes_compra oc on doc.id_oc_nk = oc.id_oc_nk
+    group by 1
+),
+
+recetas as (
+    -- Cuántos productos usan cada insumo (criticidad del insumo)
+    select
+        id_insumo_nk,
+        count(distinct id_producto_nk) as num_productos_dependientes,
+        avg(cantidad_requerida) as cantidad_promedio_por_receta
+    from HGC_DW.SILVER.stg_mysql__recetas_bom
+    group by 1
+)
+
+select
+    ms.id_insumo_nk,
+    ms.id_almacen_nk,
+    ms.fecha_consumo,
+    ms.cantidad_consumida_dia,
+    ms.num_movimientos_dia,
+
+    -- Datos del insumo
+    i.nombre_insumo,
+    i.unidad_medida,
+    i.costo_unitario,
+
+    -- Stock actual
+    coalesce(s.cantidad_actual, 0) as stock_actual,
+    coalesce(s.punto_reorden, 0) as punto_reorden,
+    coalesce(s.stock_minimo, 0) as stock_minimo,
+    coalesce(s.stock_maximo, 0) as stock_maximo,
+
+    -- Lead time de compras
+    coalesce(lt.lead_time_promedio_dias, 0) as lead_time_promedio_dias,
+    coalesce(lt.total_ordenes_compra, 0) as total_ordenes_compra,
+    coalesce(lt.precio_compra_promedio, i.costo_unitario) as precio_compra_promedio,
+
+    -- Criticidad (BOM)
+    coalesce(r.num_productos_dependientes, 0) as num_productos_dependientes,
+    coalesce(r.cantidad_promedio_por_receta, 0) as cantidad_promedio_por_receta
+
+from movimientos_salida ms
+left join insumos i on ms.id_insumo_nk = i.id_insumo_nk
+left join stock_actual s on ms.id_insumo_nk = s.id_insumo_nk and ms.id_almacen_nk = s.id_almacen_nk
+left join lead_time_compras lt on ms.id_insumo_nk = lt.id_insumo_nk
+left join recetas r on ms.id_insumo_nk = r.id_insumo_nk
+  )
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.int_demanda_insumos"} */;
+[0m02:25:01.910856 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:25:03.674489 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.764 seconds
+[0m02:25:03.701913 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA7035250>]}
+[0m02:25:03.702510 [info ] [Thread-2 (]: 1 of 3 OK created sql view model SILVER.int_demanda_insumos .................... [[32mSUCCESS 1[0m in 1.83s]
+[0m02:25:03.703104 [debug] [Thread-2 (]: Finished running node model.my_new_project.int_demanda_insumos
+[0m02:25:03.703760 [debug] [Thread-3 (]: Began running node model.my_new_project.feat_inventario_demanda
+[0m02:25:03.704208 [info ] [Thread-3 (]: 2 of 3 START sql table model features.feat_inventario_demanda .................. [RUN]
+[0m02:25:03.704697 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.my_new_project.feat_inventario_demanda'
+[0m02:25:03.705042 [debug] [Thread-3 (]: Began compiling node model.my_new_project.feat_inventario_demanda
+[0m02:25:03.708039 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_new_project.feat_inventario_demanda"
+[0m02:25:03.709233 [debug] [Thread-3 (]: Began executing node model.my_new_project.feat_inventario_demanda
+[0m02:25:03.731033 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_new_project.feat_inventario_demanda"
+[0m02:25:03.736792 [debug] [Thread-3 (]: Using snowflake connection "model.my_new_project.feat_inventario_demanda"
+[0m02:25:03.737409 [debug] [Thread-3 (]: On model.my_new_project.feat_inventario_demanda: create or replace transient table HGC_DW.features.feat_inventario_demanda
+    
+    
+    
+    as (
+
+/*
+    FEATURES: feat_inventario_demanda
+    ----------------------------------
+    Calcula features estadísticos de demanda por insumo/almacén 
+    para alimentar el modelo Newsvendor de optimización de inventario.
+    
+    Features calculados:
+      - Demanda: promedio, desviación estándar, coeficiente de variación
+      - Tendencia: comparación últimos 7 vs 30 días
+      - Stock: niveles actuales, punto de reorden, cobertura en días
+      - Compras: lead time, costo unitario
+      - Criticidad: número de productos que dependen del insumo
+*/
+
+with demanda_diaria as (
+    select * from HGC_DW.SILVER.int_demanda_insumos
+),
+
+-- Estadísticas globales de demanda por insumo-almacén
+stats_demanda as (
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+
+        -- Estadísticas de demanda global
+        count(distinct fecha_consumo) as dias_con_demanda,
+        sum(cantidad_consumida_dia) as demanda_total_historica,
+        avg(cantidad_consumida_dia) as demanda_promedio_diaria,
+        stddev(cantidad_consumida_dia) as demanda_desviacion_std,
+        min(cantidad_consumida_dia) as demanda_minima_diaria,
+        max(cantidad_consumida_dia) as demanda_maxima_diaria,
+        median(cantidad_consumida_dia) as demanda_mediana_diaria,
+
+        -- Rango temporal
+        min(fecha_consumo) as primera_fecha_consumo,
+        max(fecha_consumo) as ultima_fecha_consumo,
+        datediff(day, min(fecha_consumo), max(fecha_consumo)) as rango_dias_historico
+
+    from demanda_diaria
+    group by 1, 2
+),
+
+-- Tendencia reciente: últimos 7 días vs últimos 30 días
+tendencia_reciente as (
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+
+        avg(case when fecha_consumo >= dateadd(day, -7, current_date()) then cantidad_consumida_dia end) as demanda_promedio_7d,
+        avg(case when fecha_consumo >= dateadd(day, -30, current_date()) then cantidad_consumida_dia end) as demanda_promedio_30d,
+        
+        count(case when fecha_consumo >= dateadd(day, -30, current_date()) then 1 end) as dias_activos_ultimo_mes
+
+    from demanda_diaria
+    group by 1, 2
+),
+
+-- Último registro de stock e info del insumo (tomar el registro más reciente)
+info_insumo as (
+    select distinct
+        id_insumo_nk,
+        id_almacen_nk,
+        last_value(nombre_insumo) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as nombre_insumo,
+        last_value(unidad_medida) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as unidad_medida,
+        last_value(costo_unitario) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as costo_unitario,
+        last_value(stock_actual) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as stock_actual,
+        last_value(punto_reorden) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as punto_reorden,
+        last_value(stock_minimo) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as stock_minimo,
+        last_value(stock_maximo) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as stock_maximo,
+        last_value(lead_time_promedio_dias) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as lead_time_promedio_dias,
+        last_value(precio_compra_promedio) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as precio_compra_promedio,
+        last_value(num_productos_dependientes) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as num_productos_dependientes
+    from demanda_diaria
+)
+
+select
+    sd.id_insumo_nk,
+    sd.id_almacen_nk,
+    ii.nombre_insumo,
+    ii.unidad_medida,
+
+    -- Features de demanda estadística
+    sd.dias_con_demanda,
+    sd.demanda_total_historica,
+    round(sd.demanda_promedio_diaria, 4) as demanda_promedio_diaria,
+    round(coalesce(sd.demanda_desviacion_std, 0), 4) as demanda_desviacion_std,
+    sd.demanda_minima_diaria,
+    sd.demanda_maxima_diaria,
+    round(sd.demanda_mediana_diaria, 4) as demanda_mediana_diaria,
+
+    -- Coeficiente de variación (volatilidad de la demanda)
+    round(
+        case 
+            when sd.demanda_promedio_diaria > 0 
+            then coalesce(sd.demanda_desviacion_std, 0) / sd.demanda_promedio_diaria 
+            else 0 
+        end, 4
+    ) as coeficiente_variacion,
+
+    -- Features de tendencia
+    round(coalesce(tr.demanda_promedio_7d, 0), 4) as demanda_promedio_7d,
+    round(coalesce(tr.demanda_promedio_30d, 0), 4) as demanda_promedio_30d,
+    round(
+        case 
+            when coalesce(tr.demanda_promedio_30d, 0) > 0 
+            then (coalesce(tr.demanda_promedio_7d, 0) - tr.demanda_promedio_30d) / tr.demanda_promedio_30d
+            else 0 
+        end, 4
+    ) as tendencia_demanda_ratio,
+    coalesce(tr.dias_activos_ultimo_mes, 0) as dias_activos_ultimo_mes,
+
+    -- Features de stock
+    ii.stock_actual,
+    ii.punto_reorden,
+    ii.stock_minimo,
+    ii.stock_maximo,
+    case when ii.stock_actual <= ii.punto_reorden then 1 else 0 end as indicador_bajo_stock,
+
+    -- Cobertura de stock en días
+    round(
+        case 
+            when sd.demanda_promedio_diaria > 0 
+            then ii.stock_actual / sd.demanda_promedio_diaria 
+            else 9999 
+        end, 2
+    ) as dias_cobertura_stock,
+
+    -- Features de compras y costos
+    ii.costo_unitario,
+    ii.precio_compra_promedio,
+    ii.lead_time_promedio_dias,
+
+    -- Demanda durante lead time (para modelo Newsvendor)
+    round(sd.demanda_promedio_diaria * coalesce(nullif(ii.lead_time_promedio_dias, 0), 1), 4) as demanda_esperada_lead_time,
+    round(coalesce(sd.demanda_desviacion_std, 0) * sqrt(coalesce(nullif(ii.lead_time_promedio_dias, 0), 1)), 4) as desviacion_demanda_lead_time,
+
+    -- Criticidad del insumo
+    ii.num_productos_dependientes,
+
+    -- Rango histórico
+    sd.primera_fecha_consumo,
+    sd.ultima_fecha_consumo,
+    sd.rango_dias_historico
+
+from stats_demanda sd
+left join tendencia_reciente tr on sd.id_insumo_nk = tr.id_insumo_nk and sd.id_almacen_nk = tr.id_almacen_nk
+left join info_insumo ii on sd.id_insumo_nk = ii.id_insumo_nk and sd.id_almacen_nk = ii.id_almacen_nk
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.feat_inventario_demanda"} */;
+[0m02:25:03.737992 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m02:25:08.117654 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 4.379 seconds
+[0m02:25:08.125541 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA7096BA0>]}
+[0m02:25:08.128214 [info ] [Thread-3 (]: 2 of 3 OK created sql table model features.feat_inventario_demanda ............. [[32mSUCCESS 1[0m in 4.42s]
+[0m02:25:08.131276 [debug] [Thread-3 (]: Finished running node model.my_new_project.feat_inventario_demanda
+[0m02:25:08.133342 [debug] [Thread-4 (]: Began running node model.my_new_project.obt_inventory_optimization
+[0m02:25:08.134943 [info ] [Thread-4 (]: 3 of 3 START sql table model training_datasets.obt_inventory_optimization ...... [RUN]
+[0m02:25:08.136709 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.my_new_project.obt_inventory_optimization'
+[0m02:25:08.138043 [debug] [Thread-4 (]: Began compiling node model.my_new_project.obt_inventory_optimization
+[0m02:25:08.147441 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_new_project.obt_inventory_optimization"
+[0m02:25:08.150893 [debug] [Thread-4 (]: Began executing node model.my_new_project.obt_inventory_optimization
+[0m02:25:08.157579 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_new_project.obt_inventory_optimization"
+[0m02:25:08.162792 [debug] [Thread-4 (]: Using snowflake connection "model.my_new_project.obt_inventory_optimization"
+[0m02:25:08.163639 [debug] [Thread-4 (]: On model.my_new_project.obt_inventory_optimization: create or replace transient table HGC_DW.training_datasets.obt_inventory_optimization
+    
+    
+    
+    as (
+
+/*
+    DATASET: obt_inventory_optimization
+    -------------------------------------
+    Dataset final para el modelo Newsvendor de optimización de inventario.
+    
+    Objetivo: Determinar la cantidad óptima de compra (Q*) para cada insumo
+    minimizando el riesgo de quiebre de stock y el desperdicio.
+    
+    Modelo: Newsvendor → Q* = μ_LT + z(SL) × σ_LT
+    donde:
+      μ_LT = demanda esperada durante el lead time
+      σ_LT = desviación de la demanda durante el lead time
+      z(SL) = valor z de la distribución normal para el nivel de servicio deseado
+    
+    Tipo: Optimización bajo incertidumbre (NO supervisado ni clásico)
+*/
+
+select
+    id_insumo_nk,
+    id_almacen_nk,
+    nombre_insumo,
+    unidad_medida,
+
+    -- FEATURES: Estadísticas de demanda
+    demanda_promedio_diaria as feature_demanda_promedio_diaria,
+    demanda_desviacion_std as feature_demanda_desviacion_std,
+    coeficiente_variacion as feature_coeficiente_variacion,
+    demanda_mediana_diaria as feature_demanda_mediana_diaria,
+    demanda_minima_diaria as feature_demanda_minima_diaria,
+    demanda_maxima_diaria as feature_demanda_maxima_diaria,
+
+    -- FEATURES: Tendencia
+    demanda_promedio_7d as feature_demanda_promedio_7d,
+    demanda_promedio_30d as feature_demanda_promedio_30d,
+    tendencia_demanda_ratio as feature_tendencia_demanda_ratio,
+    dias_activos_ultimo_mes as feature_dias_activos_ultimo_mes,
+
+    -- FEATURES: Stock
+    stock_actual as feature_stock_actual,
+    punto_reorden as feature_punto_reorden,
+    stock_minimo as feature_stock_minimo,
+    stock_maximo as feature_stock_maximo,
+    indicador_bajo_stock as feature_indicador_bajo_stock,
+    dias_cobertura_stock as feature_dias_cobertura_stock,
+
+    -- FEATURES: Costos y Lead Time
+    costo_unitario as feature_costo_unitario,
+    precio_compra_promedio as feature_precio_compra_promedio,
+    lead_time_promedio_dias as feature_lead_time_dias,
+
+    -- FEATURES: Demanda durante Lead Time (inputs directos del Newsvendor)
+    demanda_esperada_lead_time as feature_demanda_esperada_lt,
+    desviacion_demanda_lead_time as feature_desviacion_demanda_lt,
+
+    -- FEATURES: Criticidad
+    num_productos_dependientes as feature_num_productos_dependientes,
+
+    -- METADATA: Contexto temporal
+    dias_con_demanda as meta_dias_con_demanda,
+    primera_fecha_consumo as meta_primera_fecha,
+    ultima_fecha_consumo as meta_ultima_fecha,
+    rango_dias_historico as meta_rango_dias
+
+from HGC_DW.features.feat_inventario_demanda
+-- Solo insumos con suficiente historial para hacer predicciones confiables
+where dias_con_demanda >= 5
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.obt_inventory_optimization"} */;
+[0m02:25:08.164422 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:25:09.452231 [debug] [Thread-4 (]: SQL status: SUCCESS 1 in 1.287 seconds
+[0m02:25:09.455107 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'caa4ac52-4753-476c-8de1-cf71aec49be1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA716EAD0>]}
+[0m02:25:09.455666 [info ] [Thread-4 (]: 3 of 3 OK created sql table model training_datasets.obt_inventory_optimization . [[32mSUCCESS 1[0m in 1.32s]
+[0m02:25:09.456354 [debug] [Thread-4 (]: Finished running node model.my_new_project.obt_inventory_optimization
+[0m02:25:09.457688 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:25:09.457975 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m02:25:09.458250 [debug] [MainThread]: On list_HGC_DW: Close
+[0m02:25:09.705237 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m02:25:09.706759 [debug] [MainThread]: On list_HGC_DW: Close
+[0m02:25:09.973839 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m02:25:09.974238 [debug] [MainThread]: On list_HGC_DW: Close
+[0m02:25:10.222938 [debug] [MainThread]: Connection 'list_HGC_DW_snapshots' was left open.
+[0m02:25:10.224486 [debug] [MainThread]: On list_HGC_DW_snapshots: Close
+[0m02:25:10.478485 [debug] [MainThread]: Connection 'list_HGC_DW_GOLD' was left open.
+[0m02:25:10.480122 [debug] [MainThread]: On list_HGC_DW_GOLD: Close
+[0m02:25:10.729846 [debug] [MainThread]: Connection 'list_HGC_DW_features' was left open.
+[0m02:25:10.731460 [debug] [MainThread]: On list_HGC_DW_features: Close
+[0m02:25:11.001373 [debug] [MainThread]: Connection 'list_HGC_DW_training_datasets' was left open.
+[0m02:25:11.002054 [debug] [MainThread]: On list_HGC_DW_training_datasets: Close
+[0m02:25:11.228243 [debug] [MainThread]: Connection 'model.my_new_project.int_demanda_insumos' was left open.
+[0m02:25:11.228669 [debug] [MainThread]: On model.my_new_project.int_demanda_insumos: Close
+[0m02:25:11.458938 [debug] [MainThread]: Connection 'model.my_new_project.feat_inventario_demanda' was left open.
+[0m02:25:11.459323 [debug] [MainThread]: On model.my_new_project.feat_inventario_demanda: Close
+[0m02:25:11.710032 [debug] [MainThread]: Connection 'model.my_new_project.obt_inventory_optimization' was left open.
+[0m02:25:11.710440 [debug] [MainThread]: On model.my_new_project.obt_inventory_optimization: Close
+[0m02:25:11.956967 [info ] [MainThread]: 
+[0m02:25:11.957853 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 13.39 seconds (13.39s).
+[0m02:25:11.960088 [debug] [MainThread]: Command end result
+[0m02:25:12.027229 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m02:25:12.030032 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m02:25:12.036157 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\run_results.json
+[0m02:25:12.036541 [info ] [MainThread]: 
+[0m02:25:12.036930 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:25:12.037273 [info ] [MainThread]: 
+[0m02:25:12.037621 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m02:25:12.038396 [debug] [MainThread]: Command `dbt run` succeeded at 02:25:12.038285 after 15.60 seconds
+[0m02:25:12.038756 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA134F3D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA19F8550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017EA31317F0>]}
+[0m02:25:12.039099 [debug] [MainThread]: Flushing usage events
+[0m02:25:12.883524 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:36:22.145774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251B87ED6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251BA0A9BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251BA7B3ED0>]}
+
+
+============================== 02:36:22.150616 | c048ad7c-a8ac-4473-a366-c4a2f78f8235 ==============================
+[0m02:36:22.150616 [info ] [MainThread]: Running with dbt=1.11.8
+[0m02:36:22.151326 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m02:36:22.155861 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m02:36:22.156773 [debug] [MainThread]: Command `dbt run` failed at 02:36:22.156652 after 0.18 seconds
+[0m02:36:22.157117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251BA8982B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251BA7FF530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251BA7BE250>]}
+[0m02:36:22.157539 [debug] [MainThread]: Flushing usage events
+[0m02:36:22.979816 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:39:47.063298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E325E9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E302FC050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E32EA3B10>]}
+
+
+============================== 02:39:47.066991 | cdb12363-e886-45a9-ba01-2fe2768338c6 ==============================
+[0m02:39:47.066991 [info ] [MainThread]: Running with dbt=1.11.8
+[0m02:39:47.067515 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': '.', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run --profiles-dir . --select int_demanda_insumos feat_inventario_demanda obt_inventory_optimization', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m02:39:47.739435 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m02:39:47.740014 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m02:39:47.740353 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m02:39:47.966611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E328D15B0>]}
+[0m02:39:48.031965 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4F8FDE10>]}
+[0m02:39:48.032973 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m02:39:48.503334 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m02:39:48.722598 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m02:39:48.723497 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\intermediate\int_demanda_insumos.sql
+[0m02:39:49.011366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4FFBE850>]}
+[0m02:39:49.125640 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m02:39:49.132685 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m02:39:49.150037 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E4F9895E0>]}
+[0m02:39:49.150482 [info ] [MainThread]: Found 80 models, 5 snapshots, 36 sources, 638 macros
+[0m02:39:49.150853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E511F27B0>]}
+[0m02:39:49.153912 [info ] [MainThread]: 
+[0m02:39:49.154253 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:39:49.154546 [info ] [MainThread]: 
+[0m02:39:49.154983 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:39:49.159402 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m02:39:49.171035 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m02:39:49.173439 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m02:39:49.235532 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m02:39:49.236001 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m02:39:49.236350 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m02:39:49.236777 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m02:39:49.237100 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m02:39:49.237432 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:49.237777 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m02:39:49.238065 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:49.238536 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:50.734055 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.496 seconds
+[0m02:39:50.736216 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.498 seconds
+[0m02:39:50.760975 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.523 seconds
+[0m02:39:50.768619 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_features'
+[0m02:39:50.780507 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_features"
+[0m02:39:50.781007 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_training_datasets'
+[0m02:39:50.781356 [debug] [ThreadPool]: On list_HGC_DW_features: show objects in HGC_DW.features
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_features"} */;
+[0m02:39:50.783753 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_training_datasets"
+[0m02:39:50.784105 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:50.784514 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_SILVER'
+[0m02:39:50.784875 [debug] [ThreadPool]: On list_HGC_DW_training_datasets: show objects in HGC_DW.training_datasets
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_training_datasets"} */;
+[0m02:39:50.785540 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_GOLD'
+[0m02:39:50.787247 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_SILVER"
+[0m02:39:50.787740 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:50.789601 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_GOLD"
+[0m02:39:50.790580 [debug] [ThreadPool]: On list_HGC_DW_SILVER: show objects in HGC_DW.SILVER
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_SILVER"} */;
+[0m02:39:50.795015 [debug] [ThreadPool]: On list_HGC_DW_GOLD: show objects in HGC_DW.GOLD
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_GOLD"} */;
+[0m02:39:50.798905 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:50.799327 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:39:51.466745 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.679 seconds
+[0m02:39:51.475706 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_HGC_DW_training_datasets, now list_HGC_DW_snapshots)
+[0m02:39:51.486388 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_snapshots"
+[0m02:39:51.488085 [debug] [ThreadPool]: SQL status: SUCCESS 29 in 0.689 seconds
+[0m02:39:51.488710 [debug] [ThreadPool]: On list_HGC_DW_snapshots: show objects in HGC_DW.snapshots
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_snapshots"} */;
+[0m02:39:51.690932 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.191 seconds
+[0m02:39:52.155493 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.371 seconds
+[0m02:39:52.175582 [debug] [ThreadPool]: SQL status: SUCCESS 42 in 1.377 seconds
+[0m02:39:52.201099 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E518C9300>]}
+[0m02:39:52.215224 [debug] [Thread-2 (]: Began running node model.my_new_project.int_demanda_insumos
+[0m02:39:52.215764 [info ] [Thread-2 (]: 1 of 3 START sql view model SILVER.int_demanda_insumos ......................... [RUN]
+[0m02:39:52.216299 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.my_new_project.int_demanda_insumos'
+[0m02:39:52.216652 [debug] [Thread-2 (]: Began compiling node model.my_new_project.int_demanda_insumos
+[0m02:39:52.225046 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_new_project.int_demanda_insumos"
+[0m02:39:52.226184 [debug] [Thread-2 (]: Began executing node model.my_new_project.int_demanda_insumos
+[0m02:39:52.252855 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_new_project.int_demanda_insumos"
+[0m02:39:52.256040 [debug] [Thread-2 (]: Using snowflake connection "model.my_new_project.int_demanda_insumos"
+[0m02:39:52.256513 [debug] [Thread-2 (]: On model.my_new_project.int_demanda_insumos: create or replace   view HGC_DW.SILVER.int_demanda_insumos
+  
+  
+  
+  
+  as (
+    /*
+    INTERMEDIATE: int_demanda_insumos
+    ---------------------------------
+    Consolida el consumo diario de insumos por almacén.
+    Cruza movimientos de salida con datos de insumos, stock y lead time de compras.
+    
+    Fuentes (Silver):
+      - stg_mysql__movimientos_inventario (salidas = consumo)
+      - stg_mysql__insumos (nombre, unidad, costo)
+      - stg_mysql__stock (punto reorden, stock min/max)
+      - stg_mysql__ordenes_compra + detalle_oc (lead time)
+      - stg_mysql__recetas_bom (relación producto-insumo)
+*/
+
+with movimientos_salida as (
+    -- Solo movimientos de SALIDA representan consumo/demanda real
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+        cast(fecha_hora_movimiento as date) as fecha_consumo,
+        sum(cantidad_movimiento) as cantidad_consumida_dia,
+        count(*) as num_movimientos_dia
+    from HGC_DW.SILVER.stg_mysql__movimientos_inventario
+    where lower(tipo_movimiento) = 'salida'
+    group by 1, 2, 3
+),
+
+insumos as (
+    select
+        id_insumo_nk,
+        nombre_insumo,
+        unidad_medida,
+        costo_unitario,
+        activo
+    from HGC_DW.SILVER.stg_mysql__insumos
+),
+
+stock_actual as (
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+        cantidad_actual,
+        punto_reorden,
+        stock_minimo,
+        stock_maximo
+    from HGC_DW.SILVER.stg_mysql__stock
+),
+
+lead_time_compras as (
+    -- Lead time = días entre fecha_pedido y fecha_recepción_esperada por insumo
+    select
+        doc.id_insumo_nk,
+        avg(datediff(day, oc.fecha_pedido, oc.fecha_recepcion_esperada)) as lead_time_promedio_dias,
+        count(distinct oc.id_oc_nk) as total_ordenes_compra,
+        avg(doc.precio_unitario_compra) as precio_compra_promedio
+    from HGC_DW.SILVER.stg_mysql__detalle_oc doc
+    join HGC_DW.SILVER.stg_mysql__ordenes_compra oc on doc.id_oc_nk = oc.id_oc_nk
+    group by 1
+),
+
+recetas as (
+    -- Cuántos productos usan cada insumo (criticidad del insumo)
+    select
+        id_insumo_nk,
+        count(distinct id_producto_nk) as num_productos_dependientes,
+        avg(cantidad_requerida) as cantidad_promedio_por_receta
+    from HGC_DW.SILVER.stg_mysql__recetas_bom
+    group by 1
+)
+
+select
+    ms.id_insumo_nk,
+    ms.id_almacen_nk,
+    ms.fecha_consumo,
+    ms.cantidad_consumida_dia,
+    ms.num_movimientos_dia,
+
+    -- Datos del insumo
+    i.nombre_insumo,
+    i.unidad_medida,
+    i.costo_unitario,
+
+    -- Stock actual
+    coalesce(s.cantidad_actual, 0) as stock_actual,
+    coalesce(s.punto_reorden, 0) as punto_reorden,
+    coalesce(s.stock_minimo, 0) as stock_minimo,
+    coalesce(s.stock_maximo, 0) as stock_maximo,
+
+    -- Lead time de compras
+    coalesce(lt.lead_time_promedio_dias, 0) as lead_time_promedio_dias,
+    coalesce(lt.total_ordenes_compra, 0) as total_ordenes_compra,
+    coalesce(lt.precio_compra_promedio, i.costo_unitario) as precio_compra_promedio,
+
+    -- Criticidad (BOM)
+    coalesce(r.num_productos_dependientes, 0) as num_productos_dependientes,
+    coalesce(r.cantidad_promedio_por_receta, 0) as cantidad_promedio_por_receta
+
+from movimientos_salida ms
+left join insumos i on ms.id_insumo_nk = i.id_insumo_nk
+left join stock_actual s on ms.id_insumo_nk = s.id_insumo_nk and ms.id_almacen_nk = s.id_almacen_nk
+left join lead_time_compras lt on ms.id_insumo_nk = lt.id_insumo_nk
+left join recetas r on ms.id_insumo_nk = r.id_insumo_nk
+  )
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.int_demanda_insumos"} */;
+[0m02:39:52.256994 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m02:39:53.196858 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.940 seconds
+[0m02:39:53.224784 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E517631D0>]}
+[0m02:39:53.225378 [info ] [Thread-2 (]: 1 of 3 OK created sql view model SILVER.int_demanda_insumos .................... [[32mSUCCESS 1[0m in 1.01s]
+[0m02:39:53.225978 [debug] [Thread-2 (]: Finished running node model.my_new_project.int_demanda_insumos
+[0m02:39:53.226746 [debug] [Thread-3 (]: Began running node model.my_new_project.feat_inventario_demanda
+[0m02:39:53.227193 [info ] [Thread-3 (]: 2 of 3 START sql table model features.feat_inventario_demanda .................. [RUN]
+[0m02:39:53.227675 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.my_new_project.feat_inventario_demanda'
+[0m02:39:53.228028 [debug] [Thread-3 (]: Began compiling node model.my_new_project.feat_inventario_demanda
+[0m02:39:53.231548 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_new_project.feat_inventario_demanda"
+[0m02:39:53.232517 [debug] [Thread-3 (]: Began executing node model.my_new_project.feat_inventario_demanda
+[0m02:39:53.254734 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_new_project.feat_inventario_demanda"
+[0m02:39:53.265949 [debug] [Thread-3 (]: Using snowflake connection "model.my_new_project.feat_inventario_demanda"
+[0m02:39:53.266601 [debug] [Thread-3 (]: On model.my_new_project.feat_inventario_demanda: create or replace transient table HGC_DW.features.feat_inventario_demanda
+    
+    
+    
+    as (
+
+/*
+    FEATURES: feat_inventario_demanda
+    ----------------------------------
+    Calcula features estadísticos de demanda por insumo/almacén 
+    para alimentar el modelo Newsvendor de optimización de inventario.
+    
+    Features calculados:
+      - Demanda: promedio, desviación estándar, coeficiente de variación
+      - Tendencia: comparación últimos 7 vs 30 días
+      - Stock: niveles actuales, punto de reorden, cobertura en días
+      - Compras: lead time, costo unitario
+      - Criticidad: número de productos que dependen del insumo
+*/
+
+with demanda_diaria as (
+    select * from HGC_DW.SILVER.int_demanda_insumos
+),
+
+-- Estadísticas globales de demanda por insumo-almacén
+stats_demanda as (
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+
+        -- Estadísticas de demanda global
+        count(distinct fecha_consumo) as dias_con_demanda,
+        sum(cantidad_consumida_dia) as demanda_total_historica,
+        avg(cantidad_consumida_dia) as demanda_promedio_diaria,
+        stddev(cantidad_consumida_dia) as demanda_desviacion_std,
+        min(cantidad_consumida_dia) as demanda_minima_diaria,
+        max(cantidad_consumida_dia) as demanda_maxima_diaria,
+        median(cantidad_consumida_dia) as demanda_mediana_diaria,
+
+        -- Rango temporal
+        min(fecha_consumo) as primera_fecha_consumo,
+        max(fecha_consumo) as ultima_fecha_consumo,
+        datediff(day, min(fecha_consumo), max(fecha_consumo)) as rango_dias_historico
+
+    from demanda_diaria
+    group by 1, 2
+),
+
+-- Tendencia reciente: últimos 7 días vs últimos 30 días
+tendencia_reciente as (
+    select
+        id_insumo_nk,
+        id_almacen_nk,
+
+        avg(case when fecha_consumo >= dateadd(day, -7, current_date()) then cantidad_consumida_dia end) as demanda_promedio_7d,
+        avg(case when fecha_consumo >= dateadd(day, -30, current_date()) then cantidad_consumida_dia end) as demanda_promedio_30d,
+        
+        count(case when fecha_consumo >= dateadd(day, -30, current_date()) then 1 end) as dias_activos_ultimo_mes
+
+    from demanda_diaria
+    group by 1, 2
+),
+
+-- Último registro de stock e info del insumo (tomar el registro más reciente)
+info_insumo as (
+    select distinct
+        id_insumo_nk,
+        id_almacen_nk,
+        last_value(nombre_insumo) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as nombre_insumo,
+        last_value(unidad_medida) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as unidad_medida,
+        last_value(costo_unitario) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as costo_unitario,
+        last_value(stock_actual) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as stock_actual,
+        last_value(punto_reorden) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as punto_reorden,
+        last_value(stock_minimo) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as stock_minimo,
+        last_value(stock_maximo) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as stock_maximo,
+        last_value(lead_time_promedio_dias) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as lead_time_promedio_dias,
+        last_value(precio_compra_promedio) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as precio_compra_promedio,
+        last_value(num_productos_dependientes) over (partition by id_insumo_nk, id_almacen_nk order by fecha_consumo
+            rows between unbounded preceding and unbounded following) as num_productos_dependientes
+    from demanda_diaria
+)
+
+select
+    sd.id_insumo_nk,
+    sd.id_almacen_nk,
+    ii.nombre_insumo,
+    ii.unidad_medida,
+
+    -- Features de demanda estadística
+    sd.dias_con_demanda,
+    sd.demanda_total_historica,
+    round(sd.demanda_promedio_diaria, 4) as demanda_promedio_diaria,
+    round(coalesce(sd.demanda_desviacion_std, 0), 4) as demanda_desviacion_std,
+    sd.demanda_minima_diaria,
+    sd.demanda_maxima_diaria,
+    round(sd.demanda_mediana_diaria, 4) as demanda_mediana_diaria,
+
+    -- Coeficiente de variación (volatilidad de la demanda)
+    round(
+        case 
+            when sd.demanda_promedio_diaria > 0 
+            then coalesce(sd.demanda_desviacion_std, 0) / sd.demanda_promedio_diaria 
+            else 0 
+        end, 4
+    ) as coeficiente_variacion,
+
+    -- Features de tendencia
+    round(coalesce(tr.demanda_promedio_7d, 0), 4) as demanda_promedio_7d,
+    round(coalesce(tr.demanda_promedio_30d, 0), 4) as demanda_promedio_30d,
+    round(
+        case 
+            when coalesce(tr.demanda_promedio_30d, 0) > 0 
+            then (coalesce(tr.demanda_promedio_7d, 0) - tr.demanda_promedio_30d) / tr.demanda_promedio_30d
+            else 0 
+        end, 4
+    ) as tendencia_demanda_ratio,
+    coalesce(tr.dias_activos_ultimo_mes, 0) as dias_activos_ultimo_mes,
+
+    -- Features de stock
+    ii.stock_actual,
+    ii.punto_reorden,
+    ii.stock_minimo,
+    ii.stock_maximo,
+    case when ii.stock_actual <= ii.punto_reorden then 1 else 0 end as indicador_bajo_stock,
+
+    -- Cobertura de stock en días
+    round(
+        case 
+            when sd.demanda_promedio_diaria > 0 
+            then ii.stock_actual / sd.demanda_promedio_diaria 
+            else 9999 
+        end, 2
+    ) as dias_cobertura_stock,
+
+    -- Features de compras y costos
+    ii.costo_unitario,
+    ii.precio_compra_promedio,
+    ii.lead_time_promedio_dias,
+
+    -- Demanda durante lead time (para modelo Newsvendor)
+    round(sd.demanda_promedio_diaria * coalesce(nullif(ii.lead_time_promedio_dias, 0), 1), 4) as demanda_esperada_lead_time,
+    round(coalesce(sd.demanda_desviacion_std, 0) * sqrt(coalesce(nullif(ii.lead_time_promedio_dias, 0), 1)), 4) as desviacion_demanda_lead_time,
+
+    -- Criticidad del insumo
+    ii.num_productos_dependientes,
+
+    -- Rango histórico
+    sd.primera_fecha_consumo,
+    sd.ultima_fecha_consumo,
+    sd.rango_dias_historico
+
+from stats_demanda sd
+left join tendencia_reciente tr on sd.id_insumo_nk = tr.id_insumo_nk and sd.id_almacen_nk = tr.id_almacen_nk
+left join info_insumo ii on sd.id_insumo_nk = ii.id_insumo_nk and sd.id_almacen_nk = ii.id_almacen_nk
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.feat_inventario_demanda"} */;
+[0m02:39:53.267215 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m02:39:56.874634 [debug] [Thread-3 (]: SQL status: SUCCESS 24 in 3.607 seconds
+[0m02:39:56.876651 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E51A5D700>]}
+[0m02:39:56.877261 [info ] [Thread-3 (]: 2 of 3 OK created sql table model features.feat_inventario_demanda ............. [[32mSUCCESS 24[0m in 3.65s]
+[0m02:39:56.877916 [debug] [Thread-3 (]: Finished running node model.my_new_project.feat_inventario_demanda
+[0m02:39:56.878624 [debug] [Thread-4 (]: Began running node model.my_new_project.obt_inventory_optimization
+[0m02:39:56.879100 [info ] [Thread-4 (]: 3 of 3 START sql table model training_datasets.obt_inventory_optimization ...... [RUN]
+[0m02:39:56.879671 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.my_new_project.obt_inventory_optimization'
+[0m02:39:56.880047 [debug] [Thread-4 (]: Began compiling node model.my_new_project.obt_inventory_optimization
+[0m02:39:56.883221 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_new_project.obt_inventory_optimization"
+[0m02:39:56.884516 [debug] [Thread-4 (]: Began executing node model.my_new_project.obt_inventory_optimization
+[0m02:39:56.887572 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_new_project.obt_inventory_optimization"
+[0m02:39:56.890823 [debug] [Thread-4 (]: Using snowflake connection "model.my_new_project.obt_inventory_optimization"
+[0m02:39:56.891417 [debug] [Thread-4 (]: On model.my_new_project.obt_inventory_optimization: create or replace transient table HGC_DW.training_datasets.obt_inventory_optimization
+    
+    
+    
+    as (
+
+/*
+    DATASET: obt_inventory_optimization
+    -------------------------------------
+    Dataset final para el modelo Newsvendor de optimización de inventario.
+    
+    Objetivo: Determinar la cantidad óptima de compra (Q*) para cada insumo
+    minimizando el riesgo de quiebre de stock y el desperdicio.
+    
+    Modelo: Newsvendor → Q* = μ_LT + z(SL) × σ_LT
+    donde:
+      μ_LT = demanda esperada durante el lead time
+      σ_LT = desviación de la demanda durante el lead time
+      z(SL) = valor z de la distribución normal para el nivel de servicio deseado
+    
+    Tipo: Optimización bajo incertidumbre (NO supervisado ni clásico)
+*/
+
+select
+    id_insumo_nk,
+    id_almacen_nk,
+    nombre_insumo,
+    unidad_medida,
+
+    -- FEATURES: Estadísticas de demanda
+    demanda_promedio_diaria as feature_demanda_promedio_diaria,
+    demanda_desviacion_std as feature_demanda_desviacion_std,
+    coeficiente_variacion as feature_coeficiente_variacion,
+    demanda_mediana_diaria as feature_demanda_mediana_diaria,
+    demanda_minima_diaria as feature_demanda_minima_diaria,
+    demanda_maxima_diaria as feature_demanda_maxima_diaria,
+
+    -- FEATURES: Tendencia
+    demanda_promedio_7d as feature_demanda_promedio_7d,
+    demanda_promedio_30d as feature_demanda_promedio_30d,
+    tendencia_demanda_ratio as feature_tendencia_demanda_ratio,
+    dias_activos_ultimo_mes as feature_dias_activos_ultimo_mes,
+
+    -- FEATURES: Stock
+    stock_actual as feature_stock_actual,
+    punto_reorden as feature_punto_reorden,
+    stock_minimo as feature_stock_minimo,
+    stock_maximo as feature_stock_maximo,
+    indicador_bajo_stock as feature_indicador_bajo_stock,
+    dias_cobertura_stock as feature_dias_cobertura_stock,
+
+    -- FEATURES: Costos y Lead Time
+    costo_unitario as feature_costo_unitario,
+    precio_compra_promedio as feature_precio_compra_promedio,
+    lead_time_promedio_dias as feature_lead_time_dias,
+
+    -- FEATURES: Demanda durante Lead Time (inputs directos del Newsvendor)
+    demanda_esperada_lead_time as feature_demanda_esperada_lt,
+    desviacion_demanda_lead_time as feature_desviacion_demanda_lt,
+
+    -- FEATURES: Criticidad
+    num_productos_dependientes as feature_num_productos_dependientes,
+
+    -- METADATA: Contexto temporal
+    dias_con_demanda as meta_dias_con_demanda,
+    primera_fecha_consumo as meta_primera_fecha,
+    ultima_fecha_consumo as meta_ultima_fecha,
+    rango_dias_historico as meta_rango_dias
+
+from HGC_DW.features.feat_inventario_demanda
+-- Solo insumos con suficiente historial para hacer predicciones confiables
+where dias_con_demanda >= 5
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.obt_inventory_optimization"} */;
+[0m02:39:56.891902 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m02:39:58.484798 [debug] [Thread-4 (]: SQL status: SUCCESS 24 in 1.593 seconds
+[0m02:39:58.487653 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'cdb12363-e886-45a9-ba01-2fe2768338c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E51AB3070>]}
+[0m02:39:58.488448 [info ] [Thread-4 (]: 3 of 3 OK created sql table model training_datasets.obt_inventory_optimization . [[32mSUCCESS 24[0m in 1.61s]
+[0m02:39:58.489342 [debug] [Thread-4 (]: Finished running node model.my_new_project.obt_inventory_optimization
+[0m02:39:58.491092 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:39:58.491508 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m02:39:58.491907 [debug] [MainThread]: On list_HGC_DW: Close
+[0m02:39:58.742027 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m02:39:58.742572 [debug] [MainThread]: On list_HGC_DW: Close
+[0m02:39:58.979986 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m02:39:58.980357 [debug] [MainThread]: On list_HGC_DW: Close
+[0m02:39:59.214954 [debug] [MainThread]: Connection 'list_HGC_DW_features' was left open.
+[0m02:39:59.215456 [debug] [MainThread]: On list_HGC_DW_features: Close
+[0m02:39:59.464101 [debug] [MainThread]: Connection 'list_HGC_DW_snapshots' was left open.
+[0m02:39:59.464479 [debug] [MainThread]: On list_HGC_DW_snapshots: Close
+[0m02:39:59.699465 [debug] [MainThread]: Connection 'list_HGC_DW_SILVER' was left open.
+[0m02:39:59.699872 [debug] [MainThread]: On list_HGC_DW_SILVER: Close
+[0m02:39:59.959014 [debug] [MainThread]: Connection 'list_HGC_DW_GOLD' was left open.
+[0m02:39:59.960611 [debug] [MainThread]: On list_HGC_DW_GOLD: Close
+[0m02:40:00.210531 [debug] [MainThread]: Connection 'model.my_new_project.int_demanda_insumos' was left open.
+[0m02:40:00.210944 [debug] [MainThread]: On model.my_new_project.int_demanda_insumos: Close
+[0m02:40:00.453821 [debug] [MainThread]: Connection 'model.my_new_project.feat_inventario_demanda' was left open.
+[0m02:40:00.454233 [debug] [MainThread]: On model.my_new_project.feat_inventario_demanda: Close
+[0m02:40:00.705366 [debug] [MainThread]: Connection 'model.my_new_project.obt_inventory_optimization' was left open.
+[0m02:40:00.705764 [debug] [MainThread]: On model.my_new_project.obt_inventory_optimization: Close
+[0m02:40:00.958365 [info ] [MainThread]: 
+[0m02:40:00.958846 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 11.80 seconds (11.80s).
+[0m02:40:00.960043 [debug] [MainThread]: Command end result
+[0m02:40:01.015314 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m02:40:01.018144 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m02:40:01.024155 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\run_results.json
+[0m02:40:01.030485 [info ] [MainThread]: 
+[0m02:40:01.030956 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:40:01.031322 [info ] [MainThread]: 
+[0m02:40:01.031681 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m02:40:01.032621 [debug] [MainThread]: Command `dbt run` succeeded at 02:40:01.032497 after 14.07 seconds
+[0m02:40:01.033007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E32870550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E324ED150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025E346525F0>]}
+[0m02:40:01.033376 [debug] [MainThread]: Flushing usage events
+[0m02:40:01.824210 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:31:07.792585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023000DF9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002307DB8C050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230016B7B10>]}
+
+
+============================== 03:31:07.797351 | 8896d25b-a0d6-45cf-ac07-95a30ef19be9 ==============================
+[0m03:31:07.797351 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:31:07.797857 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run --profiles-dir . --select int_ventas_precios_diarios feat_precio_elasticidad obt_price_elasticity', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m03:31:08.489002 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:31:08.489528 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:31:08.489853 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:31:08.718585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230010E15B0>]}
+[0m03:31:08.782301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301F1FDE10>]}
+[0m03:31:08.783232 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:31:09.177889 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:31:09.388258 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 1 files changed.
+[0m03:31:09.389105 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\ml\datasets\obt_price_elasticity.sql
+[0m03:31:09.389447 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\intermediate\int_ventas_precios_diarios.sql
+[0m03:31:09.389766 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\ml\features\feat_precio_elasticidad.sql
+[0m03:31:09.390196 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\_ml_datasets.yml
+[0m03:31:09.744173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301F1DA050>]}
+[0m03:31:09.852655 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m03:31:09.860532 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m03:31:09.880117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301F2895E0>]}
+[0m03:31:09.880565 [info ] [MainThread]: Found 83 models, 5 snapshots, 36 sources, 638 macros
+[0m03:31:09.880907 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301FBEB4D0>]}
+[0m03:31:09.884163 [info ] [MainThread]: 
+[0m03:31:09.884495 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m03:31:09.884822 [info ] [MainThread]: 
+[0m03:31:09.885263 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m03:31:09.889344 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:31:09.900372 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:31:09.902481 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:31:09.960562 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:31:09.960922 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:31:09.961214 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:09.961706 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:31:09.961998 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:31:09.962260 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:09.962699 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:31:09.963036 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:31:09.963297 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:11.572117 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.609 seconds
+[0m03:31:11.572820 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.611 seconds
+[0m03:31:11.573251 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.612 seconds
+[0m03:31:11.583215 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_SILVER'
+[0m03:31:11.595706 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_training_datasets'
+[0m03:31:11.598322 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_SILVER"
+[0m03:31:11.600128 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_training_datasets"
+[0m03:31:11.600513 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_features'
+[0m03:31:11.600991 [debug] [ThreadPool]: On list_HGC_DW_SILVER: show objects in HGC_DW.SILVER
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_SILVER"} */;
+[0m03:31:11.601448 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_GOLD'
+[0m03:31:11.601742 [debug] [ThreadPool]: On list_HGC_DW_training_datasets: show objects in HGC_DW.training_datasets
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_training_datasets"} */;
+[0m03:31:11.603702 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_features"
+[0m03:31:11.604050 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:11.605695 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_GOLD"
+[0m03:31:11.606038 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:11.606388 [debug] [ThreadPool]: On list_HGC_DW_features: show objects in HGC_DW.features
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_features"} */;
+[0m03:31:11.606842 [debug] [ThreadPool]: On list_HGC_DW_GOLD: show objects in HGC_DW.GOLD
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_GOLD"} */;
+[0m03:31:11.607384 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:11.607748 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:31:12.389500 [debug] [ThreadPool]: SQL status: SUCCESS 42 in 0.785 seconds
+[0m03:31:12.392562 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_HGC_DW_SILVER, now list_HGC_DW_snapshots)
+[0m03:31:12.394389 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_snapshots"
+[0m03:31:12.394687 [debug] [ThreadPool]: On list_HGC_DW_snapshots: show objects in HGC_DW.snapshots
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_snapshots"} */;
+[0m03:31:12.618780 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.224 seconds
+[0m03:31:12.983733 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.378 seconds
+[0m03:31:13.031853 [debug] [ThreadPool]: SQL status: SUCCESS 29 in 1.424 seconds
+[0m03:31:13.049013 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 1.442 seconds
+[0m03:31:13.052296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002302020E0D0>]}
+[0m03:31:13.061690 [debug] [Thread-2 (]: Began running node model.my_new_project.int_ventas_precios_diarios
+[0m03:31:13.062182 [info ] [Thread-2 (]: 1 of 3 START sql view model SILVER.int_ventas_precios_diarios .................. [RUN]
+[0m03:31:13.062694 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.my_new_project.int_ventas_precios_diarios'
+[0m03:31:13.063036 [debug] [Thread-2 (]: Began compiling node model.my_new_project.int_ventas_precios_diarios
+[0m03:31:13.070460 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_new_project.int_ventas_precios_diarios"
+[0m03:31:13.071786 [debug] [Thread-2 (]: Began executing node model.my_new_project.int_ventas_precios_diarios
+[0m03:31:13.100858 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_new_project.int_ventas_precios_diarios"
+[0m03:31:13.105194 [debug] [Thread-2 (]: Using snowflake connection "model.my_new_project.int_ventas_precios_diarios"
+[0m03:31:13.105771 [debug] [Thread-2 (]: On model.my_new_project.int_ventas_precios_diarios: create or replace   view HGC_DW.SILVER.int_ventas_precios_diarios
+  
+  
+  
+  
+  as (
+    /*
+    INTERMEDIATE: int_ventas_precios_diarios
+    ------------------------------------------
+    Agrega ventas a nivel diario por producto, capturando el precio
+    de venta efectivo promedio y las métricas de volumen y revenue.
+    
+    Este modelo sirve como base para calcular la elasticidad de precios.
+    
+    Fuentes (Silver / Gold):
+      - fact_ventas_detalle (ventas con precios efectivos)
+      - dim_producto (precio base, costo estándar, categoría)
+*/
+
+with ventas as (
+    select
+        to_date(cast(v.id_fecha_sk as varchar), 'YYYYMMDD') as fecha_venta,
+        v.id_producto_sk,
+        v.cantidad_vendida,
+        v.precio_unitario_venta,
+        v.monto_subtotal_bruto,
+        v.monto_descuento_linea,
+        v.monto_subtotal_neto
+    from HGC_DW.GOLD.fact_ventas_detalle v
+),
+
+producto as (
+    select
+        id_producto_sk,
+        id_producto_nk,
+        nombre_producto,
+        categoria_nombre,
+        tipo_producto,
+        precio_base_historico,
+        costo_estandar_historico,
+        es_actual
+    from HGC_DW.GOLD.dim_producto
+    where es_actual = true
+),
+
+-- Agregación diaria por producto
+ventas_diarias as (
+    select
+        v.fecha_venta,
+        p.id_producto_nk,
+        p.nombre_producto,
+        p.categoria_nombre,
+        p.tipo_producto,
+        p.precio_base_historico,
+        p.costo_estandar_historico,
+
+        -- Métricas de volumen
+        sum(v.cantidad_vendida) as cantidad_vendida_dia,
+        count(*) as num_transacciones_dia,
+
+        -- Métricas de precio efectivo
+        avg(v.precio_unitario_venta) as precio_promedio_dia,
+        min(v.precio_unitario_venta) as precio_minimo_dia,
+        max(v.precio_unitario_venta) as precio_maximo_dia,
+
+        -- Métricas de revenue
+        sum(v.monto_subtotal_bruto) as revenue_bruto_dia,
+        sum(v.monto_descuento_linea) as descuento_total_dia,
+        sum(v.monto_subtotal_neto) as revenue_neto_dia,
+
+        -- Margen estimado
+        sum(v.monto_subtotal_neto) - (sum(v.cantidad_vendida) * p.costo_estandar_historico) as margen_estimado_dia
+
+    from ventas v
+    join producto p on v.id_producto_sk = p.id_producto_sk
+    group by 1, 2, 3, 4, 5, 6, 7
+)
+
+select
+    *,
+    -- Descuento relativo del día
+    case 
+        when revenue_bruto_dia > 0 
+        then round(descuento_total_dia / revenue_bruto_dia, 4)
+        else 0 
+    end as tasa_descuento_dia,
+
+    -- Variación de precio vs precio base
+    case 
+        when precio_base_historico > 0 
+        then round((precio_promedio_dia - precio_base_historico) / precio_base_historico, 4)
+        else 0 
+    end as variacion_precio_vs_base,
+
+    -- Margen porcentual
+    case 
+        when revenue_neto_dia > 0 
+        then round(margen_estimado_dia / revenue_neto_dia, 4)
+        else 0 
+    end as margen_porcentual_dia
+
+from ventas_diarias
+  )
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.int_ventas_precios_diarios"} */;
+[0m03:31:13.106440 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m03:31:13.939273 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.833 seconds
+[0m03:31:13.961019 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301F6D1FD0>]}
+[0m03:31:13.961611 [info ] [Thread-2 (]: 1 of 3 OK created sql view model SILVER.int_ventas_precios_diarios ............. [[32mSUCCESS 1[0m in 0.90s]
+[0m03:31:13.962222 [debug] [Thread-2 (]: Finished running node model.my_new_project.int_ventas_precios_diarios
+[0m03:31:13.962913 [debug] [Thread-3 (]: Began running node model.my_new_project.feat_precio_elasticidad
+[0m03:31:13.963330 [debug] [Thread-4 (]: Began running node model.my_new_project.obt_price_elasticity
+[0m03:31:13.963800 [info ] [Thread-3 (]: 2 of 3 START sql table model features.feat_precio_elasticidad .................. [RUN]
+[0m03:31:13.964301 [info ] [Thread-4 (]: 3 of 3 START sql table model training_datasets.obt_price_elasticity ............ [RUN]
+[0m03:31:13.964952 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.my_new_project.feat_precio_elasticidad'
+[0m03:31:13.965525 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.my_new_project.obt_price_elasticity'
+[0m03:31:13.965959 [debug] [Thread-3 (]: Began compiling node model.my_new_project.feat_precio_elasticidad
+[0m03:31:13.966326 [debug] [Thread-4 (]: Began compiling node model.my_new_project.obt_price_elasticity
+[0m03:31:13.969947 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_new_project.feat_precio_elasticidad"
+[0m03:31:13.972386 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_new_project.obt_price_elasticity"
+[0m03:31:13.974015 [debug] [Thread-3 (]: Began executing node model.my_new_project.feat_precio_elasticidad
+[0m03:31:13.980166 [debug] [Thread-4 (]: Began executing node model.my_new_project.obt_price_elasticity
+[0m03:31:14.004815 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_new_project.obt_price_elasticity"
+[0m03:31:14.008663 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_new_project.feat_precio_elasticidad"
+[0m03:31:14.010894 [debug] [Thread-4 (]: Using snowflake connection "model.my_new_project.obt_price_elasticity"
+[0m03:31:14.011351 [debug] [Thread-4 (]: On model.my_new_project.obt_price_elasticity: create or replace transient table HGC_DW.training_datasets.obt_price_elasticity
+    
+    
+    
+    as (
+
+/*
+    DATASET: obt_price_elasticity
+    --------------------------------
+    Dataset final para análisis de elasticidad de precios y
+    simulación de escenarios de pricing con modelos VAR.
+    
+    Objetivo: Entender cómo cambios en precios afectan ventas y margen.
+    
+    Resultado esperado:
+      "Subir precios 5% → ventas -2%, margen +3%"
+    
+    Tipo: Series temporales + Regresión (VAR multivariado)
+    
+    Nota: Este OBT incluye datos diarios (no agregados) para permitir
+    el análisis de series temporales en el notebook.
+*/
+
+select
+    fecha_venta,
+    id_producto_nk,
+    nombre_producto,
+    categoria_nombre,
+    tipo_producto,
+
+    -- FEATURES: Precio
+    precio_promedio_dia as feature_precio_efectivo,
+    precio_base_historico as feature_precio_base,
+    variacion_precio_vs_base as feature_variacion_precio_pct,
+    tasa_descuento_dia as feature_tasa_descuento,
+
+    -- FEATURES: Volumen
+    cantidad_vendida_dia as feature_cantidad_vendida,
+    num_transacciones_dia as feature_num_transacciones,
+
+    -- FEATURES: Revenue
+    revenue_bruto_dia as feature_revenue_bruto,
+    revenue_neto_dia as feature_revenue_neto,
+    descuento_total_dia as feature_descuento_total,
+
+    -- FEATURES: Margen y Costos
+    margen_estimado_dia as feature_margen_estimado,
+    margen_porcentual_dia as feature_margen_porcentual,
+    costo_estandar_historico as feature_costo_estandar
+
+from HGC_DW.SILVER.int_ventas_precios_diarios
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.obt_price_elasticity"} */;
+[0m03:31:14.013383 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m03:31:14.016027 [debug] [Thread-3 (]: Using snowflake connection "model.my_new_project.feat_precio_elasticidad"
+[0m03:31:14.016573 [debug] [Thread-3 (]: On model.my_new_project.feat_precio_elasticidad: create or replace transient table HGC_DW.features.feat_precio_elasticidad
+    
+    
+    
+    as (
+
+/*
+    FEATURES: feat_precio_elasticidad
+    -----------------------------------
+    Calcula features de elasticidad de precios por producto para
+    alimentar modelos VAR y simulación de escenarios de pricing.
+    
+    Features calculados:
+      - Estadísticas de precio y volumen
+      - Elasticidad precio-demanda estimada (correlación)
+      - Tendencias temporales (7d, 30d, 90d)
+      - Métricas de margen y sensibilidad
+*/
+
+with diario as (
+    select * from HGC_DW.SILVER.int_ventas_precios_diarios
+),
+
+-- Estadísticas globales por producto
+stats_producto as (
+    select
+        id_producto_nk,
+        nombre_producto,
+        categoria_nombre,
+        tipo_producto,
+        precio_base_historico,
+        costo_estandar_historico,
+
+        -- Rango temporal
+        min(fecha_venta) as primera_venta,
+        max(fecha_venta) as ultima_venta,
+        count(distinct fecha_venta) as dias_con_ventas,
+
+        -- Estadísticas de volumen
+        avg(cantidad_vendida_dia) as volumen_promedio_diario,
+        stddev(cantidad_vendida_dia) as volumen_desviacion_std,
+        sum(cantidad_vendida_dia) as volumen_total_historico,
+
+        -- Estadísticas de precio efectivo
+        avg(precio_promedio_dia) as precio_efectivo_promedio,
+        stddev(precio_promedio_dia) as precio_desviacion_std,
+        min(precio_promedio_dia) as precio_efectivo_minimo,
+        max(precio_promedio_dia) as precio_efectivo_maximo,
+
+        -- Revenue y margen
+        sum(revenue_neto_dia) as revenue_neto_total,
+        sum(margen_estimado_dia) as margen_total,
+        avg(margen_porcentual_dia) as margen_porcentual_promedio,
+
+        -- Descuentos
+        avg(tasa_descuento_dia) as tasa_descuento_promedio,
+        sum(descuento_total_dia) as descuento_total_historico,
+
+        -- Elasticidad estimada: correlación entre variación de precio y cantidad
+        -- Pearson: corr(precio, cantidad)
+        corr(precio_promedio_dia, cantidad_vendida_dia) as correlacion_precio_cantidad,
+
+        -- Transacciones
+        avg(num_transacciones_dia) as transacciones_promedio_dia
+
+    from diario
+    group by 1, 2, 3, 4, 5, 6
+),
+
+-- Tendencias recientes por producto
+tendencias as (
+    select
+        id_producto_nk,
+        
+        -- Volumen reciente
+        avg(case when fecha_venta >= dateadd(day, -7, current_date()) then cantidad_vendida_dia end) as volumen_promedio_7d,
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then cantidad_vendida_dia end) as volumen_promedio_30d,
+        avg(case when fecha_venta >= dateadd(day, -90, current_date()) then cantidad_vendida_dia end) as volumen_promedio_90d,
+
+        -- Precio reciente
+        avg(case when fecha_venta >= dateadd(day, -7, current_date()) then precio_promedio_dia end) as precio_promedio_7d,
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then precio_promedio_dia end) as precio_promedio_30d,
+        avg(case when fecha_venta >= dateadd(day, -90, current_date()) then precio_promedio_dia end) as precio_promedio_90d,
+
+        -- Revenue reciente
+        sum(case when fecha_venta >= dateadd(day, -30, current_date()) then revenue_neto_dia else 0 end) as revenue_neto_30d,
+        sum(case when fecha_venta >= dateadd(day, -90, current_date()) then revenue_neto_dia else 0 end) as revenue_neto_90d,
+
+        -- Margen reciente
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then margen_porcentual_dia end) as margen_promedio_30d
+
+    from diario
+    group by 1
+)
+
+select
+    sp.id_producto_nk,
+    sp.nombre_producto,
+    sp.categoria_nombre,
+    sp.tipo_producto,
+    sp.precio_base_historico,
+    sp.costo_estandar_historico,
+
+    -- Features de volumen
+    sp.dias_con_ventas,
+    round(sp.volumen_promedio_diario, 2) as volumen_promedio_diario,
+    round(coalesce(sp.volumen_desviacion_std, 0), 2) as volumen_desviacion_std,
+    sp.volumen_total_historico,
+    round(sp.transacciones_promedio_dia, 2) as transacciones_promedio_dia,
+
+    -- Features de precio
+    round(sp.precio_efectivo_promedio, 2) as precio_efectivo_promedio,
+    round(coalesce(sp.precio_desviacion_std, 0), 4) as precio_desviacion_std,
+    sp.precio_efectivo_minimo,
+    sp.precio_efectivo_maximo,
+
+    -- Variabilidad de precios
+    round(
+        case 
+            when sp.precio_efectivo_promedio > 0 
+            then coalesce(sp.precio_desviacion_std, 0) / sp.precio_efectivo_promedio 
+            else 0 
+        end, 4
+    ) as coeficiente_variacion_precio,
+
+    -- Features de elasticidad
+    round(coalesce(sp.correlacion_precio_cantidad, 0), 4) as elasticidad_precio_demanda,
+
+    -- Revenue y margen
+    round(sp.revenue_neto_total, 2) as revenue_neto_total,
+    round(sp.margen_total, 2) as margen_total,
+    round(sp.margen_porcentual_promedio, 4) as margen_porcentual_promedio,
+    round(sp.tasa_descuento_promedio, 4) as tasa_descuento_promedio,
+    round(sp.descuento_total_historico, 2) as descuento_total_historico,
+
+    -- Tendencias de volumen
+    round(coalesce(t.volumen_promedio_7d, 0), 2) as volumen_promedio_7d,
+    round(coalesce(t.volumen_promedio_30d, 0), 2) as volumen_promedio_30d,
+    round(coalesce(t.volumen_promedio_90d, 0), 2) as volumen_promedio_90d,
+    round(
+        case 
+            when coalesce(t.volumen_promedio_30d, 0) > 0 
+            then (coalesce(t.volumen_promedio_7d, 0) - t.volumen_promedio_30d) / t.volumen_promedio_30d
+            else 0 
+        end, 4
+    ) as tendencia_volumen_7d_vs_30d,
+
+    -- Tendencias de precio
+    round(coalesce(t.precio_promedio_7d, 0), 2) as precio_promedio_7d,
+    round(coalesce(t.precio_promedio_30d, 0), 2) as precio_promedio_30d,
+    round(coalesce(t.precio_promedio_90d, 0), 2) as precio_promedio_90d,
+
+    -- Revenue reciente
+    round(coalesce(t.revenue_neto_30d, 0), 2) as revenue_neto_30d,
+    round(coalesce(t.revenue_neto_90d, 0), 2) as revenue_neto_90d,
+    round(coalesce(t.margen_promedio_30d, 0), 4) as margen_promedio_30d,
+
+    -- Metadata temporal
+    sp.primera_venta,
+    sp.ultima_venta
+
+from stats_producto sp
+left join tendencias t on sp.id_producto_nk = t.id_producto_nk
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.feat_precio_elasticidad"} */;
+[0m03:31:14.017203 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m03:31:16.205455 [debug] [Thread-4 (]: SQL status: SUCCESS 38241 in 2.191 seconds
+[0m03:31:16.207930 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023020376BA0>]}
+[0m03:31:16.208477 [info ] [Thread-4 (]: 3 of 3 OK created sql table model training_datasets.obt_price_elasticity ....... [[32mSUCCESS 38241[0m in 2.24s]
+[0m03:31:16.209247 [debug] [Thread-4 (]: Finished running node model.my_new_project.obt_price_elasticity
+[0m03:31:16.218511 [debug] [Thread-3 (]: SQL status: SUCCESS 9 in 2.201 seconds
+[0m03:31:16.220180 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8896d25b-a0d6-45cf-ac07-95a30ef19be9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230203320D0>]}
+[0m03:31:16.220693 [info ] [Thread-3 (]: 2 of 3 OK created sql table model features.feat_precio_elasticidad ............. [[32mSUCCESS 9[0m in 2.26s]
+[0m03:31:16.221500 [debug] [Thread-3 (]: Finished running node model.my_new_project.feat_precio_elasticidad
+[0m03:31:16.223096 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:31:16.223385 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:31:16.223662 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:31:16.472598 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:31:16.473140 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:31:16.737066 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:31:16.737509 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:31:16.990995 [debug] [MainThread]: Connection 'list_HGC_DW_snapshots' was left open.
+[0m03:31:16.991371 [debug] [MainThread]: On list_HGC_DW_snapshots: Close
+[0m03:31:17.236021 [debug] [MainThread]: Connection 'list_HGC_DW_training_datasets' was left open.
+[0m03:31:17.236409 [debug] [MainThread]: On list_HGC_DW_training_datasets: Close
+[0m03:31:17.480361 [debug] [MainThread]: Connection 'list_HGC_DW_features' was left open.
+[0m03:31:17.480944 [debug] [MainThread]: On list_HGC_DW_features: Close
+[0m03:31:17.740236 [debug] [MainThread]: Connection 'list_HGC_DW_GOLD' was left open.
+[0m03:31:17.740640 [debug] [MainThread]: On list_HGC_DW_GOLD: Close
+[0m03:31:18.002917 [debug] [MainThread]: Connection 'model.my_new_project.int_ventas_precios_diarios' was left open.
+[0m03:31:18.003511 [debug] [MainThread]: On model.my_new_project.int_ventas_precios_diarios: Close
+[0m03:31:18.255678 [debug] [MainThread]: Connection 'model.my_new_project.feat_precio_elasticidad' was left open.
+[0m03:31:18.256167 [debug] [MainThread]: On model.my_new_project.feat_precio_elasticidad: Close
+[0m03:31:18.505638 [debug] [MainThread]: Connection 'model.my_new_project.obt_price_elasticity' was left open.
+[0m03:31:18.506029 [debug] [MainThread]: On model.my_new_project.obt_price_elasticity: Close
+[0m03:31:18.761534 [info ] [MainThread]: 
+[0m03:31:18.763288 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 8.88 seconds (8.88s).
+[0m03:31:18.768418 [debug] [MainThread]: Command end result
+[0m03:31:18.827422 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m03:31:18.830362 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m03:31:18.836227 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\run_results.json
+[0m03:31:18.836642 [info ] [MainThread]: 
+[0m03:31:18.837036 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:31:18.837372 [info ] [MainThread]: 
+[0m03:31:18.837798 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m03:31:18.838874 [debug] [MainThread]: Command `dbt run` succeeded at 03:31:18.838729 after 11.14 seconds
+[0m03:31:18.839303 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301FD40450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002301FAD0750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023001E625F0>]}
+[0m03:31:18.839660 [debug] [MainThread]: Flushing usage events
+[0m03:31:19.906151 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:40:14.971632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023555AED6A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000235573A5BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023557AB3ED0>]}
+
+
+============================== 03:40:14.976399 | c8b5a5ba-0b51-441c-a286-df60cf877031 ==============================
+[0m03:40:14.976399 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:40:14.977083 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt run', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m03:40:14.981441 [error] [MainThread]: Encountered an error:
+Parsing Error
+  Env var required but not provided: 'SNOWFLAKE_ACCOUNT'
+[0m03:40:14.982456 [debug] [MainThread]: Command `dbt run` failed at 03:40:14.982341 after 0.16 seconds
+[0m03:40:14.982893 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023557B8C2B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023557AFF530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023557ABE250>]}
+[0m03:40:14.983241 [debug] [MainThread]: Flushing usage events
+[0m03:40:15.824015 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:46:59.586917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002310A7E9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002310754C050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002310C0A7B10>]}
+
+
+============================== 03:46:59.590741 | 9e0693b4-19ea-46fb-972d-caa2e2190480 ==============================
+[0m03:46:59.590741 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:46:59.591271 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt run --profiles-dir . --select int_ventas_precios_diarios feat_precio_elasticidad obt_price_elasticity', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m03:47:00.275086 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:47:00.275524 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:47:00.275844 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:47:00.482458 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002310AAD15B0>]}
+[0m03:47:00.546020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023127B3DE10>]}
+[0m03:47:00.546966 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:47:00.944202 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:47:01.160009 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m03:47:01.160886 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\intermediate\int_ventas_precios_diarios.sql
+[0m03:47:01.161307 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\obt_price_elasticity.sql
+[0m03:47:01.511648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023127B1A050>]}
+[0m03:47:01.620907 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m03:47:01.624749 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m03:47:01.643757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023127BC95E0>]}
+[0m03:47:01.644238 [info ] [MainThread]: Found 83 models, 5 snapshots, 36 sources, 638 macros
+[0m03:47:01.644602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231296AD390>]}
+[0m03:47:01.647887 [info ] [MainThread]: 
+[0m03:47:01.648253 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m03:47:01.648539 [info ] [MainThread]: 
+[0m03:47:01.649013 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m03:47:01.653276 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:47:01.659722 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:47:01.666882 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:47:01.755976 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:47:01.756475 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:47:01.756787 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:47:01.757205 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:47:01.757580 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:47:01.757928 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:01.758271 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:47:01.758610 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:01.759059 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:03.267088 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.509 seconds
+[0m03:47:03.291168 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.532 seconds
+[0m03:47:03.299081 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.540 seconds
+[0m03:47:03.306279 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_SILVER'
+[0m03:47:03.317816 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_SILVER"
+[0m03:47:03.318146 [debug] [ThreadPool]: On list_HGC_DW_SILVER: show objects in HGC_DW.SILVER
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_SILVER"} */;
+[0m03:47:03.318436 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:03.318898 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_GOLD'
+[0m03:47:03.320598 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_GOLD"
+[0m03:47:03.320898 [debug] [ThreadPool]: On list_HGC_DW_GOLD: show objects in HGC_DW.GOLD
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_GOLD"} */;
+[0m03:47:03.321167 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:03.321908 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_training_datasets'
+[0m03:47:03.323772 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_training_datasets"
+[0m03:47:03.324070 [debug] [ThreadPool]: On list_HGC_DW_training_datasets: show objects in HGC_DW.training_datasets
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_training_datasets"} */;
+[0m03:47:03.324354 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:03.328709 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_snapshots'
+[0m03:47:03.330409 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_snapshots"
+[0m03:47:03.330706 [debug] [ThreadPool]: On list_HGC_DW_snapshots: show objects in HGC_DW.snapshots
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_snapshots"} */;
+[0m03:47:03.330971 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:47:04.053997 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.729 seconds
+[0m03:47:04.062811 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_HGC_DW_training_datasets, now list_HGC_DW_features)
+[0m03:47:04.076659 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_features"
+[0m03:47:04.078845 [debug] [ThreadPool]: On list_HGC_DW_features: show objects in HGC_DW.features
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_features"} */;
+[0m03:47:04.082858 [debug] [ThreadPool]: SQL status: SUCCESS 43 in 0.764 seconds
+[0m03:47:04.100546 [debug] [ThreadPool]: SQL status: SUCCESS 29 in 0.779 seconds
+[0m03:47:04.269695 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.189 seconds
+[0m03:47:04.738626 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.407 seconds
+[0m03:47:04.742414 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002312985B040>]}
+[0m03:47:04.752037 [debug] [Thread-2 (]: Began running node model.my_new_project.int_ventas_precios_diarios
+[0m03:47:04.752526 [info ] [Thread-2 (]: 1 of 3 START sql view model SILVER.int_ventas_precios_diarios .................. [RUN]
+[0m03:47:04.753032 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.my_new_project.int_ventas_precios_diarios'
+[0m03:47:04.753358 [debug] [Thread-2 (]: Began compiling node model.my_new_project.int_ventas_precios_diarios
+[0m03:47:04.760438 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_new_project.int_ventas_precios_diarios"
+[0m03:47:04.761549 [debug] [Thread-2 (]: Began executing node model.my_new_project.int_ventas_precios_diarios
+[0m03:47:04.789220 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_new_project.int_ventas_precios_diarios"
+[0m03:47:04.792774 [debug] [Thread-2 (]: Using snowflake connection "model.my_new_project.int_ventas_precios_diarios"
+[0m03:47:04.793325 [debug] [Thread-2 (]: On model.my_new_project.int_ventas_precios_diarios: create or replace   view HGC_DW.SILVER.int_ventas_precios_diarios
+  
+  
+  
+  
+  as (
+    /*
+    INTERMEDIATE: int_ventas_precios_diarios
+    ------------------------------------------
+    Agrega ventas a nivel diario por producto, calculando el precio
+    efectivo por unidad (revenue/cantidad) que SÍ varía por transacción.
+    
+    NOTA: Los precios base son fijos en esta data, pero el precio
+    efectivo por unidad varía porque cada transacción tiene diferentes
+    cantidades y subtotales. El análisis se basa en volumen de demanda
+    y su relación con revenue/margen para simular escenarios de pricing.
+    
+    Fuentes (Silver / Gold):
+      - fact_ventas_detalle (ventas con precios efectivos)
+      - dim_producto (precio base, costo estándar, categoría)
+*/
+
+with ventas as (
+    select
+        to_date(cast(v.id_fecha_sk as varchar), 'YYYYMMDD') as fecha_venta,
+        v.id_producto_sk,
+        v.cantidad_vendida,
+        v.precio_unitario_venta,
+        v.monto_subtotal_bruto,
+        v.monto_descuento_linea,
+        v.monto_subtotal_neto
+    from HGC_DW.GOLD.fact_ventas_detalle v
+),
+
+producto as (
+    select
+        id_producto_sk,
+        id_producto_nk,
+        nombre_producto,
+        categoria_nombre,
+        tipo_producto,
+        precio_base_historico,
+        costo_estandar_historico,
+        es_actual
+    from HGC_DW.GOLD.dim_producto
+    where es_actual = true
+),
+
+-- Agregación diaria por producto
+ventas_diarias as (
+    select
+        v.fecha_venta,
+        p.id_producto_nk,
+        p.nombre_producto,
+        p.categoria_nombre,
+        p.tipo_producto,
+        p.precio_base_historico,
+        p.costo_estandar_historico,
+
+        -- Métricas de volumen
+        sum(v.cantidad_vendida) as cantidad_vendida_dia,
+        count(*) as num_transacciones_dia,
+
+        -- Métricas de precio
+        p.precio_base_historico as precio_unitario_dia,
+
+        -- Métricas de revenue
+        sum(v.monto_subtotal_bruto) as revenue_bruto_dia,
+        sum(v.monto_descuento_linea) as descuento_total_dia,
+        sum(v.monto_subtotal_neto) as revenue_neto_dia,
+
+        -- Revenue por unidad efectivo (VARÍA por día según mix de cantidades)
+        case
+            when sum(v.cantidad_vendida) > 0
+            then round(sum(v.monto_subtotal_neto) / sum(v.cantidad_vendida), 2)
+            else 0
+        end as revenue_por_unidad_dia,
+
+        -- Margen estimado
+        sum(v.monto_subtotal_neto) - (sum(v.cantidad_vendida) * p.costo_estandar_historico) as margen_estimado_dia
+
+    from ventas v
+    join producto p on v.id_producto_sk = p.id_producto_sk
+    group by 1, 2, 3, 4, 5, 6, 7
+)
+
+select
+    *,
+    -- Margen porcentual
+    case 
+        when revenue_neto_dia > 0 
+        then round(margen_estimado_dia / revenue_neto_dia, 4)
+        else 0 
+    end as margen_porcentual_dia,
+
+    -- Ticket promedio por transacción
+    case
+        when num_transacciones_dia > 0
+        then round(revenue_neto_dia / num_transacciones_dia, 2)
+        else 0
+    end as ticket_promedio_dia,
+
+    -- Unidades promedio por transacción
+    case
+        when num_transacciones_dia > 0
+        then round(cantidad_vendida_dia * 1.0 / num_transacciones_dia, 2)
+        else 0
+    end as unidades_por_transaccion_dia
+
+from ventas_diarias
+  )
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.int_ventas_precios_diarios"} */;
+[0m03:47:04.793825 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m03:47:06.262395 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.468 seconds
+[0m03:47:06.288910 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023129AEBB90>]}
+[0m03:47:06.289505 [info ] [Thread-2 (]: 1 of 3 OK created sql view model SILVER.int_ventas_precios_diarios ............. [[32mSUCCESS 1[0m in 1.53s]
+[0m03:47:06.290103 [debug] [Thread-2 (]: Finished running node model.my_new_project.int_ventas_precios_diarios
+[0m03:47:06.290884 [debug] [Thread-4 (]: Began running node model.my_new_project.obt_price_elasticity
+[0m03:47:06.291348 [info ] [Thread-4 (]: 3 of 3 START sql table model training_datasets.obt_price_elasticity ............ [RUN]
+[0m03:47:06.291840 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.my_new_project.obt_price_elasticity'
+[0m03:47:06.292183 [debug] [Thread-4 (]: Began compiling node model.my_new_project.obt_price_elasticity
+[0m03:47:06.294728 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_new_project.obt_price_elasticity"
+[0m03:47:06.295263 [debug] [Thread-3 (]: Began running node model.my_new_project.feat_precio_elasticidad
+[0m03:47:06.295691 [info ] [Thread-3 (]: 2 of 3 START sql table model features.feat_precio_elasticidad .................. [RUN]
+[0m03:47:06.296345 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.my_new_project.feat_precio_elasticidad'
+[0m03:47:06.296679 [debug] [Thread-3 (]: Began compiling node model.my_new_project.feat_precio_elasticidad
+[0m03:47:06.299457 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_new_project.feat_precio_elasticidad"
+[0m03:47:06.300150 [debug] [Thread-4 (]: Began executing node model.my_new_project.obt_price_elasticity
+[0m03:47:06.321987 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_new_project.obt_price_elasticity"
+[0m03:47:06.322866 [debug] [Thread-3 (]: Began executing node model.my_new_project.feat_precio_elasticidad
+[0m03:47:06.325261 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_new_project.feat_precio_elasticidad"
+[0m03:47:06.326930 [debug] [Thread-4 (]: Using snowflake connection "model.my_new_project.obt_price_elasticity"
+[0m03:47:06.327341 [debug] [Thread-4 (]: On model.my_new_project.obt_price_elasticity: create or replace transient table HGC_DW.training_datasets.obt_price_elasticity
+    
+    
+    
+    as (
+
+/*
+    DATASET: obt_price_elasticity
+    --------------------------------
+    Dataset diario para análisis de impacto de precios en ventas y ganancias.
+    
+    Los precios base son fijos en la data actual, por lo que el análisis
+    se centra en:
+      1. Variación natural del volumen de demanda
+      2. Revenue por unidad (varía por mix de transacciones)
+      3. Simulación de escenarios de cambio de precio usando elasticidades calibradas
+      4. Modelo VAR sobre volumen, revenue y margen (que SÍ varían)
+    
+    Tipo: Series temporales + Simulación de escenarios
+*/
+
+select
+    fecha_venta,
+    id_producto_nk,
+    nombre_producto,
+    categoria_nombre,
+    tipo_producto,
+
+    -- FEATURES: Precio y costos
+    precio_unitario_dia as feature_precio_unitario,
+    precio_base_historico as feature_precio_base,
+    costo_estandar_historico as feature_costo_estandar,
+    revenue_por_unidad_dia as feature_revenue_por_unidad,
+
+    -- FEATURES: Volumen (VARÍA diariamente)
+    cantidad_vendida_dia as feature_cantidad_vendida,
+    num_transacciones_dia as feature_num_transacciones,
+    unidades_por_transaccion_dia as feature_unidades_por_transaccion,
+
+    -- FEATURES: Revenue (VARÍA diariamente)
+    revenue_bruto_dia as feature_revenue_bruto,
+    revenue_neto_dia as feature_revenue_neto,
+    ticket_promedio_dia as feature_ticket_promedio,
+
+    -- FEATURES: Margen (VARÍA diariamente)
+    margen_estimado_dia as feature_margen_estimado,
+    margen_porcentual_dia as feature_margen_porcentual
+
+from HGC_DW.SILVER.int_ventas_precios_diarios
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.obt_price_elasticity"} */;
+[0m03:47:06.327749 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m03:47:06.333165 [debug] [Thread-3 (]: Using snowflake connection "model.my_new_project.feat_precio_elasticidad"
+[0m03:47:06.334367 [debug] [Thread-3 (]: On model.my_new_project.feat_precio_elasticidad: create or replace transient table HGC_DW.features.feat_precio_elasticidad
+    
+    
+    
+    as (
+
+/*
+    FEATURES: feat_precio_elasticidad
+    -----------------------------------
+    Calcula features de elasticidad de precios por producto para
+    alimentar modelos VAR y simulación de escenarios de pricing.
+    
+    Features calculados:
+      - Estadísticas de precio y volumen
+      - Elasticidad precio-demanda estimada (correlación)
+      - Tendencias temporales (7d, 30d, 90d)
+      - Métricas de margen y sensibilidad
+*/
+
+with diario as (
+    select * from HGC_DW.SILVER.int_ventas_precios_diarios
+),
+
+-- Estadísticas globales por producto
+stats_producto as (
+    select
+        id_producto_nk,
+        nombre_producto,
+        categoria_nombre,
+        tipo_producto,
+        precio_base_historico,
+        costo_estandar_historico,
+
+        -- Rango temporal
+        min(fecha_venta) as primera_venta,
+        max(fecha_venta) as ultima_venta,
+        count(distinct fecha_venta) as dias_con_ventas,
+
+        -- Estadísticas de volumen
+        avg(cantidad_vendida_dia) as volumen_promedio_diario,
+        stddev(cantidad_vendida_dia) as volumen_desviacion_std,
+        sum(cantidad_vendida_dia) as volumen_total_historico,
+
+        -- Estadísticas de precio efectivo
+        avg(precio_promedio_dia) as precio_efectivo_promedio,
+        stddev(precio_promedio_dia) as precio_desviacion_std,
+        min(precio_promedio_dia) as precio_efectivo_minimo,
+        max(precio_promedio_dia) as precio_efectivo_maximo,
+
+        -- Revenue y margen
+        sum(revenue_neto_dia) as revenue_neto_total,
+        sum(margen_estimado_dia) as margen_total,
+        avg(margen_porcentual_dia) as margen_porcentual_promedio,
+
+        -- Descuentos
+        avg(tasa_descuento_dia) as tasa_descuento_promedio,
+        sum(descuento_total_dia) as descuento_total_historico,
+
+        -- Elasticidad estimada: correlación entre variación de precio y cantidad
+        -- Pearson: corr(precio, cantidad)
+        corr(precio_promedio_dia, cantidad_vendida_dia) as correlacion_precio_cantidad,
+
+        -- Transacciones
+        avg(num_transacciones_dia) as transacciones_promedio_dia
+
+    from diario
+    group by 1, 2, 3, 4, 5, 6
+),
+
+-- Tendencias recientes por producto
+tendencias as (
+    select
+        id_producto_nk,
+        
+        -- Volumen reciente
+        avg(case when fecha_venta >= dateadd(day, -7, current_date()) then cantidad_vendida_dia end) as volumen_promedio_7d,
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then cantidad_vendida_dia end) as volumen_promedio_30d,
+        avg(case when fecha_venta >= dateadd(day, -90, current_date()) then cantidad_vendida_dia end) as volumen_promedio_90d,
+
+        -- Precio reciente
+        avg(case when fecha_venta >= dateadd(day, -7, current_date()) then precio_promedio_dia end) as precio_promedio_7d,
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then precio_promedio_dia end) as precio_promedio_30d,
+        avg(case when fecha_venta >= dateadd(day, -90, current_date()) then precio_promedio_dia end) as precio_promedio_90d,
+
+        -- Revenue reciente
+        sum(case when fecha_venta >= dateadd(day, -30, current_date()) then revenue_neto_dia else 0 end) as revenue_neto_30d,
+        sum(case when fecha_venta >= dateadd(day, -90, current_date()) then revenue_neto_dia else 0 end) as revenue_neto_90d,
+
+        -- Margen reciente
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then margen_porcentual_dia end) as margen_promedio_30d
+
+    from diario
+    group by 1
+)
+
+select
+    sp.id_producto_nk,
+    sp.nombre_producto,
+    sp.categoria_nombre,
+    sp.tipo_producto,
+    sp.precio_base_historico,
+    sp.costo_estandar_historico,
+
+    -- Features de volumen
+    sp.dias_con_ventas,
+    round(sp.volumen_promedio_diario, 2) as volumen_promedio_diario,
+    round(coalesce(sp.volumen_desviacion_std, 0), 2) as volumen_desviacion_std,
+    sp.volumen_total_historico,
+    round(sp.transacciones_promedio_dia, 2) as transacciones_promedio_dia,
+
+    -- Features de precio
+    round(sp.precio_efectivo_promedio, 2) as precio_efectivo_promedio,
+    round(coalesce(sp.precio_desviacion_std, 0), 4) as precio_desviacion_std,
+    sp.precio_efectivo_minimo,
+    sp.precio_efectivo_maximo,
+
+    -- Variabilidad de precios
+    round(
+        case 
+            when sp.precio_efectivo_promedio > 0 
+            then coalesce(sp.precio_desviacion_std, 0) / sp.precio_efectivo_promedio 
+            else 0 
+        end, 4
+    ) as coeficiente_variacion_precio,
+
+    -- Features de elasticidad
+    round(coalesce(sp.correlacion_precio_cantidad, 0), 4) as elasticidad_precio_demanda,
+
+    -- Revenue y margen
+    round(sp.revenue_neto_total, 2) as revenue_neto_total,
+    round(sp.margen_total, 2) as margen_total,
+    round(sp.margen_porcentual_promedio, 4) as margen_porcentual_promedio,
+    round(sp.tasa_descuento_promedio, 4) as tasa_descuento_promedio,
+    round(sp.descuento_total_historico, 2) as descuento_total_historico,
+
+    -- Tendencias de volumen
+    round(coalesce(t.volumen_promedio_7d, 0), 2) as volumen_promedio_7d,
+    round(coalesce(t.volumen_promedio_30d, 0), 2) as volumen_promedio_30d,
+    round(coalesce(t.volumen_promedio_90d, 0), 2) as volumen_promedio_90d,
+    round(
+        case 
+            when coalesce(t.volumen_promedio_30d, 0) > 0 
+            then (coalesce(t.volumen_promedio_7d, 0) - t.volumen_promedio_30d) / t.volumen_promedio_30d
+            else 0 
+        end, 4
+    ) as tendencia_volumen_7d_vs_30d,
+
+    -- Tendencias de precio
+    round(coalesce(t.precio_promedio_7d, 0), 2) as precio_promedio_7d,
+    round(coalesce(t.precio_promedio_30d, 0), 2) as precio_promedio_30d,
+    round(coalesce(t.precio_promedio_90d, 0), 2) as precio_promedio_90d,
+
+    -- Revenue reciente
+    round(coalesce(t.revenue_neto_30d, 0), 2) as revenue_neto_30d,
+    round(coalesce(t.revenue_neto_90d, 0), 2) as revenue_neto_90d,
+    round(coalesce(t.margen_promedio_30d, 0), 4) as margen_promedio_30d,
+
+    -- Metadata temporal
+    sp.primera_venta,
+    sp.ultima_venta
+
+from stats_producto sp
+left join tendencias t on sp.id_producto_nk = t.id_producto_nk
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.feat_precio_elasticidad"} */;
+[0m03:47:06.335248 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m03:47:07.099368 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c3be33-0001-5585-0001-1da6000871d6
+[0m03:47:07.099772 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 45 at position 12
+invalid identifier 'PRECIO_PROMEDIO_DIA'
+[0m03:47:07.110460 [debug] [Thread-3 (]: Database Error in model feat_precio_elasticidad (models\ml\features\feat_precio_elasticidad.sql)
+  000904 (42000): SQL compilation error: error line 45 at position 12
+  invalid identifier 'PRECIO_PROMEDIO_DIA'
+  compiled code at target\run\my_new_project\models\ml\features\feat_precio_elasticidad.sql
+[0m03:47:07.110927 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023129DA3120>]}
+[0m03:47:07.111477 [error] [Thread-3 (]: 2 of 3 ERROR creating sql table model features.feat_precio_elasticidad ......... [[31mERROR[0m in 0.81s]
+[0m03:47:07.112063 [debug] [Thread-3 (]: Finished running node model.my_new_project.feat_precio_elasticidad
+[0m03:47:07.112618 [debug] [Thread-8 (]: Marking all children of 'model.my_new_project.feat_precio_elasticidad' to be skipped because of status 'error'.  Reason: Database Error in model feat_precio_elasticidad (models\ml\features\feat_precio_elasticidad.sql)
+  000904 (42000): SQL compilation error: error line 45 at position 12
+  invalid identifier 'PRECIO_PROMEDIO_DIA'
+  compiled code at target\run\my_new_project\models\ml\features\feat_precio_elasticidad.sql.
+[0m03:47:08.065996 [debug] [Thread-4 (]: SQL status: SUCCESS 38241 in 1.738 seconds
+[0m03:47:08.069043 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9e0693b4-19ea-46fb-972d-caa2e2190480', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023129E3C370>]}
+[0m03:47:08.069583 [info ] [Thread-4 (]: 3 of 3 OK created sql table model training_datasets.obt_price_elasticity ....... [[32mSUCCESS 38241[0m in 1.78s]
+[0m03:47:08.070487 [debug] [Thread-4 (]: Finished running node model.my_new_project.obt_price_elasticity
+[0m03:47:08.072195 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:47:08.072492 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:47:08.072774 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:47:08.326853 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:47:08.328401 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:47:08.585303 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:47:08.585857 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:47:08.835827 [debug] [MainThread]: Connection 'list_HGC_DW_SILVER' was left open.
+[0m03:47:08.836217 [debug] [MainThread]: On list_HGC_DW_SILVER: Close
+[0m03:47:09.080080 [debug] [MainThread]: Connection 'list_HGC_DW_GOLD' was left open.
+[0m03:47:09.080459 [debug] [MainThread]: On list_HGC_DW_GOLD: Close
+[0m03:47:09.333650 [debug] [MainThread]: Connection 'list_HGC_DW_features' was left open.
+[0m03:47:09.335251 [debug] [MainThread]: On list_HGC_DW_features: Close
+[0m03:47:09.591681 [debug] [MainThread]: Connection 'list_HGC_DW_snapshots' was left open.
+[0m03:47:09.592479 [debug] [MainThread]: On list_HGC_DW_snapshots: Close
+[0m03:47:09.847866 [debug] [MainThread]: Connection 'model.my_new_project.int_ventas_precios_diarios' was left open.
+[0m03:47:09.848240 [debug] [MainThread]: On model.my_new_project.int_ventas_precios_diarios: Close
+[0m03:47:10.099857 [debug] [MainThread]: Connection 'model.my_new_project.obt_price_elasticity' was left open.
+[0m03:47:10.100238 [debug] [MainThread]: On model.my_new_project.obt_price_elasticity: Close
+[0m03:47:10.349718 [debug] [MainThread]: Connection 'model.my_new_project.feat_precio_elasticidad' was left open.
+[0m03:47:10.350095 [debug] [MainThread]: On model.my_new_project.feat_precio_elasticidad: Close
+[0m03:47:10.609858 [info ] [MainThread]: 
+[0m03:47:10.610331 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 8.96 seconds (8.96s).
+[0m03:47:10.611334 [debug] [MainThread]: Command end result
+[0m03:47:10.670231 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m03:47:10.674657 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m03:47:10.680842 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\run_results.json
+[0m03:47:10.681259 [info ] [MainThread]: 
+[0m03:47:10.681616 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m03:47:10.682172 [info ] [MainThread]: 
+[0m03:47:10.682571 [error] [MainThread]: [31mFailure in model feat_precio_elasticidad (models\ml\features\feat_precio_elasticidad.sql)[0m
+[0m03:47:10.683051 [error] [MainThread]:   Database Error in model feat_precio_elasticidad (models\ml\features\feat_precio_elasticidad.sql)
+  000904 (42000): SQL compilation error: error line 45 at position 12
+  invalid identifier 'PRECIO_PROMEDIO_DIA'
+  compiled code at target\run\my_new_project\models\ml\features\feat_precio_elasticidad.sql
+[0m03:47:10.683385 [info ] [MainThread]: 
+[0m03:47:10.683734 [info ] [MainThread]:   compiled code at target\compiled\my_new_project\models\ml\features\feat_precio_elasticidad.sql
+[0m03:47:10.684042 [info ] [MainThread]: 
+[0m03:47:10.684416 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=3
+[0m03:47:10.685215 [debug] [MainThread]: Command `dbt run` failed at 03:47:10.685106 after 11.23 seconds
+[0m03:47:10.685585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023129C3CE50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231292A6ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002310C84E7B0>]}
+[0m03:47:10.685939 [debug] [MainThread]: Flushing usage events
+[0m03:47:11.484415 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:48:42.239636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021ACF0E9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021ACBE4C050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021ACF9A7B10>]}
+
+
+============================== 03:48:42.243392 | d5040159-e8be-41be-b058-286bda7ffbb2 ==============================
+[0m03:48:42.243392 [info ] [MainThread]: Running with dbt=1.11.8
+[0m03:48:42.243899 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt run --profiles-dir . --select feat_precio_elasticidad', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m03:48:42.884475 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m03:48:42.885576 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m03:48:42.886415 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m03:48:43.096763 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021ACF3D15B0>]}
+[0m03:48:43.158795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AED3FDE10>]}
+[0m03:48:43.159687 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m03:48:43.520942 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m03:48:43.702730 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m03:48:43.703601 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\features\feat_precio_elasticidad.sql
+[0m03:48:43.986879 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEDAEAA50>]}
+[0m03:48:44.099550 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m03:48:44.102375 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m03:48:44.118474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AED4895E0>]}
+[0m03:48:44.118932 [info ] [MainThread]: Found 83 models, 5 snapshots, 36 sources, 638 macros
+[0m03:48:44.119319 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEDBB65F0>]}
+[0m03:48:44.121682 [info ] [MainThread]: 
+[0m03:48:44.122013 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m03:48:44.122300 [info ] [MainThread]: 
+[0m03:48:44.122738 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m03:48:44.123663 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m03:48:44.188679 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m03:48:44.189056 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m03:48:44.189340 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:48:45.745945 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.557 seconds
+[0m03:48:45.756304 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_GOLD'
+[0m03:48:45.766671 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_features'
+[0m03:48:45.769442 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_GOLD"
+[0m03:48:45.771640 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_features"
+[0m03:48:45.772242 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_snapshots'
+[0m03:48:45.772855 [debug] [ThreadPool]: On list_HGC_DW_GOLD: show objects in HGC_DW.GOLD
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_GOLD"} */;
+[0m03:48:45.773456 [debug] [ThreadPool]: On list_HGC_DW_features: show objects in HGC_DW.features
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_features"} */;
+[0m03:48:45.774119 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_SILVER'
+[0m03:48:45.776692 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_snapshots"
+[0m03:48:45.777137 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:48:45.777482 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:48:45.779216 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_SILVER"
+[0m03:48:45.779568 [debug] [ThreadPool]: On list_HGC_DW_snapshots: show objects in HGC_DW.snapshots
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_snapshots"} */;
+[0m03:48:45.780221 [debug] [ThreadPool]: On list_HGC_DW_SILVER: show objects in HGC_DW.SILVER
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_SILVER"} */;
+[0m03:48:45.780683 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:48:45.781068 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:48:46.575029 [debug] [ThreadPool]: SQL status: SUCCESS 29 in 0.798 seconds
+[0m03:48:46.577697 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_HGC_DW_GOLD, now list_HGC_DW_training_datasets)
+[0m03:48:46.579553 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_training_datasets"
+[0m03:48:46.579853 [debug] [ThreadPool]: On list_HGC_DW_training_datasets: show objects in HGC_DW.training_datasets
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_training_datasets"} */;
+[0m03:48:46.801405 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.221 seconds
+[0m03:48:47.166780 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.389 seconds
+[0m03:48:47.182975 [debug] [ThreadPool]: SQL status: SUCCESS 43 in 1.402 seconds
+[0m03:48:47.206817 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 1.426 seconds
+[0m03:48:47.209583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEE403AD0>]}
+[0m03:48:47.213354 [debug] [Thread-2 (]: Began running node model.my_new_project.feat_precio_elasticidad
+[0m03:48:47.213821 [info ] [Thread-2 (]: 1 of 1 START sql table model features.feat_precio_elasticidad .................. [RUN]
+[0m03:48:47.214311 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.my_new_project.feat_precio_elasticidad'
+[0m03:48:47.214645 [debug] [Thread-2 (]: Began compiling node model.my_new_project.feat_precio_elasticidad
+[0m03:48:47.221894 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_new_project.feat_precio_elasticidad"
+[0m03:48:47.222807 [debug] [Thread-2 (]: Began executing node model.my_new_project.feat_precio_elasticidad
+[0m03:48:47.251261 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_new_project.feat_precio_elasticidad"
+[0m03:48:47.255297 [debug] [Thread-2 (]: Using snowflake connection "model.my_new_project.feat_precio_elasticidad"
+[0m03:48:47.255797 [debug] [Thread-2 (]: On model.my_new_project.feat_precio_elasticidad: create or replace transient table HGC_DW.features.feat_precio_elasticidad
+    
+    
+    
+    as (
+
+/*
+    FEATURES: feat_precio_elasticidad
+    -----------------------------------
+    Calcula features agregados por producto para el análisis de 
+    elasticidad y simulación de escenarios de pricing.
+    
+    Dado que los precios base son fijos, el análisis se centra en:
+      - Variación natural de volumen de demanda
+      - Revenue y margen por producto
+      - Tendencias temporales de volumen
+      - Ticket promedio y unidades por transacción
+*/
+
+with diario as (
+    select * from HGC_DW.SILVER.int_ventas_precios_diarios
+),
+
+-- Estadísticas globales por producto
+stats_producto as (
+    select
+        id_producto_nk,
+        nombre_producto,
+        categoria_nombre,
+        tipo_producto,
+        precio_base_historico,
+        costo_estandar_historico,
+
+        -- Rango temporal
+        min(fecha_venta) as primera_venta,
+        max(fecha_venta) as ultima_venta,
+        count(distinct fecha_venta) as dias_con_ventas,
+
+        -- Estadísticas de volumen (VARÍA diariamente)
+        avg(cantidad_vendida_dia) as volumen_promedio_diario,
+        stddev(cantidad_vendida_dia) as volumen_desviacion_std,
+        sum(cantidad_vendida_dia) as volumen_total_historico,
+
+        -- Estadísticas de transacciones
+        avg(num_transacciones_dia) as transacciones_promedio_dia,
+        avg(ticket_promedio_dia) as ticket_promedio_historico,
+        avg(unidades_por_transaccion_dia) as unidades_por_transaccion_promedio,
+
+        -- Revenue y margen
+        sum(revenue_neto_dia) as revenue_neto_total,
+        sum(margen_estimado_dia) as margen_total,
+        avg(margen_porcentual_dia) as margen_porcentual_promedio,
+
+        -- Revenue por unidad (proxy de precio efectivo)
+        avg(revenue_por_unidad_dia) as revenue_por_unidad_promedio,
+        stddev(revenue_por_unidad_dia) as revenue_por_unidad_std,
+
+        -- Correlación volumen-revenue (elasticidad empírica)
+        corr(cantidad_vendida_dia, revenue_neto_dia) as correlacion_volumen_revenue
+
+    from diario
+    group by 1, 2, 3, 4, 5, 6
+),
+
+-- Tendencias recientes por producto
+tendencias as (
+    select
+        id_producto_nk,
+        
+        -- Volumen reciente
+        avg(case when fecha_venta >= dateadd(day, -7, current_date()) then cantidad_vendida_dia end) as volumen_promedio_7d,
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then cantidad_vendida_dia end) as volumen_promedio_30d,
+        avg(case when fecha_venta >= dateadd(day, -90, current_date()) then cantidad_vendida_dia end) as volumen_promedio_90d,
+
+        -- Revenue reciente
+        sum(case when fecha_venta >= dateadd(day, -30, current_date()) then revenue_neto_dia else 0 end) as revenue_neto_30d,
+        sum(case when fecha_venta >= dateadd(day, -90, current_date()) then revenue_neto_dia else 0 end) as revenue_neto_90d,
+
+        -- Margen reciente
+        avg(case when fecha_venta >= dateadd(day, -30, current_date()) then margen_porcentual_dia end) as margen_promedio_30d
+
+    from diario
+    group by 1
+)
+
+select
+    sp.id_producto_nk,
+    sp.nombre_producto,
+    sp.categoria_nombre,
+    sp.tipo_producto,
+    sp.precio_base_historico,
+    sp.costo_estandar_historico,
+
+    -- Features de volumen
+    sp.dias_con_ventas,
+    round(sp.volumen_promedio_diario, 2) as volumen_promedio_diario,
+    round(coalesce(sp.volumen_desviacion_std, 0), 2) as volumen_desviacion_std,
+    sp.volumen_total_historico,
+    round(sp.transacciones_promedio_dia, 2) as transacciones_promedio_dia,
+    round(sp.ticket_promedio_historico, 2) as ticket_promedio_historico,
+    round(sp.unidades_por_transaccion_promedio, 2) as unidades_por_transaccion_promedio,
+
+    -- Revenue por unidad (proxy de variación de precio)
+    round(sp.revenue_por_unidad_promedio, 2) as revenue_por_unidad_promedio,
+    round(coalesce(sp.revenue_por_unidad_std, 0), 4) as revenue_por_unidad_std,
+
+    -- Margen
+    round(sp.revenue_neto_total, 2) as revenue_neto_total,
+    round(sp.margen_total, 2) as margen_total,
+    round(sp.margen_porcentual_promedio, 4) as margen_porcentual_promedio,
+
+    -- Correlación volumen-revenue
+    round(coalesce(sp.correlacion_volumen_revenue, 0), 4) as correlacion_volumen_revenue,
+
+    -- Tendencias de volumen
+    round(coalesce(t.volumen_promedio_7d, 0), 2) as volumen_promedio_7d,
+    round(coalesce(t.volumen_promedio_30d, 0), 2) as volumen_promedio_30d,
+    round(coalesce(t.volumen_promedio_90d, 0), 2) as volumen_promedio_90d,
+    round(
+        case 
+            when coalesce(t.volumen_promedio_30d, 0) > 0 
+            then (coalesce(t.volumen_promedio_7d, 0) - t.volumen_promedio_30d) / t.volumen_promedio_30d
+            else 0 
+        end, 4
+    ) as tendencia_volumen_7d_vs_30d,
+
+    -- Revenue reciente
+    round(coalesce(t.revenue_neto_30d, 0), 2) as revenue_neto_30d,
+    round(coalesce(t.revenue_neto_90d, 0), 2) as revenue_neto_90d,
+    round(coalesce(t.margen_promedio_30d, 0), 4) as margen_promedio_30d,
+
+    -- Metadata temporal
+    sp.primera_venta,
+    sp.ultima_venta
+
+from stats_producto sp
+left join tendencias t on sp.id_producto_nk = t.id_producto_nk
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.feat_precio_elasticidad"} */;
+[0m03:48:47.256326 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m03:48:49.000627 [debug] [Thread-2 (]: SQL status: SUCCESS 9 in 1.743 seconds
+[0m03:48:49.025414 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd5040159-e8be-41be-b058-286bda7ffbb2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEE3D1FD0>]}
+[0m03:48:49.025998 [info ] [Thread-2 (]: 1 of 1 OK created sql table model features.feat_precio_elasticidad ............. [[32mSUCCESS 9[0m in 1.81s]
+[0m03:48:49.026617 [debug] [Thread-2 (]: Finished running node model.my_new_project.feat_precio_elasticidad
+[0m03:48:49.028192 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:48:49.028488 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m03:48:49.028772 [debug] [MainThread]: On list_HGC_DW: Close
+[0m03:48:49.282604 [debug] [MainThread]: Connection 'list_HGC_DW_training_datasets' was left open.
+[0m03:48:49.282999 [debug] [MainThread]: On list_HGC_DW_training_datasets: Close
+[0m03:48:49.537940 [debug] [MainThread]: Connection 'list_HGC_DW_features' was left open.
+[0m03:48:49.539006 [debug] [MainThread]: On list_HGC_DW_features: Close
+[0m03:48:49.786661 [debug] [MainThread]: Connection 'list_HGC_DW_snapshots' was left open.
+[0m03:48:49.787521 [debug] [MainThread]: On list_HGC_DW_snapshots: Close
+[0m03:48:50.054668 [debug] [MainThread]: Connection 'list_HGC_DW_SILVER' was left open.
+[0m03:48:50.055628 [debug] [MainThread]: On list_HGC_DW_SILVER: Close
+[0m03:48:50.315862 [debug] [MainThread]: Connection 'model.my_new_project.feat_precio_elasticidad' was left open.
+[0m03:48:50.316304 [debug] [MainThread]: On model.my_new_project.feat_precio_elasticidad: Close
+[0m03:48:50.557422 [info ] [MainThread]: 
+[0m03:48:50.557871 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 6.43 seconds (6.43s).
+[0m03:48:50.558633 [debug] [MainThread]: Command end result
+[0m03:48:50.619218 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m03:48:50.622484 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m03:48:50.628638 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\run_results.json
+[0m03:48:50.628959 [info ] [MainThread]: 
+[0m03:48:50.629344 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m03:48:50.629651 [info ] [MainThread]: 
+[0m03:48:50.630044 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m03:48:50.630837 [debug] [MainThread]: Command `dbt run` succeeded at 03:48:50.630724 after 8.52 seconds
+[0m03:48:50.631182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEE50B1D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEE29EE90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021AEE29F2F0>]}
+[0m03:48:50.631517 [debug] [MainThread]: Flushing usage events
+[0m03:48:51.429969 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:18:15.706035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B1FEF9940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B1CC8C050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B207B7B10>]}
+
+
+============================== 04:18:15.710465 | c0eba5f7-9daf-443f-8fb5-de2a0d453e44 ==============================
+[0m04:18:15.710465 [info ] [MainThread]: Running with dbt=1.11.8
+[0m04:18:15.710980 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': '.', 'invocation_command': 'dbt run --profiles-dir . --select int_demanda_operativa feat_demanda_operativa obt_operational_demand', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Nick\\Documents\\Dat372 - BI\\HGC\\hgc-system\\dbt\\logs'}
+[0m04:18:16.340913 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m04:18:16.341381 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m04:18:16.341697 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m04:18:16.548152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B201E15B0>]}
+[0m04:18:16.612425 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3E2FDE10>]}
+[0m04:18:16.613424 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m04:18:16.989012 [debug] [MainThread]: checksum: 7d524ac048c2100769df89d592e662e060a73ca564e31bd9c2a37efdfe8d8ab6, vars: {}, profile: , target: , version: 1.11.8
+[0m04:18:17.185661 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 1 files changed.
+[0m04:18:17.186449 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\ml\features\feat_demanda_operativa.sql
+[0m04:18:17.186776 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\intermediate\int_demanda_operativa.sql
+[0m04:18:17.187082 [debug] [MainThread]: Partial parsing: added file: my_new_project://models\ml\datasets\obt_operational_demand.sql
+[0m04:18:17.187509 [debug] [MainThread]: Partial parsing: updated file: my_new_project://models\ml\datasets\_ml_datasets.yml
+[0m04:18:17.527585 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3E2DA050>]}
+[0m04:18:17.638740 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m04:18:17.642175 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m04:18:17.660034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3E9E1A90>]}
+[0m04:18:17.660476 [info ] [MainThread]: Found 86 models, 5 snapshots, 36 sources, 638 macros
+[0m04:18:17.660841 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3EBA84B0>]}
+[0m04:18:17.664071 [info ] [MainThread]: 
+[0m04:18:17.664408 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m04:18:17.664864 [info ] [MainThread]: 
+[0m04:18:17.665344 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m04:18:17.669637 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m04:18:17.681157 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m04:18:17.684277 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW'
+[0m04:18:17.743807 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m04:18:17.744289 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m04:18:17.744601 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m04:18:17.745003 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW"
+[0m04:18:17.745394 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m04:18:17.745723 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:17.746070 [debug] [ThreadPool]: On list_HGC_DW: show terse schemas in database HGC_DW
+    limit 10000
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW"} */
+[0m04:18:17.746462 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:17.747050 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:19.265775 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.519 seconds
+[0m04:18:19.268577 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.523 seconds
+[0m04:18:19.270753 [debug] [ThreadPool]: SQL status: SUCCESS 16 in 1.524 seconds
+[0m04:18:19.277870 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_training_datasets'
+[0m04:18:19.289206 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_training_datasets"
+[0m04:18:19.289535 [debug] [ThreadPool]: On list_HGC_DW_training_datasets: show objects in HGC_DW.training_datasets
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_training_datasets"} */;
+[0m04:18:19.289821 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:19.290314 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_GOLD'
+[0m04:18:19.292500 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_GOLD"
+[0m04:18:19.292843 [debug] [ThreadPool]: On list_HGC_DW_GOLD: show objects in HGC_DW.GOLD
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_GOLD"} */;
+[0m04:18:19.293158 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:19.293946 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_features'
+[0m04:18:19.295744 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_features"
+[0m04:18:19.296080 [debug] [ThreadPool]: On list_HGC_DW_features: show objects in HGC_DW.features
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_features"} */;
+[0m04:18:19.296389 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:19.300266 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_HGC_DW_SILVER'
+[0m04:18:19.306482 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_SILVER"
+[0m04:18:19.309597 [debug] [ThreadPool]: On list_HGC_DW_SILVER: show objects in HGC_DW.SILVER
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_SILVER"} */;
+[0m04:18:19.309893 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:18:19.992602 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.696 seconds
+[0m04:18:19.995686 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_HGC_DW_features, now list_HGC_DW_snapshots)
+[0m04:18:20.000887 [debug] [ThreadPool]: Using snowflake connection "list_HGC_DW_snapshots"
+[0m04:18:20.001204 [debug] [ThreadPool]: On list_HGC_DW_snapshots: show objects in HGC_DW.snapshots
+    limit 10000
+    
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "connection_name": "list_HGC_DW_snapshots"} */;
+[0m04:18:20.016668 [debug] [ThreadPool]: SQL status: SUCCESS 43 in 0.707 seconds
+[0m04:18:20.025934 [debug] [ThreadPool]: SQL status: SUCCESS 29 in 0.733 seconds
+[0m04:18:20.186087 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.185 seconds
+[0m04:18:20.728982 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 1.439 seconds
+[0m04:18:20.742848 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3F3198B0>]}
+[0m04:18:20.751944 [debug] [Thread-2 (]: Began running node model.my_new_project.int_demanda_operativa
+[0m04:18:20.752451 [info ] [Thread-2 (]: 1 of 3 START sql view model SILVER.int_demanda_operativa ....................... [RUN]
+[0m04:18:20.752965 [debug] [Thread-2 (]: Acquiring new snowflake connection 'model.my_new_project.int_demanda_operativa'
+[0m04:18:20.753298 [debug] [Thread-2 (]: Began compiling node model.my_new_project.int_demanda_operativa
+[0m04:18:20.760678 [debug] [Thread-2 (]: Writing injected SQL for node "model.my_new_project.int_demanda_operativa"
+[0m04:18:20.761790 [debug] [Thread-2 (]: Began executing node model.my_new_project.int_demanda_operativa
+[0m04:18:20.788179 [debug] [Thread-2 (]: Writing runtime sql for node "model.my_new_project.int_demanda_operativa"
+[0m04:18:20.791065 [debug] [Thread-2 (]: Using snowflake connection "model.my_new_project.int_demanda_operativa"
+[0m04:18:20.791690 [debug] [Thread-2 (]: On model.my_new_project.int_demanda_operativa: create or replace   view HGC_DW.SILVER.int_demanda_operativa
+  
+  
+  
+  
+  as (
+    /*
+    INTERMEDIATE: int_demanda_operativa
+    -----------------------------------
+    Agrega las ventas a nivel diario por producto para la predicción
+    de demanda operativa (preparación en cocina).
+    
+    Incluye características temporales básicas:
+      - día de la semana
+      - es fin de semana
+      - mes
+      - nombre del día
+*/
+
+with ventas as (
+    select
+        to_date(cast(v.id_fecha_sk as varchar), 'YYYYMMDD') as fecha_prediccion,
+        v.id_producto_sk,
+        v.cantidad_vendida
+    from HGC_DW.GOLD.fact_ventas_detalle v
+),
+
+producto as (
+    select
+        id_producto_sk,
+        id_producto_nk,
+        nombre_producto,
+        categoria_nombre,
+        tipo_producto,
+        es_actual
+    from HGC_DW.GOLD.dim_producto
+    where es_actual = true
+),
+
+-- Agregación diaria por producto
+demanda_diaria as (
+    select
+        v.fecha_prediccion,
+        p.id_producto_nk,
+        p.nombre_producto,
+        p.categoria_nombre,
+        p.tipo_producto,
+        sum(v.cantidad_vendida) as cantidad_total_dia,
+        count(*) as num_ordenes_dia
+    from ventas v
+    join producto p on v.id_producto_sk = p.id_producto_sk
+    group by 1, 2, 3, 4, 5
+)
+
+select
+    *,
+    -- Características temporales
+    extract(dayofweek from fecha_prediccion) as dia_semana,
+    case 
+        when extract(dayofweek from fecha_prediccion) in (6, 0) then 1 
+        else 0 
+    end as es_fin_de_semana,
+    extract(month from fecha_prediccion) as mes,
+    dayname(fecha_prediccion) as nombre_dia
+from demanda_diaria
+  )
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.int_demanda_operativa"} */;
+[0m04:18:20.792245 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m04:18:21.622369 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.830 seconds
+[0m04:18:21.646396 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3F476690>]}
+[0m04:18:21.646997 [info ] [Thread-2 (]: 1 of 3 OK created sql view model SILVER.int_demanda_operativa .................. [[32mSUCCESS 1[0m in 0.89s]
+[0m04:18:21.647696 [debug] [Thread-2 (]: Finished running node model.my_new_project.int_demanda_operativa
+[0m04:18:21.648485 [debug] [Thread-3 (]: Began running node model.my_new_project.feat_demanda_operativa
+[0m04:18:21.649022 [info ] [Thread-3 (]: 2 of 3 START sql table model features.feat_demanda_operativa ................... [RUN]
+[0m04:18:21.649520 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.my_new_project.feat_demanda_operativa'
+[0m04:18:21.649862 [debug] [Thread-3 (]: Began compiling node model.my_new_project.feat_demanda_operativa
+[0m04:18:21.652411 [debug] [Thread-3 (]: Writing injected SQL for node "model.my_new_project.feat_demanda_operativa"
+[0m04:18:21.653701 [debug] [Thread-3 (]: Began executing node model.my_new_project.feat_demanda_operativa
+[0m04:18:21.678565 [debug] [Thread-3 (]: Writing runtime sql for node "model.my_new_project.feat_demanda_operativa"
+[0m04:18:21.681077 [debug] [Thread-3 (]: Using snowflake connection "model.my_new_project.feat_demanda_operativa"
+[0m04:18:21.681506 [debug] [Thread-3 (]: On model.my_new_project.feat_demanda_operativa: create or replace transient table HGC_DW.features.feat_demanda_operativa
+    
+    
+    
+    as (
+
+/*
+    FEATURES: feat_demanda_operativa
+    -----------------------------------
+    Calcula rezagos (lags) y estadísticas móviles para la predicción
+    de demanda. Estos indicadores capturan la inercia y volatilidad
+    de la demanda reciente.
+*/
+
+with base as (
+    select * from HGC_DW.SILVER.int_demanda_operativa
+),
+
+features as (
+    select
+        *,
+        -- Lags (Inercia)
+        lag(cantidad_total_dia, 1) over (partition by id_producto_nk order by fecha_prediccion) as lag_1_dia,
+        lag(cantidad_total_dia, 7) over (partition by id_producto_nk order by fecha_prediccion) as lag_7_dias,
+
+        -- Estadísticas Móviles (Tendencia y Volatilidad)
+        avg(cantidad_total_dia) over (
+            partition by id_producto_nk 
+            order by fecha_prediccion 
+            rows between 7 preceding and 1 preceding
+        ) as rolling_avg_7d,
+        
+        stddev(cantidad_total_dia) over (
+            partition by id_producto_nk 
+            order by fecha_prediccion 
+            rows between 7 preceding and 1 preceding
+        ) as rolling_std_7d,
+
+        avg(cantidad_total_dia) over (
+            partition by id_producto_nk 
+            order by fecha_prediccion 
+            rows between 30 preceding and 1 preceding
+        ) as rolling_avg_30d
+
+    from base
+)
+
+select
+    *,
+    -- Coeficiente de variación (indicador de incertidumbre)
+    case 
+        when rolling_avg_7d > 0 then round(rolling_std_7d / rolling_avg_7d, 4)
+        else 0 
+    end as feature_coef_variacion_7d
+from features
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.feat_demanda_operativa"} */;
+[0m04:18:21.681920 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m04:18:23.345201 [debug] [Thread-3 (]: SQL status: SUCCESS 38241 in 1.663 seconds
+[0m04:18:23.347099 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3F4154F0>]}
+[0m04:18:23.347703 [info ] [Thread-3 (]: 2 of 3 OK created sql table model features.feat_demanda_operativa .............. [[32mSUCCESS 38241[0m in 1.70s]
+[0m04:18:23.348369 [debug] [Thread-3 (]: Finished running node model.my_new_project.feat_demanda_operativa
+[0m04:18:23.349097 [debug] [Thread-4 (]: Began running node model.my_new_project.obt_operational_demand
+[0m04:18:23.349583 [info ] [Thread-4 (]: 3 of 3 START sql table model training_datasets.obt_operational_demand .......... [RUN]
+[0m04:18:23.350104 [debug] [Thread-4 (]: Acquiring new snowflake connection 'model.my_new_project.obt_operational_demand'
+[0m04:18:23.350499 [debug] [Thread-4 (]: Began compiling node model.my_new_project.obt_operational_demand
+[0m04:18:23.353656 [debug] [Thread-4 (]: Writing injected SQL for node "model.my_new_project.obt_operational_demand"
+[0m04:18:23.354943 [debug] [Thread-4 (]: Began executing node model.my_new_project.obt_operational_demand
+[0m04:18:23.357692 [debug] [Thread-4 (]: Writing runtime sql for node "model.my_new_project.obt_operational_demand"
+[0m04:18:23.359637 [debug] [Thread-4 (]: Using snowflake connection "model.my_new_project.obt_operational_demand"
+[0m04:18:23.360105 [debug] [Thread-4 (]: On model.my_new_project.obt_operational_demand: create or replace transient table HGC_DW.training_datasets.obt_operational_demand
+    
+    
+    
+    as (
+
+/*
+    DATASET: obt_operational_demand
+    ------------------------------
+    One Big Table (OBT) para la predicción de demanda operativa diaria.
+    Contiene métricas de volumen, características de tiempo y features
+    de series temporales (lags/rolling).
+    
+    Usado por: 5_operational_demand.ipynb
+*/
+
+select
+    fecha_prediccion,
+    id_producto_nk,
+    nombre_producto,
+    categoria_nombre,
+    tipo_producto,
+
+    -- Meta / Target
+    cantidad_total_dia as target_cantidad_total,
+    num_ordenes_dia as meta_num_ordenes,
+
+    -- Features de Tiempo
+    dia_semana as feature_dia_semana,
+    es_fin_de_semana as feature_es_fin_de_semana,
+    mes as feature_mes,
+    nombre_dia as meta_nombre_dia,
+
+    -- Features de Demanda (Lags)
+    coalesce(lag_1_dia, 0) as feature_lag_1_dia,
+    coalesce(lag_7_dias, 0) as feature_lag_7_dias,
+
+    -- Features de Demanda (Rolling)
+    coalesce(rolling_avg_7d, 0) as feature_rolling_avg_7d,
+    coalesce(rolling_std_7d, 0) as feature_rolling_std_7d,
+    coalesce(rolling_avg_30d, 0) as feature_rolling_avg_30d,
+    coalesce(feature_coef_variacion_7d, 0) as feature_coef_variacion_7d
+
+from HGC_DW.features.feat_demanda_operativa
+    )
+
+/* {"app": "dbt", "dbt_version": "1.11.8", "profile_name": "hgc_dbt", "target_name": "dev", "node_id": "model.my_new_project.obt_operational_demand"} */;
+[0m04:18:23.360511 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m04:18:24.523357 [debug] [Thread-4 (]: SQL status: SUCCESS 38241 in 1.163 seconds
+[0m04:18:24.525157 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c0eba5f7-9daf-443f-8fb5-de2a0d453e44', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3F4F76B0>]}
+[0m04:18:24.525743 [info ] [Thread-4 (]: 3 of 3 OK created sql table model training_datasets.obt_operational_demand ..... [[32mSUCCESS 38241[0m in 1.18s]
+[0m04:18:24.526432 [debug] [Thread-4 (]: Finished running node model.my_new_project.obt_operational_demand
+[0m04:18:24.527665 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:18:24.527971 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m04:18:24.528264 [debug] [MainThread]: On list_HGC_DW: Close
+[0m04:18:24.765444 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m04:18:24.765824 [debug] [MainThread]: On list_HGC_DW: Close
+[0m04:18:25.025037 [debug] [MainThread]: Connection 'list_HGC_DW' was left open.
+[0m04:18:25.025419 [debug] [MainThread]: On list_HGC_DW: Close
+[0m04:18:25.268041 [debug] [MainThread]: Connection 'list_HGC_DW_training_datasets' was left open.
+[0m04:18:25.268650 [debug] [MainThread]: On list_HGC_DW_training_datasets: Close
+[0m04:18:25.539517 [debug] [MainThread]: Connection 'list_HGC_DW_GOLD' was left open.
+[0m04:18:25.539900 [debug] [MainThread]: On list_HGC_DW_GOLD: Close
+[0m04:18:25.797204 [debug] [MainThread]: Connection 'list_HGC_DW_snapshots' was left open.
+[0m04:18:25.798826 [debug] [MainThread]: On list_HGC_DW_snapshots: Close
+[0m04:18:26.047355 [debug] [MainThread]: Connection 'list_HGC_DW_SILVER' was left open.
+[0m04:18:26.047726 [debug] [MainThread]: On list_HGC_DW_SILVER: Close
+[0m04:18:26.295384 [debug] [MainThread]: Connection 'model.my_new_project.int_demanda_operativa' was left open.
+[0m04:18:26.296558 [debug] [MainThread]: On model.my_new_project.int_demanda_operativa: Close
+[0m04:18:26.556987 [debug] [MainThread]: Connection 'model.my_new_project.feat_demanda_operativa' was left open.
+[0m04:18:26.557365 [debug] [MainThread]: On model.my_new_project.feat_demanda_operativa: Close
+[0m04:18:26.810983 [debug] [MainThread]: Connection 'model.my_new_project.obt_operational_demand' was left open.
+[0m04:18:26.811932 [debug] [MainThread]: On model.my_new_project.obt_operational_demand: Close
+[0m04:18:27.056683 [info ] [MainThread]: 
+[0m04:18:27.058439 [info ] [MainThread]: Finished running 2 table models, 1 view model in 0 hours 0 minutes and 9.39 seconds (9.39s).
+[0m04:18:27.063738 [debug] [MainThread]: Command end result
+[0m04:18:27.136738 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\manifest.json
+[0m04:18:27.139592 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\semantic_manifest.json
+[0m04:18:27.145697 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Nick\Documents\Dat372 - BI\HGC\hgc-system\dbt\target\run_results.json
+[0m04:18:27.146091 [info ] [MainThread]: 
+[0m04:18:27.146546 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:18:27.146967 [info ] [MainThread]: 
+[0m04:18:27.147461 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[0m04:18:27.148434 [debug] [MainThread]: Command `dbt run` succeeded at 04:18:27.148322 after 11.58 seconds
+[0m04:18:27.148787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3F1D1350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B3E9A6CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023B2204E7B0>]}
+[0m04:18:27.149126 [debug] [MainThread]: Flushing usage events
+[0m04:18:28.214551 [debug] [MainThread]: An error was encountered while trying to flush usage events
