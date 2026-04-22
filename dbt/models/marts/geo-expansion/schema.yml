@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: mart_sucursales_consolidado
+    description: "Tabla consolidada por sucursal y fecha que combina métricas de ventas, tickets promedio y mermas de inventario. El 'Espejo del Negocio'."
+    columns:
+      - name: id_sucursal_sk
+        description: "Clave subrogada de la sucursal."
+      - name: id_sucursal_nk
+        description: "Clave natural de la sucursal."
+      - name: nombre_sucursal
+        description: "Nombre de la sucursal."
+      - name: ciudad
+        description: "Ciudad donde se ubica la sucursal."
+      - name: id_fecha_sk
+        description: "Clave de fecha en formato YYYYMMDD."
+      - name: total_ventas
+        description: "Monto total de ventas netas en la fecha para la sucursal."
+      - name: total_tickets
+        description: "Cantidad de pedidos o tickets únicos."
+      - name: ticket_promedio
+        description: "Venta promedio por ticket."
+      - name: total_mermas
+        description: "Monto total de inventario mermado (dañado, vencido, merma declarada)."

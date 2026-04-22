@@ -22,8 +22,14 @@ app.get("/api/clients", async (req, res) => {
 });
 const mlRoutes = require("./analytics/ml.routes");
 const operationalDemandRoutes = require("./analytics/operationalDemand");
+const geoExpansionRoutes = require("./geo-expansion/geo.routes");
+const profitabilityRoutes = require("./profitability/profitability.routes");
+const simulatorRoutes = require("./predictions/simulator.routes");
 
 app.use("/api/ml", mlRoutes);
 app.use("/api/operational-demand", operationalDemandRoutes);
+app.use("/api/geo-expansion", geoExpansionRoutes);
+app.use("/api/profitability", profitabilityRoutes);
+app.use("/api/simulator", simulatorRoutes);
 
 module.exports = app;

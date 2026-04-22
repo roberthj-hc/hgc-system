@@ -51,6 +51,9 @@ const data = {
         { title: "Propensión a Upselling", url: "/system/predictions/upselling" },
         { title: "Fuga de Clientes (Legacy)", url: "/system/predictions/legacy-churn" },
         { title: "Tiempos de Delivery", url: "/system/predictions/delivery" },
+        { title: "El Espejo del Negocio", url: "/system/predictions/mirror-dashboard" },
+        { title: "El Detective de Rentabilidad", url: "/system/predictions/profit-detective" },
+        { title: "Simulador de Apertura", url: "/system/predictions/cbba-simulator" },
       ],
     },
     {
