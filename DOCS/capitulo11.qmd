@@ -1,0 +1,3 @@
+# CAPÍTULO XI: CONCLUSIONES Y RECOMENDACIONES
+
+Resumen de hallazgos y visión futura del sistema HGC.

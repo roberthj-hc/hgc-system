@@ -1,8 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 
-const { getChurnFeatures } = require("./analytics/data_mining/churn_features.query");
-
 const app = express();
 
 app.use(cors());
@@ -12,24 +10,17 @@ app.get("/", (req, res) => {
   res.send("API running");
 });
 
-app.get("/api/clients", async (req, res) => {
-  try {
-    const data = await getChurnFeatures();
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-const mlRoutes = require("./analytics/ml.routes");
-const operationalDemandRoutes = require("./analytics/operationalDemand");
-const geoExpansionRoutes = require("./geo-expansion/geo.routes");
-const profitabilityRoutes = require("./profitability/profitability.routes");
-const simulatorRoutes = require("./predictions/simulator.routes");
+
+const mlRoutes = require("./predictions/ml.routes");
+const geoExpansionRoutes = require("./time-series/geo-expansion/geo.routes");
+const profitabilityRoutes = require("./time-series/profitability/profitability.routes");
+const simulatorRoutes = require("./time-series/cbba-simulator/simulator.routes");
+const econometricsRoutes = require("./econometrics/econometrics.routes");
 
 app.use("/api/ml", mlRoutes);
-app.use("/api/operational-demand", operationalDemandRoutes);
 app.use("/api/geo-expansion", geoExpansionRoutes);
 app.use("/api/profitability", profitabilityRoutes);
 app.use("/api/simulator", simulatorRoutes);
+app.use("/api/econometrics", econometricsRoutes);
 
 module.exports = app;

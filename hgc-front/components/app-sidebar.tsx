@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import {
-  IconChartBar,
   IconHelp,
   IconInnerShadowTop,
   IconSearch,
@@ -10,6 +9,7 @@ import {
   IconMathFunction,
   IconRobot,
   IconTrendingUp,
+  IconChartLine,
 } from "@tabler/icons-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -33,35 +33,31 @@ const data = {
   },
   navMain: [
     {
-      title: "Análisis",
-      icon: IconChartBar,
+      title: "Predicciones",
+      icon: IconTrendingUp,
       items: [
-        { title: "Clientes", url: "/system/analytics/clients" },
-        { title: "Combos", url: "/system/analytics/combos" },
+        { title: "Canibalización", url: "/system/predictions/cannibalization" },
+        { title: "Fuga de clientes", url: "/system/predictions/churn" },
+        { title: "Matriz BCG", url: "/system/predictions/bcg-clustering" },
+        { title: "Rentabilidad sucursales", url: "/system/predictions/branch-performance" },
+        { title: "Valor de vida (CLV)", url: "/system/predictions/clv" },
       ],
     },
     {
-      title: "Proyecciones",
-      icon: IconTrendingUp,
+      title: "Series de tiempo",
+      icon: IconChartLine,
       items: [
-        { title: "Segmentación de Clientes", url: "/system/predictions/segmentation" },
-        { title: "Valor de Vida (CLV)", url: "/system/predictions/clv" },
-        { title: "Ausentismo Laboral", url: "/system/predictions/absenteeism" },
-        { title: "Canibalización (Labs)", url: "/system/predictions/cannibalization" },
-        { title: "Propensión a Upselling", url: "/system/predictions/upselling" },
-        { title: "Fuga de Clientes (Legacy)", url: "/system/predictions/legacy-churn" },
-        { title: "Tiempos de Delivery", url: "/system/predictions/delivery" },
-        { title: "El Espejo del Negocio", url: "/system/predictions/mirror-dashboard" },
-        { title: "El Detective de Rentabilidad", url: "/system/predictions/profit-detective" },
-        { title: "Simulador de Apertura", url: "/system/predictions/cbba-simulator" },
+        { title: "Espejo del negocio", url: "/system/time-series/mirror-dashboard" },
+        { title: "Detección de rentabilidad", url: "/system/time-series/profit-detective" },
+        { title: "Apertura de sucursales", url: "/system/time-series/cbba-simulator" },
       ],
     },
     {
       title: "Econometría",
       icon: IconMathFunction,
       items: [
-        { title: "Modelos", url: "#" },
-        { title: "Regresiones", url: "#" },
+        { title: "Optimizador de margen", url: "/system/econometrics/price-optimizer" },
+        { title: "Monitor de eficiencia", url: "/system/econometrics/efficiency-monitor" },
       ],
     },
     {
@@ -69,7 +65,6 @@ const data = {
       icon: IconRobot,
       items: [
         { title: "Chat", url: "#" },
-        { title: "Historial", url: "#" },
       ],
     },
   ],

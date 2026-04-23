@@ -1,0 +1,50 @@
+[
+  {
+    "id": "2fe60b0b659a4b1c1d7117fb04fd6e75",
+    "nombre": "HGC Av. Monseñor Rivero"
+  },
+  {
+    "id": "f4275ed51aa125f294fc345b0ce30405",
+    "nombre": "HGC Calacoto"
+  },
+  {
+    "id": "724e5671e927b9a7b360e773cbdcf3a4",
+    "nombre": "HGC Centro"
+  },
+  {
+    "id": "3ce72b6d2b20dbbfa1c5175f81081f77",
+    "nombre": "HGC Centro - El Prado"
+  },
+  {
+    "id": "05eb32ac093a81f32cbbe711c1d2459d",
+    "nombre": "HGC Ciudad Satélite"
+  },
+  {
+    "id": "7665d7407f7242d34dc6a25e20c5dcf6",
+    "nombre": "HGC Equipetrol"
+  },
+  {
+    "id": "2caf6ee4cdeb5fa58648c6bb8c9301d1",
+    "nombre": "HGC La Ceja"
+  },
+  {
+    "id": "c534560bdc4e765671aa835000614c20",
+    "nombre": "HGC Miraflores"
+  },
+  {
+    "id": "31dc660898fb490508740db97fc8eede",
+    "nombre": "HGC Plan 3000"
+  },
+  {
+    "id": "f9b9bd44158c6a5aefa81f7931aeb7cd",
+    "nombre": "HGC Rio Seco"
+  },
+  {
+    "id": "406f6bc714b87827cdb339f43e6ab22e",
+    "nombre": "HGC Sopocachi"
+  },
+  {
+    "id": "cc908a35ec9dbf7f31d7dec75f14adaf",
+    "nombre": "HGC Zona Norte"
+  }
+]

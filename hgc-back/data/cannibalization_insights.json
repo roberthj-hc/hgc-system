@@ -1,0 +1,21 @@
+{
+  "categoryImpact": [
+    { "name": "Combos / Menús", "impactLoss": -15.8, "overlap": 88 },
+    { "name": "Postres", "impactLoss": -2.1, "overlap": 25 },
+    { "name": "Bebidas Frias", "impactLoss": -9.4, "overlap": 70 },
+    { "name": "Cafetería", "impactLoss": -1.2, "overlap": 15 },
+    { "name": "Edición Limitada", "impactLoss": -21.6, "overlap": 98 }
+  ],
+  "geoData": [
+    { "name": "Cochabamba - Norte", "size": 92000, "color": "#fef08a" },
+    { "name": "Santa Cruz - Equipetrol", "size": 115000, "color": "#fde047" },
+    { "name": "La Paz - Sopocachi", "size": 88000, "color": "#facc15" },
+    { "name": "El Alto - Ceja", "size": 145000, "color": "#eab308" },
+    { "name": "Tarija - Centro", "size": 42000, "color": "#ca8a04" }
+  ],
+  "featureImportance": [
+    { "metric": "Diferencia de Precio", "value": 48 },
+    { "metric": "Público Compartido", "value": 35 },
+    { "metric": "Distancia (KM)", "value": 17 }
+  ]
+}

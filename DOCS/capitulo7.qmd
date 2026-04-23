@@ -1,0 +1,9 @@
+# CAPÍTULO VII: ANALÍTICA PREDICTIVA Y MACHINE LEARNING (PREDICTIONS)
+
+Este capítulo detalla la implementación de modelos de aprendizaje automático para la predicción de ventas y comportamiento del cliente.
+
+## 1. Fundamentación Técnica
+El sistema utiliza algoritmos de Random Forest y XGBoost para predecir la demanda futura basada en datos históricos de Snowflake.
+
+## 2. Ingeniería de Características (dbt)
+Las variables son pre-procesadas en Snowflake utilizando dbt para generar los sets de entrenamiento.

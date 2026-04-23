@@ -1,0 +1,3 @@
+# CAPÍTULO X: GOBERNANZA, CALIDAD Y DESPLIEGUE
+
+Estrategias de seguridad, calidad de datos y mantenimiento del pipeline.

@@ -1,0 +1,6 @@
+# CAPÍTULO VIII: ANÁLISIS DE SERIES DE TIEMPO Y PRONÓSTICOS (TIME_SERIES)
+
+Modelado de tendencias y estacionalidad mediante algoritmos estadísticos avanzados.
+
+## 1. Simulación Interactiva
+El sistema permite realizar análisis "What-if" para proyectar ventas bajo diferentes escenarios operativos.

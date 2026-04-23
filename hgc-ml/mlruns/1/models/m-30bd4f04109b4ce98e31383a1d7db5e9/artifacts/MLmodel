@@ -1,0 +1,22 @@
+artifact_path: file:C:/Users/Robert/Documents/Dat372 - BI/HGC/system/hgc-system/hgc-ml/mlruns/1/models/m-30bd4f04109b4ce98e31383a1d7db5e9/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.13.13
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBRegressor
+    model_format: ubj
+    xgb_version: 3.2.0
+mlflow_version: 3.11.1
+model_id: m-30bd4f04109b4ce98e31383a1d7db5e9
+model_size_bytes: 1207021
+model_uuid: m-30bd4f04109b4ce98e31383a1d7db5e9
+prompts: null
+run_id: e751780ff1da48a8bbc349b7478aea2e
+utc_time_created: '2026-04-22 20:45:44.025142'

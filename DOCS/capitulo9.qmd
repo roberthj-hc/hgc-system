@@ -1,0 +1,212 @@
+# CAPÍTULO IX: MODELADO ECONOMÉTRICO Y EFICIENCIA OPERATIVA (ECONOMETRICS)
+
+## Introducción al Análisis Microeconómico en HGC
+
+El sistema HGC no se limita a ser una herramienta de visualización de datos descriptivos; evoluciona hacia una plataforma de **Inteligencia Prescriptiva**. En este capítulo, se detalla el núcleo matemático y técnico que permite al sistema realizar análisis de eficiencia técnica y optimización de precios. La integración de la econometría permite responder preguntas críticas: *¿Cuánto ingreso estamos perdiendo por ineficiencias operativas?* y *¿Cómo afectará un cambio de precio a la demanda de nuestros productos?*
+
+Este capítulo describe el flujo completo de datos: desde la ingesta de transacciones crudas en Snowflake, pasando por la transformación lógica en dbt, el entrenamiento de modelos de frontera en Python, hasta la visualización interactiva en React.
+
+---
+
+## 1. Fundamentación Técnica y Marcos Teóricos
+
+La solidez del sistema reside en la aplicación de modelos microeconómicos clásicos adaptados a la infraestructura de datos moderna.
+
+### 1.1. Función de Producción Cobb-Douglas (Frontera Técnica)
+
+Para modelar la operación de las sucursales, adoptamos la función **Cobb-Douglas**. Esta función relaciona los insumos utilizados (Inputs) con el resultado obtenido (Output). En HGC, el output es la **Venta Total** ($Y$), y los inputs son el **Costo de Insumos** ($X_1$) y el **Volumen Operativo** ($X_2$).
+
+La forma funcional es:
+$$ Y_i = A \cdot X_{1i}^{\beta_1} \cdot X_{2i}^{\beta_2} \cdot e^{\epsilon_i} $$
+
+Donde:
+- **$Y_i$**: Venta neta de la sucursal $i$. Representa el valor monetario generado tras descuentos e impuestos.
+- **$A$**: Productividad Total de los Factores (PTF). Representa la tecnología, el "know-how" y la gestión base de la corporación.
+- **$X_1$**: Costo total de insumos (materia prima). Representa el capital físico consumido en el proceso de producción de alimentos.
+- **$X_2$**: Volumen de transacciones. Actúa como proxy del factor trabajo y capacidad de procesamiento de pedidos por unidad de tiempo.
+- **$\beta_1, \beta_2$**: Elasticidades producto. Indican el cambio porcentual en el output ante un cambio del 1% en el input respectivo.
+
+**Transformación Lineal (Log-Log):**
+Para que el motor de ML pueda procesar esta función mediante métodos de regresión lineal, aplicamos logaritmos naturales:
+$$ \ln(Y_i) = \alpha + \beta_1 \ln(X_{1i}) + \beta_2 \ln(X_{2i}) + v_i - u_i $$
+
+### 1.2. Análisis de Frontera Estocástica (SFA)
+
+A diferencia de una regresión promedio (OLS) que busca el rendimiento medio de las sucursales, el sistema implementa un enfoque de **Frontera Estocástica**. El error se descompone en dos partes:
+1. **$v_i$**: Ruido aleatorio (eventos fuera del control de la gerencia, como clima o variaciones de mercado). Se asume que sigue una distribución normal: $v_i \sim N(0, \sigma_v^2)$.
+2. **$u_i$**: Ineficiencia técnica. Representa el alejamiento sistemático de la frontera óptima debido a desperdicio, mala gestión de personal o procesos lentos. Se asume que sigue una distribución half-normal o exponencial: $u_i \geq 0$.
+
+En nuestra implementación, utilizamos **Regresión de Cuantiles ($q=0.90$)** como un estimador robusto de la frontera. Esto dibuja una línea que representa el **90avo percentil de rendimiento**, identificando las sucursales que logran el máximo output con el mínimo input posible.
+
+### 1.3. Elasticidad Precio de la Demanda
+
+Para el módulo de optimización de precios, aplicamos un modelo de demanda logarítmico que asume elasticidad constante:
+$$ \ln(Q_{it}) = \alpha + \eta \ln(P_{it}) + \sum \gamma \text{Control} + \epsilon_{it} $$
+
+Donde $\eta$ representa la **Elasticidad Precio**:
+- Si $|\eta| > 1$: Demanda Elástica. Un aumento de precio reduce drásticamente el volumen, disminuyendo el ingreso total.
+- Si $|\eta| < 1$: Demanda Inelástica. Un aumento de precio tiene poco impacto en el volumen, aumentando el ingreso total.
+- Si $|\eta| = 1$: Elasticidad Unitaria. El ingreso total se mantiene constante ante cambios de precio.
+
+---
+
+## 2. Implementación en la Capa de Datos (dbt)
+
+La preparación de estas variables ocurre en el **Snowflake Data Warehouse** mediante **dbt**.
+
+### 2.1. El Modelo de Eficiencia Operativa
+El archivo `mart_econometria_eficiencia_operativa.sql` es el corazón de la preparación de datos.
+
+**Código Fuente (Detalle dbt):**
+```sql
+{{ config(materialized='table') }}
+
+with costos_insumos as (
+    select
+        da.nombre_sucursal_asociada as nombre_sucursal,
+        left(m.id_fecha_sk::varchar, 6) as mes_id,
+        sum(m.monto_total_movimiento) as costo_total_insumos
+    from {{ ref('fact_movimientos_inventario') }} m
+    join {{ ref('dim_almacen') }} da on m.id_almacen_sk = da.id_almacen_sk
+    where m.monto_total_movimiento > 0
+    group by 1, 2
+),
+
+ventas_sucursal as (
+    select
+        nombre_sucursal,
+        to_char(fecha, 'YYYYMM') as mes_id,
+        sum(ventas_reales) as venta_total,
+        count(*) as volumen_operativo -- Proxy de transacciones
+    from {{ ref('mart_ventas_historicas') }}
+    group by 1, 2
+)
+
+select
+    v.nombre_sucursal,
+    v.mes_id,
+    v.venta_total,
+    c.costo_total_insumos,
+    -- Aplicación de logaritmos para el modelo lineal
+    ln(nullif(v.venta_total, 0)) as log_y,
+    ln(nullif(c.costo_total_insumos, 0)) as log_x_costo,
+    ln(nullif(v.volumen_operativo, 0)) as log_x_volumen
+from ventas_sucursal v
+join costos_insumos c on v.nombre_sucursal = c.nombre_sucursal and v.mes_id = c.mes_id
+```
+
+### 2.2. Tratamiento de Datos Estáticos (Elasticidad)
+En el modelo `mart_econometria_elasticidad_base.sql`, enfrentamos el reto de precios fijos. Aplicamos una perturbación determinística basada en el hash de la sucursal y fecha para permitir que el modelo de regresión identifique una pendiente:
+
+```sql
+-- Perturbación del 5% para simular variaciones de mercado
+v.precio_unitario_venta * (1 + (abs(hash(v.id_sucursal_sk, v.id_fecha_sk)) % 100 - 50) / 1000.0) as precio
+```
+
+---
+
+## 3. Motor de Inferencia y Machine Learning (Python)
+
+Ubicado en `hgc-ml`, este módulo realiza el entrenamiento y exportación de coeficientes.
+
+### 3.1. Entrenamiento SFA (Efficiency)
+El script utiliza `statsmodels` para realizar la regresión de cuantiles.
+
+**Lógica Matemática en Python:**
+```python
+# Definición de la fórmula Log-Log
+formula = 'LOG_Y ~ LOG_X_COSTO + LOG_X_VOLUMEN'
+
+# Ajuste al percentil 90 (Frontera)
+model = smf.quantreg(formula, df).fit(q=0.90)
+
+# Cálculo de Venta Teórica Óptima (Frontera)
+df['V_FRONTIER'] = np.exp(model.predict(df))
+
+# Score de Eficiencia Técnica
+df['SCORE_EFICIENCIA'] = (df['VENTA_TOTAL'] / df['V_FRONTIER'] * 100).clip(upper=100)
+```
+
+### 3.2. Entrenamiento de Elasticidades (OLS)
+Para cada producto, se estima una regresión independiente:
+```python
+X = sm.add_constant(prod_df['LOG_P'])
+y = prod_df['LOG_Q_NORM']
+model = sm.OLS(y, X).fit()
+elasticidad = model.params['LOG_P']
+```
+Los resultados se registran en **MLflow** y se exportan como JSON al Backend para asegurar una respuesta inmediata en el Dashboard.
+
+---
+
+## 4. Backend y Caching de Resultados
+
+El backend en **Node.js** sirve como puente de alta velocidad.
+
+### 4.1. Estrategia de Caching local
+El archivo `hgc-back/src/econometrics/econometrics.controller.js` prioriza el consumo de archivos JSON pre-calculados por el motor de ML. Esto reduce drásticamente los costos de computación en Snowflake y mejora la UX:
+
+```javascript
+exports.getEfficiencyData = async (req, res) => {
+  const DATA_PATH = path.join(__dirname, '../../data/efficiency_results.json');
+  if (fs.existsSync(DATA_PATH)) {
+    const data = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
+    return res.json(data);
+  }
+  // Fallback a Snowflake si el caché no existe
+};
+```
+
+---
+
+## 5. Visualización Avanzada (Frontend)
+
+El Dashboard está construido con **Next.js** y **Recharts**, permitiendo una exploración visual profunda de los resultados econométricos.
+
+### 5.1. Visualización de la Frontera Estocástica
+En el **Efficiency Monitor**, se utiliza un `ComposedChart` que combina:
+- **Scatter Plot**: Representa la realidad de cada sucursal. Los puntos se colorean según su `SCORE_EFICIENCIA` (Verde para los eficientes, Rojo para los que tienen fugas operativas).
+- **Línea de Frontera**: Una línea punteada que muestra dónde "deberían estar" las sucursales si operaran al máximo de su capacidad técnica.
+
+### 5.2. Simulador de Elasticidad (Price Optimizer)
+El usuario puede mover un slider para cambiar el precio de un producto. El sistema recalcula instantáneamente:
+1. **Volumen Proyectado (Q)**: Utilizando la fórmula exponencial $Q = e^{\alpha + \eta \ln(P)}$.
+2. **Excedente del Productor**: Diferencia monetaria entre el escenario actual y el simulado.
+3. **Punto de Equilibrio**: El precio que maximiza la utilidad neta considerando los costos marginales de insumos.
+
+---
+
+## 6. Diccionario de Variables Econométricas
+
+Para facilitar la interpretación de los reportes, se definen las siguientes métricas:
+
+| Variable | Definición Económica | Interpretación de Negocio |
+|----------|---------------------|---------------------------|
+| **Beta Costo ($\beta_1$)** | Elasticidad Insumo | Si es 0.8, un aumento del 10% en insumos solo sube ventas un 8%. Indica rendimientos decrecientes. |
+| **Score Eficiencia** | Ratio de Rendimiento | Porcentaje de aprovechamiento de los recursos actuales comparado con la mejor sucursal. |
+| **Brecha (Gap)** | Costo de Oportunidad | Dinero que la empresa ya tiene capacidad de generar pero está perdiendo por ineficiencia operativa. |
+| **Elasticidad ($\eta$)** | Sensibilidad al Precio | Un valor de -2.5 indica que el producto es muy sensible; subir el precio matará el volumen. |
+
+---
+
+## 7. Manual de Decisiones Estratégicas
+
+### 7.1. ¿Cómo actuar ante una sucursal con Score < 80%?
+1. **Auditoría de Mermas**: Verificar si el alto costo de insumos se debe a desperdicio o robo.
+2. **Optimización de Procesos**: Analizar si el bajo volumen de transacciones se debe a tiempos de espera largos.
+3. **Capacitación**: Evaluar si el personal requiere mejor entrenamiento en el uso de los equipos.
+
+### 7.2. ¿Cuándo subir precios?
+Solo cuando la **Elasticidad** sea cercana a 0 o menor a -1 (Inelástica). Esto suele ocurrir en productos estrella (Signature Items) con alta lealtad de marca.
+
+---
+
+## 8. Despliegue y Orquestación (MLOps)
+
+El flujo se cierra con una orquestación automatizada en el archivo `iniciar_proyecto.bat`:
+1. **Build dbt**: `dbt build` consolida las tablas en Snowflake.
+2. **Train ML**: Se ejecutan los scripts de Python que calculan la frontera y las elasticidades.
+3. **Deploy Backend**: El servidor Node.js carga los nuevos coeficientes.
+4. **Habilitación UI**: Los directivos acceden a los nuevos insights de eficiencia y optimización.
+
+Este ciclo garantiza que la inteligencia econométrica de HGC esté siempre actualizada con los datos más recientes del mercado boliviano.

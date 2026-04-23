@@ -1,0 +1,32 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Proyecto Antigravity: Documentación Técnica"
+  author: "Tu Nombre"
+  date: today
+  language: es
+  chapters:
+    - index.qmd
+    - capitulo1.qmd
+    - capitulo2.qmd
+    - capitulo3.qmd
+    - capitulo7.qmd
+    - capitulo8.qmd
+    - capitulo9.qmd
+    - capitulo10.qmd
+    - capitulo11.qmd
+
+format:
+  pdf:
+    documentclass: report
+    papersize: letter
+    toc: true
+    toc-title: "Índice General"
+    lof: true
+    lot: true
+    number-sections: true
+    pdf-engine: xelatex
+    geometry:
+      - margin=1in

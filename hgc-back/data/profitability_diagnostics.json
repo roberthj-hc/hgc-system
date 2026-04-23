@@ -1,0 +1,122 @@
+[
+  {
+    "id_sucursal_sk": "724e5671e927b9a7b360e773cbdcf3a4",
+    "nombre_sucursal": "HGC Centro",
+    "ingreso_bruto": 126871777,
+    "comisiones_delivery": 6965763.42,
+    "total_mermas": 2321753.5191,
+    "costo_operativo": 44405121.95,
+    "utilidad_neta": 73179138.1109,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "2caf6ee4cdeb5fa58648c6bb8c9301d1",
+    "nombre_sucursal": "HGC La Ceja",
+    "ingreso_bruto": 77515648,
+    "comisiones_delivery": 4239825.7,
+    "total_mermas": 1782859.904,
+    "costo_operativo": 27130476.8,
+    "utilidad_neta": 44362485.596,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "406f6bc714b87827cdb339f43e6ab22e",
+    "nombre_sucursal": "HGC Sopocachi",
+    "ingreso_bruto": 90573058,
+    "comisiones_delivery": 4965139.3,
+    "total_mermas": 1684658.8788,
+    "costo_operativo": 31700570.3,
+    "utilidad_neta": 52222689.5212,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "05eb32ac093a81f32cbbe711c1d2459d",
+    "nombre_sucursal": "HGC Ciudad Satélite",
+    "ingreso_bruto": 55930352,
+    "comisiones_delivery": 3098869.84,
+    "total_mermas": 1258432.92,
+    "costo_operativo": 19575623.2,
+    "utilidad_neta": 31997426.04,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "31dc660898fb490508740db97fc8eede",
+    "nombre_sucursal": "HGC Plan 3000",
+    "ingreso_bruto": 19078374,
+    "comisiones_delivery": 1060106.96,
+    "total_mermas": 423539.9028,
+    "costo_operativo": 6677430.9,
+    "utilidad_neta": 10917296.2372,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "3ce72b6d2b20dbbfa1c5175f81081f77",
+    "nombre_sucursal": "HGC Centro - El Prado",
+    "ingreso_bruto": 39691301,
+    "comisiones_delivery": 2170880.58,
+    "total_mermas": 813671.6705,
+    "costo_operativo": 13891955.35,
+    "utilidad_neta": 22814793.3995,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "f9b9bd44158c6a5aefa81f7931aeb7cd",
+    "nombre_sucursal": "HGC Rio Seco",
+    "ingreso_bruto": 33435454,
+    "comisiones_delivery": 1838130.36,
+    "total_mermas": 789076.7144,
+    "costo_operativo": 11702408.9,
+    "utilidad_neta": 19105838.0256,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "7665d7407f7242d34dc6a25e20c5dcf6",
+    "nombre_sucursal": "HGC Equipetrol",
+    "ingreso_bruto": 14172887,
+    "comisiones_delivery": 775060.22,
+    "total_mermas": 379833.3716,
+    "costo_operativo": 4960510.45,
+    "utilidad_neta": 8057482.9584,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "c534560bdc4e765671aa835000614c20",
+    "nombre_sucursal": "HGC Miraflores",
+    "ingreso_bruto": 184448936,
+    "comisiones_delivery": 10138560.74,
+    "total_mermas": 3486084.8904,
+    "costo_operativo": 64557127.6,
+    "utilidad_neta": 106267162.7696,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "f4275ed51aa125f294fc345b0ce30405",
+    "nombre_sucursal": "HGC Calacoto",
+    "ingreso_bruto": 104379363,
+    "comisiones_delivery": 5721157.64,
+    "total_mermas": 1690945.6806,
+    "costo_operativo": 36532777.05,
+    "utilidad_neta": 60434482.6294,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "cc908a35ec9dbf7f31d7dec75f14adaf",
+    "nombre_sucursal": "HGC Zona Norte",
+    "ingreso_bruto": 27091195,
+    "comisiones_delivery": 1492230.52,
+    "total_mermas": 693534.592,
+    "costo_operativo": 9481918.25,
+    "utilidad_neta": 15423511.638,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  },
+  {
+    "id_sucursal_sk": "2fe60b0b659a4b1c1d7117fb04fd6e75",
+    "nombre_sucursal": "HGC Av. Monseñor Rivero",
+    "ingreso_bruto": 30623709,
+    "comisiones_delivery": 1664008.72,
+    "total_mermas": 747218.4996,
+    "costo_operativo": 10718298.15,
+    "utilidad_neta": 17494183.6304,
+    "impacto_diagnostico": "Análisis basado en datos reales de Snowflake."
+  }
+]
