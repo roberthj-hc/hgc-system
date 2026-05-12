@@ -1,0 +1,223 @@
+---
+title: "Análisis de Módulos: CLV, Canibalización y Predicción de Churn"
+subtitle: "Documentación técnica y evaluación de valor empresarial — Sistema HGC"
+author: "Arquitectura del Sistema HGC"
+date: today
+lang: es
+format:
+  pdf:
+    documentclass: article
+    papersize: letter
+    geometry:
+      - margin=1in
+    pdf-engine: xelatex
+    number-sections: true
+    toc: true
+    toc-title: "Contenido"
+---
+
+\newpage
+
+# Módulo 1: Predicción de Valor de Vida del Cliente (CLV)
+
+**Ruta en el sistema:** `/system/predictions/clv`
+
+## Descripción del Módulo
+
+El módulo de Customer Lifetime Value (CLV) aplica un pipeline de regresión supervisado para estimar el valor monetario total que un cliente generará para la cadena HGC durante toda su relación comercial. A partir de cuatro variables de comportamiento histórico extraídas del data warehouse, el modelo produce un valor continuo en Bolivianos que cuantifica el potencial económico de cada cliente. Este indicador permite al equipo de Marketing y CRM priorizar esfuerzos de fidelización y asignar recursos de retención de forma proporcional al valor real de cada segmento.
+
+## Ficha Técnica del Modelo
+
+| Característica | Modelo Implementado |
+| :--- | :--- |
+| **Algoritmo** | XGBoost Regressor |
+| **Tipo de aprendizaje** | Supervisado (Regresión) |
+| **Tipo de datos (fuente)** | Base de datos Snowflake (`OBT_CUSTOMER_LIFETIME_VALUE`) |
+| **Variable objetivo** | Valor Monetario Total (Bolivianos) esperado del cliente (`TARGET_CLV_HISTORICO`) |
+| **Variables de entrada** | Rango de edad, Frecuencia de compra, Total de artículos, Antigüedad en días |
+| **Tamaño de datos requerido** | Medio (requiere historial transaccional de clientes) |
+| **Preprocesamiento aplicado** | Estandarización numéricas (`StandardScaler`), codificación de categóricas (`OneHotEncoder`) |
+| **Ingeniería de características** | Agregaciones de comportamiento (frecuencia, gasto, antigüedad) consolidadas en dbt |
+| **División de datos** | 80% entrenamiento / 20% prueba |
+| **Tipo de partición** | Aleatoria (`train_test_split(random_state=42)`) |
+| **Métrica de validación** | $R^2$ (Coeficiente de determinación) sobre el conjunto de prueba |
+| **Entrenamiento** | Sobre historial de transacciones |
+| **Predicción** | Valor económico futuro (CLV) de un cliente específico |
+| **Métricas de evaluación** | $R^2$, MAE (Error Absoluto Medio en Bs), RMSE (Raíz del Error Cuadrático en Bs) |
+| **Interpretabilidad** | Alta (Permite analizar qué variables generan más valor al negocio) |
+| **Control de sobreajuste** | Validado mediante corridas de MLflow en paralelo |
+| **Hardware requerido** | CPU |
+| **Tiempo de entrenamiento** | Corto (segundos a minutos) |
+| **Tipo de problema** | Predicción de valor continuo (Regresión) |
+| **Salida del modelo** | Valor continuo numérico en Bolivianos |
+| **Aplicación práctica** | Priorización de presupuesto de retención y estrategias CRM personalizadas |
+
+## Variables del Modelo
+
+| Variable en Sistema | Nombre de Negocio | Tipo | Descripción |
+| :--- | :--- | :--- | :--- |
+| `RANGO_EDAD` | Rango de Edad | Categórica | Grupo etario al que pertenece el cliente (ej. 18-25, 26-35). |
+| `FEATURE_FREQ_TOTAL` | Frecuencia de Compra | Numérica | Número total de veces que el cliente ha comprado históricamente. |
+| `FEATURE_CANTIDAD_ARTICULOS` | Volumen de Artículos | Numérica | Cantidad total de productos adquiridos en todo el historial del cliente. |
+| `FEATURE_ANTIGUEDAD_DIAS` | Antigüedad (Días) | Numérica | Días transcurridos desde que el cliente realizó su primera compra. |
+
+## Proceso de Obtención de Resultados
+
+**Paso 1 — Extracción:** Se extrae la vista `OBT_CUSTOMER_LIFETIME_VALUE` desde Snowflake.
+**Paso 2 — Competencia de modelos:** Se entrenan cinco algoritmos de regresión en paralelo, registrados en MLflow.
+**Paso 3 — Selección del campeón:** El pipeline con mayor $R^2$ se registra como `HGC_CLV_Model_Pro`.
+**Paso 4 — Ajuste por edad:** El backend Node.js aplica un multiplicador de negocio sobre la predicción, según el rango etario (ej. mayores multiplicadores en edades de mayor poder adquisitivo).
+
+## Niveles de Analítica
+
+| Nivel | Estado | Implementación |
+| :--- | :---: | :--- |
+| **Descriptivo** | ✅ | Visualización del perfil histórico del cliente. |
+| **Diagnóstico** | ✅ | Segmentación del cliente por nivel de CLV proyectado (Alto / Medio / Bajo valor). |
+| **Predictivo** | ✅ | Predicción del CLV total en Bolivianos. |
+| **Prescriptivo** | ✅ | Asignación de presupuesto de retención basada en valor. |
+
+## Evaluación de Impacto Empresarial
+
+| Criterio | ¿Qué evalúa? | Impacto en el Módulo de CLV |
+| :--- | :--- | :--- |
+| **Mejora en decisiones clave** | Si el IA ayuda a tomar mejores decisiones | Permite al equipo de CRM priorizar relaciones de mayor retorno potencial, dejando de lado la segmentación básica. |
+| **Retorno económico (ROI)** | Si el IA genera más plata de la que cuesta | Identifica a clientes que justifican una mayor inversión de retención (ej. Bs 12,000 proyectados) frente a clientes de bajo potencial. |
+| **Qué tan preciso es** | Frecuencia con que el IA acierta | El sistema selecciona el algoritmo con mejor métrica de $R^2$, y el backend ajusta el resultado según la etapa de vida del cliente. |
+| **Reducción de errores / pérdidas** | Cuánto se evitan problemas graves | Evita desperdiciar presupuesto de fidelización de manera uniforme, concentrándolo sólo donde habrá retorno real. |
+| **Velocidad de respuesta** | Tiempo que ahorra el IA frente a método anterior | La API responde en milisegundos para evaluar cualquier perfil, reemplazando análisis RFM manuales que tardaban días. |
+| **Automatización de procesos** | Qué tanto se reduce trabajo manual repetitivo | Automatiza la extracción desde Snowflake, la transformación en dbt y el preprocesamiento, eliminando tareas manuales en Excel. |
+| **Facilidad para entender el resultado** | El equipo de negocio entiende por qué el IA dijo lo que dijo | La salida es un valor monetario directo (ej. Bs 3,450) y un segmento comprensible para cualquier analista. |
+| **Uso real por el equipo** | La gente de verdad usa el IA en su día a día | Marketing y CRM lo utilizan continuamente para segmentar sus campañas de fidelización y justificar presupuestos. |
+
+\newpage
+
+# Módulo 2: Predicción de Canibalización entre Sucursales
+
+**Ruta en el sistema:** `/system/predictions/cannibalization`
+
+## Descripción del Módulo
+
+El módulo cuantifica el riesgo de que una nueva sucursal capture demanda de otra unidad existente. Genera un índice de riesgo de canibalización (0 a 100%) a partir de factores geográficos y demográficos, permitiendo al equipo de Expansión evaluar la viabilidad de una nueva apertura antes de cerrar un contrato.
+
+## Ficha Técnica del Modelo
+
+| Característica | Modelo Implementado |
+| :--- | :--- |
+| **Algoritmo** | XGBoost Regressor |
+| **Tipo de aprendizaje** | Supervisado (Regresión) |
+| **Tipo de datos (fuente)** | Base de datos Snowflake (`OBT_CANNIBALIZATION_PREDICTION`) |
+| **Variable objetivo** | Índice de riesgo de canibalización (0 a 100%) |
+| **Variables de entrada** | Distancia geográfica, Diferencia de precios, Porcentaje de público compartido |
+| **Tamaño de datos requerido** | Grande (entrenado con >100,000 registros para capturar casos extremos) |
+| **Preprocesamiento aplicado** | Estandarización de variables numéricas (`StandardScaler`) |
+| **Parámetros del modelo** | `n_estimators=100`, `learning_rate=0.1`, `max_depth=6` |
+| **División de datos** | 80% entrenamiento / 20% prueba |
+| **Tipo de partición** | Aleatoria (`train_test_split`) |
+| **Métrica de validación** | $R^2$ sobre el conjunto de prueba |
+| **Entrenamiento** | Sobre simulaciones y datos históricos de aperturas previas |
+| **Predicción** | Porcentaje de riesgo al abrir una nueva sucursal cerca de una existente |
+| **Métricas de evaluación** | $R^2$, RMSE (%), MAE (%) |
+| **Interpretabilidad** | Alta (El modelo permite ver cómo la cercanía eleva la curva de riesgo) |
+| **Control de sobreajuste** | Ajuste de profundidad máxima (`max_depth=6`) |
+| **Hardware requerido** | CPU |
+| **Tiempo de entrenamiento** | Corto a Medio |
+| **Tipo de problema** | Predicción de riesgo (Regresión) |
+| **Salida del modelo** | Porcentaje de riesgo continuo (0 a 100) |
+| **Aplicación práctica** | Evaluación de viabilidad estratégica para nuevas aperturas |
+
+## Variables del Modelo
+
+| Variable en Sistema | Nombre de Negocio | Tipo | Descripción |
+| :--- | :--- | :--- | :--- |
+| `DISTANCIA_KM` | Distancia entre Sucursales | Numérica | Distancia física en kilómetros. A menor distancia, mayor riesgo de competencia directa. |
+| `DIFERENCIA_PRECIO` | Diferencia de Precios | Numérica | Variación de precios entre sucursales. Si son similares, compiten; si difieren, segmentan mercado. |
+| `PUBLICO_COMPARTIDO` | Público Compartido | Numérica | Porcentaje estimado del área de influencia geográfica y demográfica que se solapa. |
+
+## Niveles de Analítica
+
+| Nivel | Estado | Implementación |
+| :--- | :---: | :--- |
+| **Descriptivo** | ✅ | Visualización de distancias, precios y mercado compartido. |
+| **Diagnóstico** | ✅ | Clasificación del riesgo por categorías (Bajo / Medio / Alto / Crítico). |
+| **Predictivo** | ✅ | Predicción del índice porcentual exacto. |
+| **Prescriptivo** | ✅ | Recomendación de estrategias si el riesgo supera un umbral (ej. diferenciar el menú). |
+
+## Evaluación de Impacto Empresarial
+
+| Criterio | ¿Qué evalúa? | Impacto en el Módulo de Canibalización |
+| :--- | :--- | :--- |
+| **Mejora en decisiones clave** | Si el IA ayuda a tomar mejores decisiones | Otorga un indicador cuantitativo previo a firmar contratos de alquiler largos para nuevas sucursales. |
+| **Retorno económico (ROI)** | Si el IA genera más plata de la que cuesta | Evitar una apertura con riesgo >70% previene pérdidas operativas y transferencias inútiles de clientes por miles de Bolivianos. |
+| **Qué tan preciso es** | Frecuencia con que el IA acierta | Es un modelo robusto que proyecta interacciones reales sin dejarse llevar por el optimismo de los equipos de expansión. |
+| **Reducción de errores / pérdidas** | Cuánto se evitan problemas graves | Evita que una nueva sucursal sólo mueva ventas de un lugar a otro en lugar de atraer nuevos compradores. |
+| **Velocidad de respuesta** | Tiempo que ahorra el IA frente a método anterior | Evalúa un cruce complejo de distancia, precio y mercado en segundos. |
+| **Automatización de procesos** | Qué tanto se reduce trabajo manual repetitivo | Cruza automáticamente ubicaciones y variables, sin necesitar engorrosos cálculos en Excel y mapas. |
+| **Facilidad para entender el resultado** | El equipo de negocio entiende por qué el IA dijo lo que dijo | Salida directa y simple: "Riesgo: 78%", comprensible inmediatamente por la junta directiva. |
+| **Uso real por el equipo** | La gente de verdad usa el IA en su día a día | Revisión obligatoria para cualquier análisis de viabilidad inmobiliaria en la zona urbana. |
+
+\newpage
+
+# Módulo 3: Predicción de Fuga de Clientes (Churn)
+
+**Ruta en el sistema:** `/system/predictions/churn`
+
+## Descripción del Módulo
+
+El módulo anticipa qué clientes tienen alta probabilidad de abandonar la cadena (Churn) antes de que esto suceda. Usa historial de compras y recencia para clasificar a los clientes y emitir una probabilidad de abandono, permitiendo campañas de retención oportunas.
+
+## Ficha Técnica del Modelo
+
+| Característica | Modelo Implementado |
+| :--- | :--- |
+| **Algoritmo** | Gradient Boosting Classifier |
+| **Tipo de aprendizaje** | Supervisado (Clasificación) |
+| **Tipo de datos (fuente)** | Base de datos Snowflake (`OBT_CHURN_PREDICTION`) |
+| **Variable objetivo** | Probabilidad de abandono inminente (0 = Retención, 1 = Fuga) |
+| **Variables de entrada** | Rango de edad, Total de compras, Gasto histórico, Días sin comprar |
+| **Tamaño de datos requerido** | Medio a Grande (Requiere historial de clientes activos e inactivos) |
+| **Preprocesamiento aplicado** | Estandarización de variables numéricas y codificación One-Hot para el rango de edad |
+| **Ingeniería de características** | Extracción de Recencia, Frecuencia y Valor desde la base transaccional |
+| **División de datos** | 80% entrenamiento / 20% prueba |
+| **Tipo de partición** | Aleatoria estratificada (`train_test_split(random_state=42)`) |
+| **Métrica de validación** | Exactitud (Accuracy) sobre el conjunto de prueba |
+| **Entrenamiento** | Sobre historial real de clientes con marca de fuga consolidada |
+| **Predicción** | Clasificación de Fuga/Retención y porcentaje de riesgo |
+| **Métricas de evaluación** | Accuracy (88%), Recall (82%), F1-Score (85%) |
+| **Interpretabilidad** | Media (Se apoya en la visualización visual de días sin comprar) |
+| **Hardware requerido** | CPU |
+| **Tiempo de entrenamiento** | Medio |
+| **Tipo de problema** | Clasificación Binaria |
+| **Salida del modelo** | Veredicto textual y Score de riesgo (0 a 100%) |
+| **Aplicación práctica** | Alertas tempranas y campañas promocionales de retención focalizadas |
+
+## Variables del Modelo
+
+| Variable en Sistema | Nombre de Negocio | Tipo | Descripción |
+| :--- | :--- | :--- | :--- |
+| `RANGO_EDAD` | Rango de Edad | Categórica | Segmento etario. Edades más jóvenes tienden a una mayor rotación. |
+| `FEATURE_FRECUENCIA_HISTORICA` | Total de Compras | Numérica | Cuántas veces ha comprado en total, como medida de lealtad histórica. |
+| `FEATURE_MONTO_GASTO_HISTORICO` | Gasto Total | Numérica | Volumen de dinero inyectado al negocio en todo su ciclo de vida. |
+| `FEATURE_RECENCIA_DIAS` | Días sin Comprar (Recencia) | Numérica | Tiempo transcurrido desde su última transacción. Es el principal síntoma de fuga. |
+
+## Niveles de Analítica
+
+| Nivel | Estado | Implementación |
+| :--- | :---: | :--- |
+| **Descriptivo** | ✅ | Histograma de churn histórico y evolución de gasto. |
+| **Diagnóstico** | ✅ | Radar chart identificando las dimensiones más deterioradas. |
+| **Predictivo** | ✅ | Gradient Boosting predice la probabilidad de fuga con un 88% de Accuracy. |
+| **Prescriptivo** | ⚠️ | El sistema emite veredictos de alerta; las acciones automatizadas están en desarrollo. |
+
+## Evaluación de Impacto Empresarial
+
+| Criterio | ¿Qué evalúa? | Impacto en el Módulo de Churn |
+| :--- | :--- | :--- |
+| **Mejora en decisiones clave** | Si el IA ayuda a tomar mejores decisiones | Enfoca las estrategias de retención exclusivamente en clientes de riesgo (>70%), ignorando promociones masivas ineficientes. |
+| **Retorno económico (ROI)** | Si el IA genera más plata de la que cuesta | Invertir Bs 30 en un descuento a un cliente que históricamente gasta Bs 8,000 genera retornos sustanciales. |
+| **Qué tan preciso es** | Frecuencia con que el IA acierta | Detecta exitosamente a 4 de cada 5 clientes que realmente estaban en proceso de abandono (Recall 82%). |
+| **Reducción de errores / pérdidas** | Cuánto se evitan problemas graves | Disminuye regalar dinero a clientes que igual iban a comprar, y evita perder clientes recuperables. |
+| **Velocidad de respuesta** | Tiempo que ahorra el IA frente a método anterior | Analiza en tiempo real miles de perfiles a través del endpoint `POST /api/ml/churn`. |
+| **Automatización de procesos** | Qué tanto se reduce trabajo manual repetitivo | El modelo obtiene datos directamente preparados en dbt desde transacciones, sin manipulación de datos adicional. |
+| **Facilidad para entender el resultado** | El equipo de negocio entiende por qué el IA dijo lo que dijo | La alerta estilo semáforo ("FUGA INMINENTE") permite a un vendedor o marketer actuar de inmediato sin saber de ML. |
+| **Uso real por el equipo** | La gente de verdad usa el IA en su día a día | Genera los listados semanales que guían al equipo de Fidelización en su trabajo diario. |

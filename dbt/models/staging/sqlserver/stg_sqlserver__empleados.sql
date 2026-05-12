@@ -1,0 +1,13 @@
+with source as (select * from {{ source('raw_rrhh', 'empleados') }})
+select
+    id_empleado as id_empleado_nk,
+    id_cargo as id_cargo_nk,
+    id_sucursal as id_sucursal_nk,
+    nombre as nombre_completo,
+    documento_identidad,
+    telefono,
+    cast(fecha_ingreso as date) as fecha_ingreso,
+    cast(salario_base as numeric(10,2)) as salario_base,
+    tipo_contrato,
+    estado as estado_empleado
+from source

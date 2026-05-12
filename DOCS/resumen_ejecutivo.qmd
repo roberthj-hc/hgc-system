@@ -1,0 +1,72 @@
+---
+title: "Exposición Ejecutiva: Inteligencia Econométrica HGC"
+author: "Arquitectura del Sistema HGC"
+date: today
+lang: es
+format:
+  pdf:
+    documentclass: article
+    papersize: letter
+    geometry:
+      - margin=1in
+    pdf-engine: xelatex
+---
+
+# Introducción: De los Datos Crudos a la Prescripción Económica
+
+Como responsables técnicos y de negocio del sistema HGC, nuestra visión nunca fue construir un "dashboard" estático que simplemente cuente cuántas hamburguesas se vendieron. Hemos desarrollado un **motor de inferencia econométrica** que procesa datos transaccionales desde Snowflake, pasa por transformaciones en dbt, y utiliza algoritmos en Python para entregar respuestas exactas a dos de las preguntas más costosas de la empresa: *¿Qué sucursales están desperdiciando recursos operacionales?* y *¿Qué productos soportan un aumento de precio sin perder clientes?*
+
+A continuación, detallo técnicamente y a nivel de negocio nuestros dos modelos econométricos en producción, clasificándolos en sus fases analíticas y evaluando su impacto corporativo.
+
+---
+
+# Caso 1: Monitor de Eficiencia Operativa (SFA y Cobb-Douglas)
+**Ubicación en el Sistema:** `/system/econometrics/efficiency-monitor`
+
+Este módulo abandona la evaluación tradicional basada en "ventas brutas" y utiliza el **Análisis de Frontera Estocástica (SFA)** para medir la ineficiencia real de las sucursales controlando por sus costos y volumen.
+
+### Niveles de Analítica Implementados:
+*   **Nivel Descriptivo:** Extrae y consolida métricas históricas de la base de datos (Snowflake) mediante el modelo dbt `mart_econometria_eficiencia_operativa`, mostrando las Ventas Netas ($Y$), Costos Operativos y de Mercadería ($X_{costo}$), y Volumen de Transacciones ($X_{volumen}$) reales por sucursal.
+*   **Nivel de Diagnóstico:** Separa el ruido estadístico aleatorio de la ineficiencia puramente técnica ($u_i$). Es decir, diagnostica si una sucursal vende poco por estar en una zona de bajo tráfico o si, dados sus altos costos laborales e insumos, el gerente local está gestionando mal sus recursos.
+*   **Nivel Predictivo:** Aplica regresión cuantílica múltiple ($q=0.90$) en el script `train.py` para calcular la **"Frontera de Máxima Eficiencia" ($V_{frontier}$)**. Esto predice el nivel máximo de ventas teóricas (en Bolivianos) que una sucursal *debería* alcanzar dados sus insumos actuales.
+*   **Nivel Prescriptivo:** Calcula matemáticamente la `BRECHA_INGRESOS` y el `SCORE_EFICIENCIA`. Según reglas de negocio integradas, el sistema dicta acciones prescriptivas automáticas (ej. "Intervención Gerencial Prioritaria: Auditar procesos de merma") indicando exactamente dónde y cómo enfocar el esfuerzo de mejora.
+
+### Matriz de Evaluación: Caso 1 (Eficiencia)
+
+| Criterio | Justificación Detallada del Sistema HGC |
+| :--- | :--- |
+| **1. Mejora en decisiones clave** | Elimina la evaluación sesgada basada únicamente en cuotas de venta. El IA permite a Operaciones decidir intervenir en sucursales basándose en el nivel de desperdicio de costos (ineficiencia técnica), optimizando el uso del capital de trabajo y personal. |
+| **2. Retorno económico (ROI)** | Impacto directo: El modelo identifica y cuantifica la `BRECHA_INGRESOS`. Si una sucursal opera al 60% de eficiencia, el sistema calcula la diferencia monetaria exacta ($V_{frontier} - Ventas Reales$) que se puede recuperar al mes corrigiendo la operación, justificando inmediatamente el costo del software. |
+| **3. Qué tan preciso es** | Altísima robustez matemática validada por un Pseudo-$R^2 > 0.70$ del modelo cuantílico. Compara a las sucursales utilizando la forma funcional de Producción Cobb-Douglas solo contra las "mejores prácticas" probadas dentro de la propia cadena HGC, filtrando valores atípicos. |
+| **4. Reducción de errores / pérdidas** | Evita el error crítico de cerrar sucursales que parecen "no rentables" pero que solo sufren de mala gestión local. Previene fugas crónicas de dinero por mermas no detectadas, sobrecostos de planilla u horas extra mal justificadas. |
+| **5. Velocidad de respuesta** | Un cálculo econométrico de SFA tomaría semanas a un equipo financiero tradicional. Nuestro script batch actualiza el modelo diario, y el controlador Node.js lee el JSON cacheado, dibujando la frontera de dispersión en el frontend en menos de 100 milisegundos. |
+| **6. Automatización de procesos** | Carga manual en Excel eliminada al 100%. Toda la ingeniería de características (transformaciones logarítmicas de costos/volumen) se autogenera en la capa dbt y alimenta el pipeline de ML en Python sin intervención de analistas. |
+| **7. Facilidad para entender el resultado** | El usuario no ve ecuaciones de optimización; interactúa con un Scatter Plot de "Semáforo" (Next.js/Recharts). Las sucursales en rojo tienen una columna crítica visible: "Brecha (Bs)". Si el gerente ve Bs 50,000 en pérdida operativa, sabe dónde actuar. |
+| **8. Uso real por el equipo** | Es el panel central interactivo para los Supervisores Regionales al asignar metas trimestrales de reducción de gastos operativos y evaluar matemáticamente el desempeño de los administradores locales. |
+
+---
+
+# Caso 2: Optimizador de Margen (Elasticidad-Precio)
+**Ubicación en el Sistema:** `/system/econometrics/price-optimizer`
+
+Este módulo calcula matemáticamente la sensibilidad del consumidor frente al precio de cada producto (Elasticidad), permitiendo realizar simulaciones financieras exactas antes de imprimir un nuevo menú.
+
+### Niveles de Analítica Implementados:
+*   **Nivel Descriptivo:** Analiza el historial completo de variaciones de precio ($P$) y sus respectivas cantidades demandadas ($Q$) para cada SKU del catálogo, pre-procesado a través del modelo dbt `mart_econometria_elasticidad_base`.
+*   **Nivel de Diagnóstico:** Infiere el coeficiente empírico de elasticidad ($\beta_1$). Diagnostica rigurosamente si un producto es "Inelástico" (los clientes toleran subidas de precio sin dejar de comprar) o "Elástico" (subidas marginales destruyen el volumen de ventas).
+*   **Nivel Predictivo:** Empleando un modelo de regresión Log-Log linealizado ($\ln(Q) = \beta_0 + \beta_1 \ln(P)$), el sistema predice con exactitud porcentual la caída (o aumento) de la demanda esperada ($Q$) ante una variación simulada de precio ($P$) en Bolivianos.
+*   **Nivel Prescriptivo:** Es el núcleo del simulador "What-If" del frontend. Al simular precios, el sistema calcula la diferencia neta esperada e implícitamente ayuda a prescribir el "punto de precio óptimo" que maximiza el Margen de Contribución Bruto total sin cruzar el umbral de abandono del cliente.
+
+### Matriz de Evaluación: Caso 2 (Optimizador)
+
+| Criterio | Justificación Detallada del Sistema HGC |
+| :--- | :--- |
+| **1. Mejora en decisiones clave** | Elimina incrementos de precio "al ojo" basados en la inflación general. El IA dicta a Comercial qué productos específicos (ej. combos estrella) pueden subir de precio y cuáles (ej. postres, bebidas) perderían volumen masivo, maximizando rentabilidad sin perder mercado. |
+| **2. Retorno económico (ROI)** | Suma directamente a la utilidad bruta. Al aplicar aumentos de precio quirúrgicos solo en los SKUs clasificados como inelásticos, la cadena captura todo el margen extra disponible sin erosionar las cantidades de venta históricas. |
+| **3. Qué tan preciso es** | Extraordinariamente preciso. Los coeficientes $\beta_1$ se entrenan por SKU filtrando estacionalidad y promociones; el rendimiento del modelo es monitorizado algorítmicamente mediante `MLflow` bajo el experimento `HGC_Price_Elasticity`. |
+| **4. Reducción de errores / pérdidas** | Evita la "canibalización de demanda" y prevé pérdidas catastróficas. Subir el precio de un producto elástico un 10% puede tumbar las ventas en un 30%; el simulador advierte esta pérdida fatal en pantalla, impidiendo que el error llegue al POS real. |
+| **5. Velocidad de respuesta** | Evita el altísimo costo y los meses de riesgo inherentes a una prueba "A/B" tradicional de mercado. El algoritmo `Math.exp(intercept + elasticity * Math.log(price))` se ejecuta en memoria (React), dando retroalimentación instantánea ante cada ajuste del slider de precios. |
+| **6. Automatización de procesos** | El recálculo econométrico de las derivadas parciales de demanda es 100% autogestionado. Conforme ingresan nuevas transacciones a Snowflake, dbt reempaqueta los vectores de la vista `feat_precio_elasticidad` para reentrenar los coeficientes sin tocar una sola línea de código. |
+| **7. Facilidad para entender el resultado** | Traduce cálculo diferencial avanzado a una calculadora intuitiva: El gerente mueve un deslizador para subir Bs 3 a una hamburguesa, y el sistema le resume en lenguaje simple: "Perderás unas 120 unidades de venta, pero ganarás Bs 3,500 en margen adicional". |
+| **8. Uso real por el equipo** | Se posiciona como la herramienta financiera de cabecera obligatoria para la Gerencia de Marketing y Pricing durante la crítica fase de reestructuración de menús y lanzamientos de nuevas campañas de combos. |
+

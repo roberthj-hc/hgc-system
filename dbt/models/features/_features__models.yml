@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: feat_ts_desc__g_regional
+    description: "Dataset semanal para dashboard descriptivo - comportamiento historico de ventas"
+    columns:
+      - name: fecha_inicio_semana
+        tests:
+          - not_null
+      - name: id_sucursal
+        tests:
+          - not_null
+
+  - name: feat_ts_diag__g_regional
+    description: "Dataset diario para dashboard diagnostico - anomalias, campanas, estacionalidad"
+    columns:
+      - name: fecha
+        tests:
+          - not_null
+      - name: id_sucursal
+        tests:
+          - not_null
+
+  - name: feat_ts_pred__g_regional
+    description: "Dataset diario con features de lag y rolling para forecasting de demanda"
+    columns:
+      - name: fecha
+        tests:
+          - not_null
+      - name: id_sucursal
+        tests:
+          - not_null
+      - name: target_pedidos
+        tests:
+          - not_null

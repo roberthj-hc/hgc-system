@@ -1,0 +1,224 @@
+{
+  "total_productos": 9,
+  "ganancia_total": 345944275.0,
+  "pareto_n80": 3,
+  "pareto_pct": 33.3,
+  "modelo_campeon": "KMeans",
+  "silhouette": 0.445,
+  "cuadrantes": {
+    "Estrella": {
+      "count": 1,
+      "ganancia_total": 14627145.5,
+      "revenue_total": 21275848.0,
+      "margen_medio": 0.6875,
+      "top5": [
+        {
+          "NOMBRE_PRODUCTO": "Papas Fritas Normales",
+          "FEATURE_GANANCIA_NETA_TOTAL": 14627145.5,
+          "FEATURE_MARGEN_PORCENTUAL": 0.6875
+        }
+      ]
+    },
+    "Vaca Lechera": {
+      "count": 2,
+      "ganancia_total": 213096185.0,
+      "revenue_total": 546062560.0,
+      "margen_medio": 0.3934,
+      "top5": [
+        {
+          "NOMBRE_PRODUCTO": "Super Mega Combo 12 Piezas",
+          "FEATURE_GANANCIA_NETA_TOTAL": 119881665.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.375
+        },
+        {
+          "NOMBRE_PRODUCTO": "Combo Familiar 8 Piezas",
+          "FEATURE_GANANCIA_NETA_TOTAL": 93214520.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.4118
+        }
+      ]
+    },
+    "Interrogante": {
+      "count": 2,
+      "ganancia_total": 47790523.0,
+      "revenue_total": 63721098.0,
+      "margen_medio": 0.7777,
+      "top5": [
+        {
+          "NOMBRE_PRODUCTO": "Papas Fritas Familiares",
+          "FEATURE_GANANCIA_NETA_TOTAL": 34517548.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.7222
+        },
+        {
+          "NOMBRE_PRODUCTO": "Gaseosa Vaso Regular",
+          "FEATURE_GANANCIA_NETA_TOTAL": 13272975.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.8333
+        }
+      ]
+    },
+    "Perro": {
+      "count": 4,
+      "ganancia_total": 70430421.5,
+      "revenue_total": 172752548.0,
+      "margen_medio": 0.3966,
+      "top5": [
+        {
+          "NOMBRE_PRODUCTO": "Combo Personal 2 Piezas",
+          "FEATURE_GANANCIA_NETA_TOTAL": 29241025.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.44
+        },
+        {
+          "NOMBRE_PRODUCTO": "Gaseosa Botella 2L",
+          "FEATURE_GANANCIA_NETA_TOTAL": 18599840.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.4667
+        },
+        {
+          "NOMBRE_PRODUCTO": "Pecho/Ala (Blanca)",
+          "FEATURE_GANANCIA_NETA_TOTAL": 11968168.5,
+          "FEATURE_MARGEN_PORCENTUAL": 0.3462
+        },
+        {
+          "NOMBRE_PRODUCTO": "Pierna/Muslo (Oscura)",
+          "FEATURE_GANANCIA_NETA_TOTAL": 10621388.0,
+          "FEATURE_MARGEN_PORCENTUAL": 0.3333
+        }
+      ]
+    }
+  },
+  "productos": [
+    {
+      "ID_PRODUCTO_NK": 2,
+      "NOMBRE_PRODUCTO": "Super Mega Combo 12 Piezas",
+      "CATEGORIA_NOMBRE": "Combos Familiares",
+      "TIPO_PRODUCTO": "Combo",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.1341,
+      "FEATURE_MARGEN_PORCENTUAL": 0.375,
+      "FEATURE_SHARE_GANANCIA_PCT": 34.6535,
+      "FEATURE_TICKET_PROMEDIO": 120.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 119881665.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 319684440.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2664037,
+      "BCG_CUADRANTE": "Vaca Lechera",
+      "CLUSTER": 0
+    },
+    {
+      "ID_PRODUCTO_NK": 1,
+      "NOMBRE_PRODUCTO": "Combo Familiar 8 Piezas",
+      "CATEGORIA_NOMBRE": "Combos Familiares",
+      "TIPO_PRODUCTO": "Combo",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.1309,
+      "FEATURE_MARGEN_PORCENTUAL": 0.4118,
+      "FEATURE_SHARE_GANANCIA_PCT": 26.945,
+      "FEATURE_TICKET_PROMEDIO": 85.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 93214520.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 226378120.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2663272,
+      "BCG_CUADRANTE": "Vaca Lechera",
+      "CLUSTER": 0
+    },
+    {
+      "ID_PRODUCTO_NK": 7,
+      "NOMBRE_PRODUCTO": "Papas Fritas Familiares",
+      "CATEGORIA_NOMBRE": "Guarniciones",
+      "TIPO_PRODUCTO": "Individual",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.0971,
+      "FEATURE_MARGEN_PORCENTUAL": 0.7222,
+      "FEATURE_SHARE_GANANCIA_PCT": 9.9778,
+      "FEATURE_TICKET_PROMEDIO": 18.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 34517548.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 47793528.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2655196,
+      "BCG_CUADRANTE": "Interrogante",
+      "CLUSTER": 2
+    },
+    {
+      "ID_PRODUCTO_NK": 3,
+      "NOMBRE_PRODUCTO": "Combo Personal 2 Piezas",
+      "CATEGORIA_NOMBRE": "Combos Personales",
+      "TIPO_PRODUCTO": "Combo",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.11,
+      "FEATURE_MARGEN_PORCENTUAL": 0.44,
+      "FEATURE_SHARE_GANANCIA_PCT": 8.4525,
+      "FEATURE_TICKET_PROMEDIO": 25.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 29241025.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 66456875.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2658275,
+      "BCG_CUADRANTE": "Perro",
+      "CLUSTER": 1
+    },
+    {
+      "ID_PRODUCTO_NK": 9,
+      "NOMBRE_PRODUCTO": "Gaseosa Botella 2L",
+      "CATEGORIA_NOMBRE": "Bebidas",
+      "TIPO_PRODUCTO": "Individual",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.1052,
+      "FEATURE_MARGEN_PORCENTUAL": 0.4667,
+      "FEATURE_SHARE_GANANCIA_PCT": 5.3765,
+      "FEATURE_TICKET_PROMEDIO": 15.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 18599840.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 39856800.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2657120,
+      "BCG_CUADRANTE": "Perro",
+      "CLUSTER": 1
+    },
+    {
+      "ID_PRODUCTO_NK": 6,
+      "NOMBRE_PRODUCTO": "Papas Fritas Normales",
+      "CATEGORIA_NOMBRE": "Guarniciones",
+      "TIPO_PRODUCTO": "Individual",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.115,
+      "FEATURE_MARGEN_PORCENTUAL": 0.6875,
+      "FEATURE_SHARE_GANANCIA_PCT": 4.2282,
+      "FEATURE_TICKET_PROMEDIO": 8.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 14627145.5,
+      "FEATURE_REVENUE_NETO_TOTAL": 21275848.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2659481,
+      "BCG_CUADRANTE": "Estrella",
+      "CLUSTER": 3
+    },
+    {
+      "ID_PRODUCTO_NK": 8,
+      "NOMBRE_PRODUCTO": "Gaseosa Vaso Regular",
+      "CATEGORIA_NOMBRE": "Bebidas",
+      "TIPO_PRODUCTO": "Individual",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.0946,
+      "FEATURE_MARGEN_PORCENTUAL": 0.8333,
+      "FEATURE_SHARE_GANANCIA_PCT": 3.8367,
+      "FEATURE_TICKET_PROMEDIO": 6.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 13272975.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 15927570.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2654595,
+      "BCG_CUADRANTE": "Interrogante",
+      "CLUSTER": 2
+    },
+    {
+      "ID_PRODUCTO_NK": 5,
+      "NOMBRE_PRODUCTO": "Pecho/Ala (Blanca)",
+      "CATEGORIA_NOMBRE": "Pollo (Piezas)",
+      "TIPO_PRODUCTO": "Individual",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.1155,
+      "FEATURE_MARGEN_PORCENTUAL": 0.3462,
+      "FEATURE_SHARE_GANANCIA_PCT": 3.4596,
+      "FEATURE_TICKET_PROMEDIO": 13.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 11968168.5,
+      "FEATURE_REVENUE_NETO_TOTAL": 34574709.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2659593,
+      "BCG_CUADRANTE": "Perro",
+      "CLUSTER": 1
+    },
+    {
+      "ID_PRODUCTO_NK": 4,
+      "NOMBRE_PRODUCTO": "Pierna/Muslo (Oscura)",
+      "CATEGORIA_NOMBRE": "Pollo (Piezas)",
+      "TIPO_PRODUCTO": "Individual",
+      "FEATURE_PARTICIPACION_VOLUMEN_PCT": 11.0977,
+      "FEATURE_MARGEN_PORCENTUAL": 0.3333,
+      "FEATURE_SHARE_GANANCIA_PCT": 3.0703,
+      "FEATURE_TICKET_PROMEDIO": 12.0,
+      "FEATURE_GANANCIA_NETA_TOTAL": 10621388.0,
+      "FEATURE_REVENUE_NETO_TOTAL": 31864164.0,
+      "FEATURE_VOLUMEN_TOTAL_UNIDADES": 2655347,
+      "BCG_CUADRANTE": "Perro",
+      "CLUSTER": 1
+    }
+  ]
+}

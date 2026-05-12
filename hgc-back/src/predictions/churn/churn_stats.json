@@ -1,0 +1,59 @@
+{
+  "total_clientes": 300000,
+  "resumen": {
+    "alto": {
+      "clientes": 54586,
+      "pct": 18.2,
+      "revenue": 89307556.0
+    },
+    "medio": {
+      "clientes": 216424,
+      "pct": 72.1,
+      "revenue": 596119995.0
+    },
+    "bajo": {
+      "clientes": 28990,
+      "pct": 9.7,
+      "revenue": 118384503.0
+    }
+  },
+  "por_edad": [
+    {
+      "edad": "18 - 25",
+      "total": 39814,
+      "alto": 7315,
+      "medio": 28646,
+      "bajo": 3853,
+      "pct_alto": 18.4,
+      "rev_alto": 11961420.0
+    },
+    {
+      "edad": "26 - 35",
+      "total": 49636,
+      "alto": 9028,
+      "medio": 35802,
+      "bajo": 4806,
+      "pct_alto": 18.2,
+      "rev_alto": 14763399.0
+    },
+    {
+      "edad": "Mayor de 35",
+      "total": 200802,
+      "alto": 36485,
+      "medio": 144993,
+      "bajo": 19324,
+      "pct_alto": 18.2,
+      "rev_alto": 59691366.0
+    },
+    {
+      "edad": "Menor de 18",
+      "total": 9748,
+      "alto": 1758,
+      "medio": 6983,
+      "bajo": 1007,
+      "pct_alto": 18.0,
+      "rev_alto": 2891371.0
+    }
+  ],
+  "modelo": "LogisticRegression | AUC=0.63 | Features: Frecuencia + Monto + Edad"
+}

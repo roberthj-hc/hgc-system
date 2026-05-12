@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw_inventario
+    database: HGC_DW
+    schema: BRONZE_MYSQL
+    description: "Gestión de almacenes, recetas BOM, compras y mermas"
+    tables:
+      - name: insumos
+      - name: recetas_bom
+      - name: almacenes
+      - name: stock
+      - name: movimientos_inventario
+      - name: proveedores
+      - name: ordenes_compra
+      - name: detalle_oc

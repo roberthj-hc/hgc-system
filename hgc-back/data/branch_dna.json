@@ -1,0 +1,122 @@
+[
+  {
+    "id_sucursal_nk": "1",
+    "nombre_sucursal": "HGC Miraflores",
+    "ciudad": "La Paz",
+    "direccion": "Av. Busch #720 cerca a Sucre Tenis Club",
+    "total_ventas": 184448936,
+    "total_mermas": 3486084.8904,
+    "total_tickets": 879982,
+    "ticket_promedio": 209.60535102
+  },
+  {
+    "id_sucursal_nk": "2",
+    "nombre_sucursal": "HGC Centro",
+    "ciudad": "La Paz",
+    "direccion": "Av. 16 de Julio (El Prado) #1500",
+    "total_ventas": 126871777,
+    "total_mermas": 2321753.5191,
+    "total_tickets": 603468,
+    "ticket_promedio": 210.23778726
+  },
+  {
+    "id_sucursal_nk": "3",
+    "nombre_sucursal": "HGC Calacoto",
+    "ciudad": "La Paz",
+    "direccion": "Calle 21 de Calacoto #315 esquina Av. Ballivián",
+    "total_ventas": 104379363,
+    "total_mermas": 1690945.6806,
+    "total_tickets": 496026,
+    "ticket_promedio": 210.43123344
+  },
+  {
+    "id_sucursal_nk": "4",
+    "nombre_sucursal": "HGC Sopocachi",
+    "ciudad": "La Paz",
+    "direccion": "Calle Rosendo Gutiérrez #85 esquina Plaza España",
+    "total_ventas": 90573058,
+    "total_mermas": 1684658.8788,
+    "total_tickets": 431930,
+    "ticket_promedio": 209.69383465
+  },
+  {
+    "id_sucursal_nk": "5",
+    "nombre_sucursal": "HGC La Ceja",
+    "ciudad": "El Alto",
+    "direccion": "Av. Juan Pablo II #600 cerca a la Ceja",
+    "total_ventas": 77515648,
+    "total_mermas": 1782859.904,
+    "total_tickets": 369136,
+    "ticket_promedio": 209.99211131
+  },
+  {
+    "id_sucursal_nk": "6",
+    "nombre_sucursal": "HGC Ciudad Satélite",
+    "ciudad": "El Alto",
+    "direccion": "Av. Satélite #210 cerca a Hospital Boliviano Holandes",
+    "total_ventas": 55930352,
+    "total_mermas": 1258432.92,
+    "total_tickets": 266514,
+    "ticket_promedio": 209.85896426
+  },
+  {
+    "id_sucursal_nk": "8",
+    "nombre_sucursal": "HGC Centro - El Prado",
+    "ciudad": "Cochabamba",
+    "direccion": "Av. Ramón Rivero #500 frente a El Prado",
+    "total_ventas": 39691301,
+    "total_mermas": 813671.6705,
+    "total_tickets": 189478,
+    "ticket_promedio": 209.47709497
+  },
+  {
+    "id_sucursal_nk": "7",
+    "nombre_sucursal": "HGC Rio Seco",
+    "ciudad": "El Alto",
+    "direccion": "Av. Río Seco #980 zona norte de El Alto",
+    "total_ventas": 33435454,
+    "total_mermas": 789076.7144,
+    "total_tickets": 158564,
+    "ticket_promedio": 210.86409273
+  },
+  {
+    "id_sucursal_nk": "10",
+    "nombre_sucursal": "HGC Av. Monseñor Rivero",
+    "ciudad": "Santa Cruz",
+    "direccion": "Av. Monseñor Rivero #1200 esquina Calle Libertad",
+    "total_ventas": 30623709,
+    "total_mermas": 747218.4996,
+    "total_tickets": 146445,
+    "ticket_promedio": 209.1140633
+  },
+  {
+    "id_sucursal_nk": "9",
+    "nombre_sucursal": "HGC Zona Norte",
+    "ciudad": "Cochabamba",
+    "direccion": "Av. América Oeste #850 cerca a la Autoventa JR",
+    "total_ventas": 27091195,
+    "total_mermas": 693534.592,
+    "total_tickets": 128744,
+    "ticket_promedio": 210.42685484
+  },
+  {
+    "id_sucursal_nk": "11",
+    "nombre_sucursal": "HGC Plan 3000",
+    "ciudad": "Santa Cruz",
+    "direccion": "Av. Paurito #3000 frente a Mercado Plan 3000",
+    "total_ventas": 19078374,
+    "total_mermas": 423539.9028,
+    "total_tickets": 90947,
+    "ticket_promedio": 209.77463798
+  },
+  {
+    "id_sucursal_nk": "12",
+    "nombre_sucursal": "HGC Equipetrol",
+    "ciudad": "Santa Cruz",
+    "direccion": "Calle Enrique Finot #450 entre 3er y 4to anillo",
+    "total_ventas": 14172887,
+    "total_mermas": 379833.3716,
+    "total_tickets": 67487,
+    "ticket_promedio": 210.0091425
+  }
+]

@@ -1,0 +1,17 @@
+# Arquitectura del Sistema
+
+En este capítulo analizamos el núcleo del sistema.
+
+## Diagrama de Bloques
+La estructura principal se basa en la eficiencia de datos.
+
+
+| Componente | Función | Latencia |
+|------------|---------|----------|
+| Core       | Lógica  | 10ms     |
+| DB         | Almacén | 50ms     |
+
+## Modelado Matemático
+La eficiencia del sistema se define por la siguiente fórmula:
+
+$$ f(x) = \int_{-\infty}^{\infty} e^{-x^2} dx $$

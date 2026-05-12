@@ -1,0 +1,437 @@
+# Capítulo VII: Analítica Predictiva y Machine Learning
+
+El presente capítulo describe en detalle el diseño, desarrollo e implementación del módulo de analítica predictiva del sistema HGC. Este módulo constituye el núcleo de inteligencia artificial del proyecto, permitiendo a la organización anticipar comportamientos de clientes, clasificar productos, proyectar rentabilidad de sucursales y detectar patrones de canibalización interna. La arquitectura adoptada sigue un enfoque MLOps completo, donde cada modelo transita por fases de experimentación, entrenamiento, registro, despliegue y monitoreo continuo.
+
+## 7.1 Fundamentación Técnica y Selección de Modelos
+
+### 7.1.1 Definición del Problema en Contexto Fast Food
+
+El negocio de comida rápida en Bolivia presenta características particulares que condicionan la elección de estrategias predictivas. A diferencia de mercados maduros con abundancia de datos estructurados, el contexto local combina alta rotación de clientes jóvenes, variabilidad estacional marcada por feriados nacionales (Carnaval, Día de la Madre, Fiestas de San Juan), y una distribución geográfica concentrada en Cochabamba con expansión hacia Santa Cruz y La Paz.
+
+El sistema HGC implementa cinco módulos predictivos diferenciados según la naturaleza del problema:
+
+| Módulo | Tipo de Problema | Variable Objetivo | Algoritmo Principal |
+|--------|-----------------|-------------------|---------------------|
+| Churn Prediction | Clasificación Binaria | TARGET_ES_CHURN (0/1) | Random Forest / XGBoost |
+| CLV Prediction | Regresión Continua | Valor de Vida del Cliente (Bs) | Gradient Boosting |
+| BCG Clustering | Clustering | Cuadrante BCG | K-Means + Reglas de Negocio |
+| Cannibalization | Clasificación Multiclase | Nivel de Canibalización | XGBoost Multiclass |
+| Branch Performance | Regresión Continua | Beneficio Neto Proyectado (Bs) | Gradient Boosting |
+
+La distinción entre problemas de regresión y clasificación no es trivial: un error en la selección del tipo de modelo puede conducir a predicciones sin sentido semántico. Por ejemplo, predecir la probabilidad de churn como un valor continuo sin umbral de decisión dificultaría la acción operativa. Por ello, el módulo Churn retorna un valor binario con lógica de fallback calibrada.
+
+### 7.1.2 Algoritmos Seleccionados
+
+El proceso de selección de algoritmos siguió una metodología de experimentación comparativa bajo MLflow. Para el módulo Churn, se evaluaron cuatro familias de modelos:
+
+**Regresión Logística** actúa como línea base interpretable. Su formulación matemática es:
+
+$$P(y=1 \mid \mathbf{x}) = \frac{1}{1 + e^{-(\beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \beta_4 x_4)}}$$
+
+Donde $x_1$ = frecuencia histórica, $x_2$ = monto gastado, $x_3$ = recencia en días, $x_4$ = codificación del rango etario.
+
+**Random Forest** con 100 árboles y profundidad máxima de 8 niveles. La predicción final se obtiene por votación mayoritaria:
+
+$$\hat{y} = \text{mode}\{h_1(\mathbf{x}), h_2(\mathbf{x}), \ldots, h_{100}(\mathbf{x})\}$$
+
+Cada árbol $h_t$ se entrena sobre un subconjunto aleatorio de observaciones (bootstrap) y características (feature bagging). La profundidad máxima de 8 previene el sobreajuste dado el tamaño moderado del dataset de entrenamiento.
+
+**XGBoost** implementa Gradient Boosting con regularización L1/L2. La función objetivo optimizada es:
+
+$$\mathcal{L} = \sum_{i=1}^{n} l(y_i, \hat{y}_i) + \sum_{k=1}^{K} \Omega(f_k)$$
+
+$$\Omega(f) = \gamma T + \frac{1}{2}\lambda \|\mathbf{w}\|^2$$
+
+Donde $T$ es el número de hojas, $\mathbf{w}$ el vector de pesos foliares, $\gamma$ el umbral mínimo de ganancia y $\lambda$ el término de regularización L2.
+
+**Red Neuronal (MLPClassifier)** con arquitectura (64, 32): dos capas ocultas con 64 y 32 neuronas respectivamente, función de activación ReLU y optimizador Adam con hasta 300 épocas de entrenamiento.
+
+La arquitectura del pipeline de preprocesamiento unifica el tratamiento de variables:
+
+```python
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', StandardScaler(), 
+         ['FEATURE_FRECUENCIA_HISTORICA',
+          'FEATURE_MONTO_GASTO_HISTORICO', 
+          'FEATURE_RECENCIA_DIAS']),
+        ('cat', OneHotEncoder(handle_unknown='ignore'), 
+         ['RANGO_EDAD'])
+    ])
+```
+
+El `StandardScaler` normaliza las variables numéricas a media cero y varianza unitaria, esencial para la convergencia del MLP. El `OneHotEncoder` transforma el rango etario en variables indicadoras binarias, manteniendo compatibilidad con todos los algoritmos del portafolio.
+
+### 7.1.3 Métricas de Evaluación y Validación
+
+La evaluación de modelos de clasificación para churn emplea múltiples métricas complementarias, dado que la precisión global (accuracy) puede ser engañosa ante desbalance de clases:
+
+| Métrica | Fórmula | Interpretación en Churn |
+|---------|---------|------------------------|
+| Accuracy | $\frac{TP+TN}{TP+TN+FP+FN}$ | % total correctamente clasificado |
+| Precisión | $\frac{TP}{TP+FP}$ | De los predichos como churn, cuántos lo son |
+| Recall | $\frac{TP}{TP+FN}$ | De los que sí hacen churn, cuántos detectamos |
+| F1-Score | $\frac{2 \cdot P \cdot R}{P+R}$ | Balance entre precisión y recall |
+| AUC-ROC | $\int_0^1 TPR(FPR) \, dFPR$ | Capacidad discriminante global |
+
+Para los modelos de regresión (CLV, Branch Performance) se emplean:
+
+$$RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y}_i)^2}$$
+
+$$MAE = \frac{1}{n}\sum_{i=1}^{n}|y_i - \hat{y}_i|$$
+
+$$R^2 = 1 - \frac{\sum(y_i - \hat{y}_i)^2}{\sum(y_i - \bar{y})^2}$$
+
+La partición de datos sigue la proporción 80/20 con semilla aleatoria fija (`random_state=42`) para garantizar reproducibilidad de resultados entre ejecuciones del pipeline:
+
+```python
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+```
+
+## 7.2 Ingeniería de Características en la Capa de Transformación (dbt)
+
+### 7.2.1 Modelado de Features en Snowflake
+
+La ingeniería de características es, junto con la calidad de los datos de entrada, el factor más determinante en el rendimiento de cualquier modelo predictivo. En el sistema HGC, esta capa es gestionada íntegramente por dbt (Data Build Tool), que transforma los datos brutos almacenados en las capas Staging e Intermediate de Snowflake en tablas de features materializadas y optimizadas para consumo por los scripts de entrenamiento.
+
+La arquitectura de capas del data warehouse es la siguiente:
+
+```
+RAW (Snowflake Stage)
+  └── STAGING (dbt: limpieza y tipado)
+        └── INTERMEDIATE (dbt: enriquecimiento)
+              └── ML/FEATURES (dbt: ingeniería de características)
+                    └── TRAINING_DATASETS (dbt: OBTs para entrenamiento)
+                          └── GOLD (dbt: marts para consumo)
+```
+
+El modelo `feat_clientes_comportamiento.sql` es el artefacto central para los módulos Churn y CLV. Consolida en una única tabla desnormalizada toda la información conductual del cliente:
+
+```sql
+{{ config(materialized='table') }}
+
+with clientes as (
+    select * from {{ ref('int_clientes_enriquecidos') }}
+),
+dim_cliente as (
+    select id_cliente_sk, id_cliente_nk 
+    from {{ ref('dim_cliente') }}
+),
+ventas as (
+    select 
+        dc.id_cliente_nk,
+        sum(v.cantidad_vendida) as cantidad_articulos_comprados,
+        count(distinct v.nro_pedido_dd) as frecuencia_pedidos,
+        sum(v.monto_subtotal_neto) as valor_monetario_total,
+        avg(v.monto_subtotal_neto) as ticket_promedio,
+        max(to_date(cast(v.id_fecha_sk as varchar),'YYYYMMDD')) 
+            as fecha_ultima_compra,
+        min(to_date(cast(v.id_fecha_sk as varchar),'YYYYMMDD')) 
+            as fecha_primera_compra
+    from {{ ref('fact_ventas_detalle') }} v
+    join dim_cliente dc on v.id_cliente_sk = dc.id_cliente_sk
+    group by 1
+)
+select
+    c.id_cliente_nk,
+    c.rango_edad,
+    coalesce(v.frecuencia_pedidos, 0) as frecuencia_pedidos,
+    coalesce(v.valor_monetario_total, 0) as valor_monetario_total,
+    case 
+        when v.fecha_ultima_compra is not null 
+        then datediff(day, v.fecha_ultima_compra, current_date()) 
+        else 9999 
+    end as recencia_dias,
+    case 
+        when v.fecha_primera_compra is not null 
+        then datediff(day, v.fecha_primera_compra, current_date()) 
+        else 0 
+    end as antiguedad_dias
+from clientes c
+left join ventas v on c.id_cliente_nk = v.id_cliente_nk
+```
+
+Este modelo implementa el patrón RFM (Recency, Frequency, Monetary) ampliamente utilizado en marketing cuantitativo. La lógica de `DATEDIFF` garantiza que la recencia siempre esté expresada en días calendarios desde la última compra hasta la fecha de ejecución del pipeline, manteniendo la frescura del feature sin necesidad de re-entrenamiento inmediato.
+
+### 7.2.2 Tablas Maestras de Entrenamiento (OBTs)
+
+Los datos de features se consolidan en One Big Tables (OBTs) dentro del schema `TRAINING_DATASETS` de Snowflake. Esta estrategia de desnormalización total minimiza los JOINs en tiempo de entrenamiento y garantiza que el script Python reciba exactamente las columnas necesarias sin procesamiento adicional:
+
+| Tabla OBT | Filas Aprox. | Features | Target |
+|-----------|-------------|---------|--------|
+| OBT_CHURN_PREDICTION | 15,000+ | 4 | TARGET_ES_CHURN |
+| OBT_CLV_PREDICTION | 15,000+ | 4 | TARGET_CLV_VALOR |
+| OBT_BCG_CLUSTERING | 500+ | 3 | (sin supervisión) |
+| OBT_BRANCH_PERFORMANCE | 200+ | 8 | TARGET_BENEFICIO_NETO |
+
+La tabla `OBT_CHURN_PREDICTION` expone exactamente las columnas que el pipeline de entrenamiento consume:
+
+- `RANGO_EDAD`: variable categórica ordinal con valores `18-25`, `26-35`, `36-45`, `46-60`, `+60`
+- `FEATURE_FRECUENCIA_HISTORICA`: número entero de pedidos realizados en toda la historia del cliente
+- `FEATURE_MONTO_GASTO_HISTORICO`: suma acumulada en bolivianos de todos los pedidos
+- `FEATURE_RECENCIA_DIAS`: días transcurridos desde la última compra (999 si nunca compró)
+- `TARGET_ES_CHURN`: etiqueta binaria (1 = cliente perdido, 0 = cliente activo)
+
+### 7.2.3 Automatización del Pipeline de Limpieza
+
+El pipeline dbt incorpora múltiples capas de defensiva de calidad de datos. Los valores nulos en features numéricos son tratados con estrategias diferenciadas según el significado semántico de cada variable:
+
+```sql
+-- En el script de entrenamiento (Python), segunda línea de defensa:
+X['FEATURE_FRECUENCIA_HISTORICA'] = X['FEATURE_FRECUENCIA_HISTORICA'].fillna(0)
+X['FEATURE_MONTO_GASTO_HISTORICO'] = X['FEATURE_MONTO_GASTO_HISTORICO'].fillna(0)
+X['FEATURE_RECENCIA_DIAS'] = X['FEATURE_RECENCIA_DIAS'].fillna(9999)
+X['RANGO_EDAD'] = X['RANGO_EDAD'].fillna('Desconocido')
+```
+
+La asignación de `9999` como recencia para clientes sin historial de compra codifica semánticamente la ausencia de comportamiento como máxima distancia temporal, lo cual es coherente con la definición de churn: un cliente que nunca compró tiene la máxima probabilidad de "abandono" desde una perspectiva de negocio.
+
+El flujo completo de automatización ejecuta en este orden:
+
+1. **dbt run --select staging**: Normaliza y tipifica datos fuente
+2. **dbt run --select intermediate**: Enriquece con dimensiones y calcula métricas intermedias  
+3. **dbt run --select ml.features**: Materializa los feature stores como tablas físicas en Snowflake
+4. **dbt run --select ml.datasets**: Genera las OBTs de entrenamiento
+5. **python train.py**: Consume OBTs y entrena modelos, registrando en MLflow
+6. **mlflow models serve**: Expone endpoints de inferencia
+
+## 7.3 Desarrollo del Motor de Inferencia
+
+### 7.3.1 Arquitectura del Servicio de Predicción
+
+El sistema de predicción adopta una arquitectura de doble ruta (dual-path) que garantiza disponibilidad del servicio independientemente del estado del servidor MLflow:
+
+```
+Solicitud REST (Frontend Next.js)
+        │
+        ▼
+Node.js API Gateway (hgc-back, puerto 3001)
+        │
+        ├── [Ruta 1] MLflow Server disponible
+        │         │
+        │         └── POST http://127.0.0.1:5001/invocations
+        │                   (timeout: 2000ms)
+        │
+        └── [Ruta 2] Fallback Heurístico (MLflow no disponible)
+                  │
+                  └── Lógica de reglas calibradas en código
+```
+
+Esta arquitectura garantiza que el dashboard nunca presente una pantalla de error al usuario final. El fallback heurístico, aunque menos preciso que el modelo entrenado, produce resultados semánticamente coherentes y calibrados con el comportamiento real de los clientes bolivianos.
+
+### 7.3.2 Implementación del Script de Entrenamiento
+
+El script `train.py` del módulo Churn implementa un ciclo de experimentación MLOps completo:
+
+```python
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_experiment("HGC_Churn_Prediction")
+
+models = {
+    "LogisticRegression": LogisticRegression(random_state=42),
+    "RandomForest": RandomForestClassifier(
+        n_estimators=100, max_depth=8, random_state=42),
+    "XGBoost": XGBClassifier(
+        use_label_encoder=False, 
+        eval_metric='logloss', 
+        random_state=42),
+    "NeuralNetwork": MLPClassifier(
+        hidden_layer_sizes=(64, 32), 
+        max_iter=300, 
+        random_state=42)
+}
+
+best_accuracy = 0
+best_pipeline = None
+
+for model_name, model in models.items():
+    with mlflow.start_run(run_name=model_name):
+        pipeline = Pipeline(steps=[
+            ('preprocessor', preprocessor),
+            ('classifier', model)
+        ])
+        pipeline.fit(X_train, y_train)
+        y_pred = pipeline.predict(X_test)
+        acc = accuracy_score(y_test, y_pred)
+        
+        mlflow.log_param("model_type", model_name)
+        mlflow.log_metric("accuracy", acc)
+        
+        if acc > best_accuracy:
+            best_accuracy = acc
+            best_pipeline = pipeline
+```
+
+El modelo ganador se registra automáticamente en el Model Registry de MLflow bajo el nombre `HGC_Churn_Model_Pro`, lo que habilita el versionado y el rollback a versiones previas en caso de degradación del rendimiento.
+
+### 7.3.3 Gestión de Modelos y Serialización
+
+MLflow serializa los pipelines de sklearn como artefactos estructurados bajo el formato `mlflow.sklearn`. La estructura de directorios generada es:
+
+```
+mlruns/
+  └── [experiment_id]/
+        └── [run_id]/
+              ├── artifacts/
+              │     └── churn_model/
+              │           ├── MLmodel          (metadatos)
+              │           ├── model.pkl        (pipeline serializado)
+              │           ├── conda.yaml       (entorno reproducible)
+              │           └── requirements.txt
+              └── metrics/
+                    └── accuracy
+```
+
+El servidor de inferencia de MLflow expone el modelo via HTTP REST:
+
+```bash
+mlflow models serve \
+  -m "models:/HGC_Churn_Model_Pro/Production" \
+  -p 5001 \
+  --no-conda
+```
+
+El payload de solicitud sigue el formato `dataframe_split`:
+
+```json
+{
+  "dataframe_split": {
+    "columns": [
+      "RANGO_EDAD",
+      "FEATURE_FRECUENCIA_HISTORICA",
+      "FEATURE_MONTO_GASTO_HISTORICO",
+      "FEATURE_RECENCIA_DIAS"
+    ],
+    "data": [["26-35", 12, 850.50, 45]]
+  }
+}
+```
+
+La respuesta devuelve:
+
+```json
+{
+  "predictions": [0]
+}
+```
+
+Donde `0` indica cliente sin riesgo de churn y `1` indica churn inminente.
+
+### 7.3.4 Lógica de Fallback y Heurísticas de Negocio
+
+Cuando MLflow no está disponible (timeout de 2 segundos), el controlador Node.js activa un sistema de scoring basado en reglas calibradas con conocimiento de dominio del negocio HGC:
+
+```javascript
+let riskScore = 0;
+// Recencia: mayor peso (hasta 50 puntos)
+riskScore += Math.min(50, (recenciaNum / 180) * 50);
+// Frecuencia: efecto protector (hasta -25 puntos)
+riskScore -= Math.min(25, (freqNum / 30) * 25);
+// Monto: efecto protector (hasta -15 puntos)
+riskScore -= Math.min(15, (montoNum / 3000) * 15);
+// Ajuste por segmento etario
+if (edad === "18-25") riskScore += 10;
+else if (edad === "+60" || edad === "46-60") riskScore -= 10;
+
+isChurn = riskScore > 25;
+```
+
+Las heurísticas de negocio adicionales ajustan el resultado final según patrones observados en el contexto boliviano:
+
+| Segmento | Condición | Ajuste |
+|----------|-----------|--------|
+| Adultos mayores (+46) | Recencia ≤ 90 días Y monto > Bs500 | Churn = false |
+| Jóvenes (18-25) | Recencia > 45 días | Churn = true |
+| General | MLflow disponible | Modelo entrenado |
+
+Este diseño refleja el conocimiento de que los clientes adultos de mayor poder adquisitivo en Bolivia son más leales y toleran períodos de inactividad más largos sin que esto indique abandono real.
+
+## 7.4 Integración en el Frontend
+
+### 7.4.1 Visualización de Resultados Predictivos
+
+El dashboard de predicciones está desarrollado en Next.js 14 con TypeScript y recharts para la visualización. El componente `CustomerChurn.tsx` gestiona el estado de la predicción, el formulario de entrada y la visualización del resultado.
+
+La arquitectura de componentes para el módulo de predicciones sigue el patrón:
+
+```
+/app/system/predictions/
+  ├── churn/
+  │     └── CustomerChurn.tsx
+  ├── clv/
+  │     └── CLVPrediction.tsx
+  ├── bcg/
+  │     └── BCGPortfolio.tsx
+  ├── cannibalization/
+  │     └── CannibalizationAnalysis.tsx
+  └── branch-performance/
+        └── BranchPerformance.tsx
+```
+
+Cada componente implementa:
+
+1. **Formulario de entrada**: Controles deslizantes y selects para los parámetros del modelo
+2. **Llamada API**: `fetch` al backend Express con manejo de errores
+3. **Visualización de resultado**: Indicador visual codificado por color (rojo/verde para churn, gradiente para CLV)
+4. **Ficha Técnica**: Panel colapsable que muestra métricas de validación del modelo (accuracy, F1, matriz de confusión)
+
+### 7.4.2 Diseño de Componentes para Toma de Decisiones en Tiempo Real
+
+La experiencia de usuario está diseñada para gerentes operativos sin formación técnica en estadística. El resultado de la predicción se presenta en lenguaje natural:
+
+- **Churn = 1**: "⚠️ CLIENTE EN RIESGO – Se recomienda activar campaña de retención"
+- **Churn = 0**: "✅ CLIENTE ACTIVO – Perfil de cliente leal"
+
+Para el CLV, el valor monetario se presenta con formato boliviano (Bs X,XXX.XX) y se contextualiza en percentiles respecto al promedio del segmento etario correspondiente.
+
+El componente de Rendimiento de Sucursal implementa cuatro categorías de estado con codificación visual:
+
+| Estado | Umbral Beneficio Neto | Color UI | Acción Recomendada |
+|--------|----------------------|----------|-------------------|
+| VIP (Expansión) | ≥ Bs 15,000,000 | Ámbar | Evaluar apertura de sucursal adicional |
+| Normal | ≥ Bs 8,000,000 | Verde | Mantener operación actual |
+| Alerta Operativa | ≥ Bs 3,000,000 | Amarillo | Revisar eficiencia y costos |
+| Riesgo Crítico | < Bs 3,000,000 | Rojo | Intervención gerencial inmediata |
+
+## 7.5 Estrategia de Despliegue y MLOps
+
+### 7.5.1 Ciclo de Vida del Modelo
+
+El ciclo de vida de cada modelo en el sistema HGC comprende cinco etapas formales:
+
+**Etapa 1 – Desarrollo**: El científico de datos experimenta con algoritmos y parámetros en notebooks Jupyter bajo el directorio `hgc-ml/notebooks/`. Cada experimento queda registrado automáticamente en MLflow con sus parámetros, métricas y artefactos.
+
+**Etapa 2 – Validación**: El modelo candidato se evalúa contra el conjunto de test con las métricas de referencia. Se verifica que la mejora respecto al modelo en producción supere un umbral mínimo del 2% en accuracy (para clasificación) o 5% en RMSE (para regresión).
+
+**Etapa 3 – Registro**: El modelo validado se registra en el MLflow Model Registry con un nombre estandarizado (`HGC_[Módulo]_Model_Pro`) y se asigna al stage `Staging`.
+
+**Etapa 4 – Producción**: Tras aprobación manual del equipo técnico, el modelo pasa al stage `Production`. El servidor MLflow sirve automáticamente la versión de producción al recibir solicitudes de inferencia.
+
+**Etapa 5 – Archivo**: Los modelos superados se trasladan al stage `Archived`, preservando el historial completo de versiones para auditoría.
+
+### 7.5.2 Monitoreo de Data Drift y Performance
+
+El monitoreo post-despliegue detecta dos tipos de degradación:
+
+**Data Drift**: Cambio en la distribución estadística de los features de entrada. Se monitorea mediante la prueba de Kolmogorov-Smirnov (KS) entre la distribución de referencia (datos de entrenamiento) y la distribución de producción:
+
+$$D_{KS} = \sup_x |F_{\text{train}}(x) - F_{\text{prod}}(x)|$$
+
+Un valor $D_{KS} > 0.1$ dispara una alerta de re-entrenamiento.
+
+**Concept Drift**: Cambio en la relación entre features y variable objetivo. Se detecta comparando el accuracy del modelo en producción (evaluado sobre muestras etiquetadas periódicamente) contra el accuracy de referencia del entrenamiento.
+
+La tabla de umbrales de alerta para el sistema HGC es:
+
+| Módulo | Métrica de Monitoreo | Umbral Alerta | Umbral Crítico |
+|--------|---------------------|---------------|----------------|
+| Churn | Accuracy semanal | < 75% | < 65% |
+| CLV | RMSE mensual | > 200 Bs | > 350 Bs |
+| Branch Perf. | MAE mensual | > Bs 500,000 | > Bs 1,000,000 |
+| BCG | Silhouette Score | < 0.45 | < 0.30 |
+
+El re-entrenamiento se ejecuta bajo demanda mediante el script `train.py` correspondiente, el cual conecta a Snowflake, extrae los datos actualizados (incluyendo los períodos más recientes), y registra el nuevo modelo en MLflow con versión incrementada automáticamente.
+
+El directorio `hgc-ml/experiments/` preserva los resultados históricos de cada ciclo de re-entrenamiento, permitiendo análisis de tendencia del rendimiento del modelo a lo largo del tiempo de operación del sistema.

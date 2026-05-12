@@ -1,0 +1,18 @@
+# Especificaciones de Hardware
+
+A continuación, se presenta una tabla detallada que requiere orientación horizontal.
+
+{{< pagebreak >}}
+
+::: {.landscape}
+## Tabla Comparativa Extensa
+
+
+| Modelo | CPU | RAM | Almacenamiento | Ancho de Banda | GPU | Refrigeración |
+|--------|-----|-----|----------------|----------------|-----|---------------|
+| v1.0   | 8c  | 16GB| 512GB          | 1Gbps          | 4GB | Aire          |
+| v2.0   | 16c | 64GB| 2TB            | 10Gbps         | 12GB| Líquida       |
+| v3.0   | 32c | 128GB| 5TB           | 40Gbps         | 24GB| Nitrógeno     |
+:::
+
+{{< pagebreak >}}

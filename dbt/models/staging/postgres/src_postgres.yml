@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: raw_ventas
+    database: HGC_DW
+    schema: BRONZE_POSTGRESQL
+    description: "Datos transaccionales del core del negocio (POS y Delivery)"
+    tables:
+      - name: categoria_producto
+      - name: productos
+      - name: combo_detalle
+      - name: canales_venta
+      - name: estado_pedido
+      - name: pedidos
+      - name: detalle_pedido
+      - name: pedido_cupon
+      - name: plataformas_delivery
+      - name: delivery_orden

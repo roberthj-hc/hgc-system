@@ -1,0 +1,241 @@
+# Capítulo IX: Modelado Econométrico y Estratégico
+
+Este capítulo detalla la implementación de los dos pilares econométricos del sistema HGC: el **Monitor de Eficiencia Operativa** y el **Optimizador de Margen por Elasticidad**. A través de modelos avanzados, la plataforma permite no solo medir la eficiencia técnica de las sucursales, sino también predecir cómo los cambios en precios afectarán la demanda y la rentabilidad.
+
+## 9.1 Fundamentos de Econometría Aplicada: Caso 1 - Eficiencia Operativa (SFA)
+
+### 9.1.1 Función de Producción Cobb-Douglas para Puntos de Venta
+
+La función de producción es un pilar analítico que describe la relación entre los inputs aplicados en la operación diaria y los outputs obtenidos. En el contexto de la comida rápida, el sistema HGC adopta la forma funcional Cobb-Douglas, ampliamente validada en la literatura económica por su robustez empírica y flexibilidad para estimar elasticidades.
+
+La formulación clásica de la función Cobb-Douglas es:
+
+$$ Y = A \cdot L^\alpha \cdot K^\beta $$
+
+Donde:
+- $Y$: Output total (ej. Ventas Totales o Volumen de Transacciones).
+- $L$: Insumo de trabajo (Labor), medido en número de empleados o costos laborales.
+- $K$: Insumo de capital (Capital), representado por costos operativos, capacidad instalada e inventario.
+- $A$: Factor de Productividad Total de los Factores (PTF), indicando la eficiencia tecnológica o de gestión inherente a la sucursal.
+- $\alpha, \beta$: Elasticidades parciales del producto respecto al trabajo y al capital, respectivamente.
+
+Para su estimación lineal mediante Mínimos Cuadrados Ordinarios (MCO) o regresión cuantil, la ecuación se transforma a su forma logarítmica:
+
+$$ \ln(Y) = \ln(A) + \alpha \ln(L) + \beta \ln(K) + \epsilon $$
+
+En el sistema HGC, esta función permite responder preguntas vitales: "Si incremento los costos operativos en un 10%, ¿en qué porcentaje aumentarán mis ingresos?". Las elasticidades estimadas dictan la política de inversión operativa, señalando si una sucursal opera bajo rendimientos a escala crecientes, constantes o decrecientes.
+
+### 9.1.2 Análisis de Frontera Estocástica (SFA) para la Medición de Eficiencia
+
+El modelo Cobb-Douglas estima el comportamiento promedio de las sucursales. Sin embargo, para identificar la eficiencia técnica, HGC implementa el Análisis de Frontera Estocástica (SFA - Stochastic Frontier Analysis) mediante Regresión Cuantílica Múltiple (en el cuantil 90).
+
+La SFA parte de la premisa de que no todas las sucursales logran la producción máxima posible dados sus insumos. La desviación de esta "frontera de máxima eficiencia" se descompone en dos términos de error:
+1. $v_i$: Ruido estadístico aleatorio (fuera del control de la sucursal, como fallas climáticas o eventos de fuerza mayor).
+2. $u_i$: Ineficiencia técnica (factores controlables por el gerente, como mala gestión de personal o exceso de merma).
+
+Matemáticamente, la frontera de producción se define como:
+
+$$ Y_i = f(X_i; \beta) \cdot \exp(v_i - u_i) $$
+
+Al utilizar la regresión cuantílica ($q = 0.90$) en el script `train.py`, el sistema estima la "mejor práctica" observada dentro de la cadena HGC:
+
+```python
+# SFA via Multiple Quantile Regression
+# log(Venta) = b0 + b1*log(Costo) + b2*log(Volumen)
+formula = 'LOG_Y ~ LOG_X_COSTO + LOG_X_VOLUMEN'
+model = smf.quantreg(formula, df).fit(q=0.90)
+```
+
+Las sucursales que se encuentran sobre o muy cerca de la curva ($u_i \approx 0$) operan con alta eficiencia técnica, dictando el estándar corporativo. Aquellas por debajo de la curva ($u_i > 0$) exhiben brechas de ineficiencia.
+
+### 9.1.3 Definición de Insumos (Inputs) y Resultados (Outputs) Económicos
+
+Para adaptar la teoría a la realidad de la cadena HGC, las variables abstractas se traducen en métricas de negocio precisas extraídas de las capas operativas (POS y ERP):
+
+**Output (Variable Dependiente):**
+- **$Y$ (Ventas Totales):** Monto subtotal neto generado en bolivianos (Bs). Este es el proxy principal de rendimiento.
+
+**Inputs (Variables Independientes):**
+- **$X_{\text{costo}}$ (Costo Operativo y Mercadería):** Suma del costo estándar histórico de los productos vendidos y los gastos operativos fijos de la sucursal.
+- **$X_{\text{volumen}}$ (Volumen Operativo):** Cantidad total de transacciones o unidades vendidas, que actúa como proxy del nivel de esfuerzo laboral y desgaste del capital.
+
+Estas definiciones garantizan que las recomendaciones del modelo SFA sean directamente aplicables en la gestión diaria.
+
+## 9.2 Implementación de Lógica Económica en dbt
+
+El éxito del modelado econométrico depende de la calidad e integridad de los datos preparados. La capa de transformación dbt se encarga de calcular, normalizar y empaquetar estos indicadores.
+
+### 9.2.1 Cálculo de Indicadores de Productividad Marginal
+
+La productividad marginal se define como el ingreso adicional generado por una unidad extra de input. En HGC, los modelos dbt de la capa de features (ej. `feat_precio_elasticidad.sql` y `mart_econometria_eficiencia_operativa`) consolidan las métricas necesarias:
+
+```sql
+-- Extracto conceptual de transformación dbt
+select
+    id_sucursal_sk,
+    sum(monto_subtotal_neto) as venta_total,
+    sum(costo_estandar_historico * cantidad_vendida) as costo_total,
+    sum(cantidad_vendida) as volumen_total,
+    
+    -- Transformación logarítmica para Cobb-Douglas
+    ln(sum(monto_subtotal_neto)) as log_y,
+    ln(sum(costo_estandar_historico * cantidad_vendida)) as log_x_costo,
+    ln(sum(cantidad_vendida)) as log_x_volumen
+from {{ ref('int_ventas_precios_diarios') }}
+group by 1
+```
+
+Estos cálculos pre-procesados en Snowflake evitan la carga computacional en los scripts de Python y aseguran que los indicadores financieros calculados cumplan con las reglas de negocio centralizadas (SSOT - Single Source of Truth).
+
+### 9.2.2 Integración de Datos de Costos, Merma y Recursos Humanos
+
+Para capturar la eficiencia operativa real, el data warehouse debe enlazar información transaccional de ventas con información de costos y recursos humanos. 
+
+La integración implica:
+1. **Costos:** Extraídos de `dim_producto` y ajustados en `int_ventas_precios_diarios`.
+2. **Merma:** Considerada indirectamente en las desviaciones de eficiencia (la brecha $u_i$ suele estar correlacionada con excesos de merma).
+3. **Recursos Humanos:** Integrando datos de asistencia y tamaño de plantilla para estimar los costos laborales en los escenarios predictivos.
+
+### 9.2.3 Normalización de Variables para Modelos Estadísticos
+
+En el modelado econométrico, variables con escalas muy divergentes (ej. ventas en millones vs. volumen en miles) pueden causar inestabilidad numérica durante la inversión de matrices en MCO o distorsionar los pesos en el entrenamiento.
+
+Por ello, la transformación logarítmica aplicada en dbt (`LOG_Y`, `LOG_X_COSTO`, `LOG_X_VOLUMEN`) cumple un doble propósito:
+1. Convierte las relaciones multiplicativas en relaciones lineales, facilitando la estimación.
+2. Comprime el rango dinámico de las variables financieras atenuando el efecto de valores atípicos severos (outliers).
+3. Convierte los coeficientes resultantes de la regresión directamente en **elasticidades porcentuales**.
+
+## 9.3 Motor de Análisis Estadístico (Backend & ML)
+
+El motor econométrico se divide entre scripts batch de machine learning (Python) y APIs transaccionales en tiempo real (Node.js).
+
+### 9.3.1 Procesamiento de Optimización de Recursos y SFA
+
+El script `hgc-ml/scripts/econometrics/efficiency-monitor/train.py` implementa el pipeline SFA. Tras ajustar el modelo cuantílico (`q=0.90`), se calculan las métricas clave de eficiencia para cada sucursal:
+
+1. **Predicción de Frontera ($V_{\text{frontier}}$):**
+   El valor máximo teórico de ventas que una sucursal podría haber generado dados sus inputs actuales.
+   ```python
+   df['V_FRONTIER'] = np.exp(model.predict(df))
+   ```
+
+2. **Score de Eficiencia:**
+   El porcentaje del potencial máximo que la sucursal logró concretar. Se recorta (clip) a 100% para compensar ligeras sobreestimaciones del cuantil 90.
+   ```python
+   df['SCORE_EFICIENCIA'] = (df['VENTA_TOTAL'] / df['V_FRONTIER'] * 100).clip(upper=100)
+   ```
+
+3. **Brecha de Ingresos (Monetaria):**
+   La diferencia absoluta en bolivianos entre las ventas potenciales y las ventas reales. Este es el dinero "dejado sobre la mesa" debido a ineficiencias operativas.
+   ```python
+   df['BRECHA_INGRESOS'] = (df['V_FRONTIER'] - df['VENTA_TOTAL']).clip(lower=0)
+   ```
+
+Los metadatos del modelo (Intercepto, $\beta_{\text{costo}}$, $\beta_{\text{volumen}}$, Pseudo-$R^2$) y el dataset resultante se exportan en formato JSON a la capa Backend.
+
+### 9.3.2 Desarrollo de Controladores para Análisis de Eficiencia
+
+El backend en Express expone la información econométrica a través del archivo `hgc-back/src/econometrics/econometrics.controller.js`. Su arquitectura prioriza respuestas de baja latencia mediante la lectura directa de cachés JSON pre-calculados, implementando consultas Snowflake solo como estrategia de fallback.
+
+```javascript
+exports.getEfficiencyData = async (req, res) => {
+  const DATA_PATH_EFFICIENCY = path.join(__dirname, '../../data/efficiency_results.json');
+  try {
+    if (fs.existsSync(DATA_PATH_EFFICIENCY)) {
+      const fullData = JSON.parse(fs.readFileSync(DATA_PATH_EFFICIENCY, 'utf8'));
+      // fullData incluye { metadata, data }
+      return res.json(fullData);
+    }
+    res.status(404).json({ error: "Efficiency data not found. Please run ML training." });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+```
+
+Este controlador alimenta la vista principal del dashboard. Del mismo modo, expone endpoints paralelos para el análisis de dispersión histórica (`getHistoricalScatter`) y la obtención de coeficientes de elasticidad de precios (`getElasticityCoefficients`), permitiendo análisis microeconómicos granulares por SKU de producto.
+
+### 9.3.3 Generación de Insights Prescriptivos
+
+Más allá de mostrar gráficos, el sistema transforma la matemática en lenguaje gerencial. Basado en el `SCORE_EFICIENCIA` y la `BRECHA_INGRESOS`, el sistema emite recomendaciones de acción prescriptivas:
+
+| Rango de Eficiencia | Interpretación del Modelo | Recomendación Prescriptiva Generada |
+|--------------------|---------------------------|-------------------------------------|
+| ≥ 95% | Óptimo (Sobre la frontera) | Operación benchmark. Analizar prácticas para replicar en otras sucursales. |
+| 80% - 94% | Rendimiento Estándar | Mantener operación, optimizar gestión de horarios valle. |
+| 65% - 79% | Ineficiencia Moderada | Auditar procesos de merma y realizar re-capacitación de personal operativo. |
+| < 65% | Ineficiencia Crítica | Intervención gerencial prioritaria. Reducir costos fijos o implementar agresiva campaña local. |
+
+
+## 9.4 Caso 2 - Optimizador de Margen e Inferencia de Elasticidad-Precio
+
+El segundo caso de estudio econométrico en HGC se enfoca en el **Análisis de Elasticidad de la Demanda**. Este modelo permite entender la sensibilidad de los clientes ante variaciones en los precios de los productos clave.
+
+### 9.4.1 Modelo Log-Log de Elasticidad
+
+Para estimar la elasticidad, el sistema utiliza un modelo de regresión lineal en forma logarítmica (Log-Log), el cual asume una elasticidad constante a lo largo de la curva de demanda:
+
+$$ \ln(Q) = \beta_0 + \beta_1 \ln(P) + \sum \gamma_i X_i + \epsilon $$
+
+Donde:
+- $Q$: Cantidad vendida (Demanda).
+- $P$: Precio unitario del producto.
+- $\beta_1$: El coeficiente de interés, que representa directamente la **Elasticidad-Precio de la Demanda**.
+- $X_i$: Variables de control (ej. temporalidad, promociones).
+
+Un valor de $\beta_1 = -1.5$ indica que por cada 1% que aumentemos el precio, la demanda caerá un 1.5%.
+
+### 9.4.2 Implementación del Optimizador de Margen
+
+El script `hgc-ml/scripts/econometrics/price-optimizer/train.py` entrena este modelo para cada producto (SKU) del menú. Los resultados se integran en el "Price Optimizer", una herramienta de simulación "What-If" donde el usuario puede:
+1. Ajustar el precio sugerido de un producto.
+2. Visualizar la caída o aumento esperado en la demanda ($Q$).
+3. Estimar el impacto neto en el margen de contribución total.
+
+Este modelo es crítico para la estrategia de precios de HGC, permitiendo identificar productos "inelásticos" (donde se puede subir el precio sin perder mucha venta) y productos "elásticos" (donde una pequeña rebaja puede disparar el volumen).
+
+## 9.5 Dashboard de Inteligencia Estratégica (Frontend)
+
+
+El frontend (Next.js y Recharts) materializa los resultados econométricos en visualizaciones tácticas para la toma de decisiones.
+
+### 9.5.1 Visualización de la Frontera de Eficiencia por Sucursal
+
+El gráfico principal del módulo de Eficiencia consiste en un diagrama de dispersión (Scatter Plot) donde el Eje X representa los Inputs Agregados (ej. Costos) y el Eje Y las Ventas Totales.
+
+- Se dibuja una **curva de regresión** que representa la Frontera de Eficiencia Estimada.
+- Cada punto representa una sucursal.
+- La distancia vertical entre un punto y la curva representa la `BRECHA_INGRESOS` (la ineficiencia).
+
+Las sucursales se colorean dinámicamente según su score de eficiencia (Verde > 90%, Amarillo 75-90%, Rojo < 75%), permitiendo a los directivos detectar sucursales sub-rendidoras con un solo vistazo.
+
+### 9.5.2 Mapas de Calor y Rankings de Desempeño Operativo-Económico
+
+Adicionalmente, se despliega una tabla de posiciones interactiva (Ranking):
+
+| Rango | Sucursal | Ventas Reales | Ventas Potenciales | Brecha (Bs) | Eficiencia |
+|-------|----------|---------------|--------------------|-------------|------------|
+| 1 | Cbba Norte | Bs 850,000 | Bs 860,000 | - Bs 10,000 | 98.8% |
+| 2 | Prado | Bs 920,000 | Bs 980,000 | - Bs 60,000 | 93.8% |
+| ... | ... | ... | ... | ... | ... |
+| 8 | Quillacollo| Bs 410,000 | Bs 650,000 | - Bs 240,000 | 63.0% |
+
+La interfaz permite ordenar por brecha monetaria absoluta, ayudando a priorizar intervenciones. Aunque una sucursal pequeña tenga un score bajo (ej. 60%), el esfuerzo gerencial debe enfocarse en la sucursal donde la brecha en bolivianos represente mayor pérdida para la cadena.
+
+## 9.6 Despliegue y Aplicación en la Toma de Decisiones
+
+### 9.6.1 Auditoría de Resultados Económicos
+
+La salida del modelo econométrico se somete a validaciones de negocio. El pseudo-$R^2$ reportado por el ajuste cuantilico proporciona una medida de la bondad de ajuste de la frontera estocástica:
+
+```python
+'R_SQUARED': float(model.prsquared)
+```
+
+Un $R^2 > 0.70$ confirma que los parámetros seleccionados (costos y volúmenes) explican de manera robusta la varianza en los ingresos de HGC, garantizando que el análisis está correctamente fundamentado en las variables determinantes reales del negocio y no en variaciones espurias.
+
+### 9.6.2 Impacto de las Recomendaciones Econométricas en el ROI del Proyecto
+
+La cuantificación de la `BRECHA_INGRESOS` representa el **Retorno de Inversión (ROI) potencial directo** de la implementación del módulo de Inteligencia de Negocios de HGC. 
+
+Al proporcionar la cifra exacta del dinero perdido por ineficiencia técnica (por ejemplo, Bs 500,000 consolidados mensuales en toda la cadena), el sistema justifica las decisiones estratégicas de reducción de costos y reestructuración operativa. Las intervenciones focalizadas dictadas por el sistema permiten a la cadena desplazar sus sucursales ineficientes hacia arriba en el gráfico, cerrando la brecha con la frontera estocástica y garantizando que el capital de trabajo y los recursos humanos operen en su capacidad máxima teórica.

@@ -1,0 +1,8 @@
+# Introducción {.unnumbered}
+
+Bienvenido a la documentación técnica oficial del sistema desarrollado bajo el framework Antigravity. Este documento detalla la arquitectura, funcionalidades y especificaciones matemáticas del proyecto.
+
+## Resumen Ejecutivo
+Este manual consta de 150 páginas detallando cada módulo del sistema.
+
+![Logo del Proyecto](images/esquema1.png){width=50% fig-align="center"}

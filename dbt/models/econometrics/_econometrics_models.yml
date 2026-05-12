@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: eco_costos_eficiencia__cfo
+    description: "Datos para la eficiencia operativa y modelos econométricos de costos (Cobb-Douglas) a nivel sucursal y mes."
+    columns:
+      - name: MES_FECHA
+        description: "Primer día del mes de referencia."
+        tests:
+          - not_null
+      - name: ID_SUCURSAL
+        tests:
+          - not_null
+      - name: RATIO_COSTO_INGRESO
+        description: "Proporción de costos operativos sobre ingresos netos."
+      - name: LN_COSTO
+        description: "Logaritmo natural del costo operativo para modelos de elasticidad de costos."
+
+  - name: eco_elasticidad_precio_demanda__cfo
+    description: "Datos para estimar la elasticidad precio de la demanda."
+    columns:
+      - name: SEMANA
+        description: "Lunes de la semana correspondiente."
+        tests:
+          - not_null
+      - name: ID_SUCURSAL
+        tests:
+          - not_null
+      - name: ID_PRODUCTO
+        tests:
+          - not_null
+      - name: LN_Q
+        description: "Logaritmo natural de la cantidad vendida (Variable dependiente)."
+      - name: LN_P
+        description: "Logaritmo natural del precio promedio (Variable independiente principal)."

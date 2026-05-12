@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_maestros
+    database: HGC_DW
+    schema: BRONZE_CSV_EXCEL
+    description: "Tablas maestras estáticas cargadas manualmente"
+    tables:
+      - name: sucursales
+      - name: calendario

@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_finanzas
+    database: HGC_DW
+    schema: BRONZE_MARIADB
+    description: "Datos financieros, transacciones de pago y egresos"
+    tables:
+      - name: metodos_pago
+      - name: transacciones_pago
+      - name: facturas
+      - name: costos_operativos

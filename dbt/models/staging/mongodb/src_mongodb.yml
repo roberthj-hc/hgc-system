@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw_marketing
+    database: HGC_DW
+    schema: BRONZE_MONGODB
+    description: "Comportamiento de clientes, cupones y programa de lealtad"
+    tables:
+      - name: clientes
+      - name: programa_lealtad
+      - name: campanas
+      - name: cupones
+      - name: cupones_redimidos

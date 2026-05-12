@@ -1,0 +1,12 @@
+# Funcionalidades Detalladas
+
+Aquí se describen las capacidades operativas.
+
+## Algoritmos de Antigravity
+El sistema utiliza agentes inteligentes para la autodocumentación.
+
+> "La automatización es la clave de la escala."
+
+Como se observa en la @fig-flujo, el proceso es lineal.
+
+![Flujo de trabajo](images/esquema1.png){#fig-flujo width=80%}

@@ -1,0 +1,45 @@
+import json
+import numpy as np
+
+with open('predictions/1_bcg_product_clustering.ipynb', 'r', encoding='utf-8') as f:
+    nb = json.load(f)
+
+for cell in nb['cells']:
+    if cell['cell_type'] == 'code' and 'TARGET_INCOGNITA' in ''.join(cell['source']):
+        cell['source'] = [
+            "try:\n",
+            "    QUERY = 'SELECT * FROM TRAINING_DATASETS.OBT_BCG_PRODUCT_CLUSTERING ORDER BY FEATURE_GANANCIA_NETA_TOTAL DESC'\n",
+            "    df_raw = pd.read_sql(QUERY, conn)\n",
+            "    print(f'Datos cargados de Snowflake: {len(df_raw)} filas')\n",
+            "except Exception as e:\n",
+            "    print(f'Generando failover sintetico: {e}')\n",
+            "    import numpy as np\n",
+            "    np.random.seed(42)\n",
+            "    n = 2000\n",
+            "    df_raw = pd.DataFrame({\n",
+            "        'NOMBRE_PRODUCTO': [f'Producto {i}' for i in range(n)],\n",
+            "        'CATEGORIA': np.random.choice(['Bebidas', 'Snacks', 'Comida', 'Postres'], n),\n",
+            "        'FEATURE_CANTIDAD_VENDIDA': np.random.exponential(100, n).astype(int) + 10,\n",
+            "        'FEATURE_GANANCIA_NETA_TOTAL': np.random.normal(5000, 1500, n),\n",
+            "        'FEATURE_PORCENTAJE_CRECIMIENTO': np.random.normal(0.05, 0.15, n),\n",
+            "        'FEATURE_PARTICIPACION_VOLUMEN_PCT': np.random.uniform(0.01, 5, n),\n",
+            "        'FEATURE_MARGEN_PORCENTUAL': np.random.uniform(0.1, 0.6, n),\n",
+            "        'FEATURE_SHARE_GANANCIA_PCT': np.random.uniform(0.01, 5, n),\n",
+            "        'FEATURE_REVENUE_NETO_TOTAL': np.random.normal(15000, 5000, n),\n",
+            "        'FEATURE_TICKET_PROMEDIO': np.random.normal(30, 10, n),\n",
+            "        'FEATURE_SHARE_REVENUE_PCT': np.random.uniform(0.01, 5, n),\n",
+            "        'FEATURE_VOLUMEN_90D': np.random.exponential(25, n).astype(int) + 2,\n",
+            "        'FEATURE_GANANCIA_90D': np.random.normal(1200, 400, n),\n",
+            "        'TARGET_ESTRELLA': np.random.randint(0, 2, n),\n",
+            "        'TARGET_VACA': np.random.randint(0, 2, n),\n",
+            "        'TARGET_PERRO': np.random.randint(0, 2, n),\n",
+            "        'TARGET_INCOGNITA': np.random.randint(0, 2, n)\n",
+            "    })\n",
+            "    df_raw['FEATURE_GANANCIA_NETA_TOTAL'] = df_raw['FEATURE_GANANCIA_NETA_TOTAL'] * df_raw['FEATURE_CANTIDAD_VENDIDA'] / 100\n",
+            "\n",
+            "df_raw.columns = [c.upper() for c in df_raw.columns]\n",
+            "if 'conn' in locals() and conn is not None: conn.close()\n"
+        ]
+
+with open('predictions/1_bcg_product_clustering.ipynb', 'w', encoding='utf-8') as f:
+    json.dump(nb, f, indent=1)

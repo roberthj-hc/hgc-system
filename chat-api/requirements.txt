@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+openai
+pydantic
+python-multipart
+python-dotenv
+snowflake-connector-python
+pymupdf
+python-docx
+Pillow
+httpx

@@ -1,0 +1,245 @@
+{
+  "generado_en": "2026-05-10T11:36:33.077617",
+  "fuente": "HGC_DW.TRAINING_DATASETS.OBT_CUSTOMER_LIFETIME_VALUE",
+  "resumen": {
+    "total_clientes": 300000,
+    "total_pedidos": 3828721,
+    "revenue_total": 803812054.0,
+    "clv_promedio_global": 2679.37,
+    "freq_promedio_global": 12.76
+  },
+  "por_segmento": [
+    {
+      "NOMBRE": "Nuevo",
+      "CLIENTES": 55624,
+      "CLV_PROMEDIO": 2684.79,
+      "REVENUE_TOTAL": 149338566.0,
+      "FREQ_PROMEDIO": 12.76
+    },
+    {
+      "NOMBRE": "VIP",
+      "CLIENTES": 38863,
+      "CLV_PROMEDIO": 2679.43,
+      "REVENUE_TOTAL": 104130733.0,
+      "FREQ_PROMEDIO": 12.77
+    },
+    {
+      "NOMBRE": "Frecuente",
+      "CLIENTES": 167079,
+      "CLV_PROMEDIO": 2678.52,
+      "REVENUE_TOTAL": 447524557.0,
+      "FREQ_PROMEDIO": 12.76
+    },
+    {
+      "NOMBRE": "Inactivo",
+      "CLIENTES": 38434,
+      "CLV_PROMEDIO": 2675.19,
+      "REVENUE_TOTAL": 102818198.0,
+      "FREQ_PROMEDIO": 12.77
+    }
+  ],
+  "por_ciudad": [
+    {
+      "NOMBRE": "La Paz",
+      "CLIENTES": 256987,
+      "CLV_PROMEDIO": 2712.58,
+      "REVENUE_TOTAL": 697097911.0,
+      "FREQ_PROMEDIO": 12.92
+    },
+    {
+      "NOMBRE": "El Alto",
+      "CLIENTES": 32498,
+      "CLV_PROMEDIO": 2528.63,
+      "REVENUE_TOTAL": 82175558.0,
+      "FREQ_PROMEDIO": 12.08
+    },
+    {
+      "NOMBRE": "Cochabamba",
+      "CLIENTES": 6548,
+      "CLV_PROMEDIO": 2387.98,
+      "REVENUE_TOTAL": 15636463.0,
+      "FREQ_PROMEDIO": 11.33
+    },
+    {
+      "NOMBRE": "Santa Cruz",
+      "CLIENTES": 3966,
+      "CLV_PROMEDIO": 2244.61,
+      "REVENUE_TOTAL": 8902122.0,
+      "FREQ_PROMEDIO": 10.77
+    },
+    {
+      "NOMBRE": "Sin Datos",
+      "CLIENTES": 1,
+      "CLV_PROMEDIO": 0.0,
+      "REVENUE_TOTAL": 0.0,
+      "FREQ_PROMEDIO": 0.0
+    }
+  ],
+  "por_sucursal": [
+    {
+      "NOMBRE": "HGC Miraflores",
+      "CLIENTES": 131897,
+      "CLV_PROMEDIO": 2759.3,
+      "REVENUE_TOTAL": 363943258.0,
+      "FREQ_PROMEDIO": 13.14
+    },
+    {
+      "NOMBRE": "HGC Centro",
+      "CLIENTES": 58557,
+      "CLV_PROMEDIO": 2693.15,
+      "REVENUE_TOTAL": 157703040.0,
+      "FREQ_PROMEDIO": 12.83
+    },
+    {
+      "NOMBRE": "HGC Calacoto",
+      "CLIENTES": 38336,
+      "CLV_PROMEDIO": 2652.26,
+      "REVENUE_TOTAL": 101677160.0,
+      "FREQ_PROMEDIO": 12.61
+    },
+    {
+      "NOMBRE": "HGC Sopocachi",
+      "CLIENTES": 28197,
+      "CLV_PROMEDIO": 2616.39,
+      "REVENUE_TOTAL": 73774453.0,
+      "FREQ_PROMEDIO": 12.48
+    },
+    {
+      "NOMBRE": "HGC La Ceja",
+      "CLIENTES": 19823,
+      "CLV_PROMEDIO": 2567.66,
+      "REVENUE_TOTAL": 50898705.0,
+      "FREQ_PROMEDIO": 12.29
+    },
+    {
+      "NOMBRE": "HGC Ciudad Satélite",
+      "CLIENTES": 9579,
+      "CLV_PROMEDIO": 2497.58,
+      "REVENUE_TOTAL": 23924362.0,
+      "FREQ_PROMEDIO": 11.91
+    },
+    {
+      "NOMBRE": "HGC Centro - El Prado",
+      "CLIENTES": 4559,
+      "CLV_PROMEDIO": 2414.98,
+      "REVENUE_TOTAL": 11009905.0,
+      "FREQ_PROMEDIO": 11.49
+    },
+    {
+      "NOMBRE": "HGC Rio Seco",
+      "CLIENTES": 3096,
+      "CLV_PROMEDIO": 2374.84,
+      "REVENUE_TOTAL": 7352491.0,
+      "FREQ_PROMEDIO": 11.25
+    },
+    {
+      "NOMBRE": "HGC Zona Norte",
+      "CLIENTES": 1989,
+      "CLV_PROMEDIO": 2326.07,
+      "REVENUE_TOTAL": 4626558.0,
+      "FREQ_PROMEDIO": 10.96
+    },
+    {
+      "NOMBRE": "HGC Av. Monseñor Rivero",
+      "CLIENTES": 2500,
+      "CLV_PROMEDIO": 2305.03,
+      "REVENUE_TOTAL": 5762581.0,
+      "FREQ_PROMEDIO": 11.03
+    },
+    {
+      "NOMBRE": "HGC Plan 3000",
+      "CLIENTES": 945,
+      "CLV_PROMEDIO": 2182.36,
+      "REVENUE_TOTAL": 2062327.0,
+      "FREQ_PROMEDIO": 10.5
+    },
+    {
+      "NOMBRE": "HGC Equipetrol",
+      "CLIENTES": 521,
+      "CLV_PROMEDIO": 2067.59,
+      "REVENUE_TOTAL": 1077214.0,
+      "FREQ_PROMEDIO": 9.98
+    },
+    {
+      "NOMBRE": "Sin Datos",
+      "CLIENTES": 1,
+      "CLV_PROMEDIO": 0.0,
+      "REVENUE_TOTAL": 0.0,
+      "FREQ_PROMEDIO": 0.0
+    }
+  ],
+  "por_nivel_lealtad": [
+    {
+      "NOMBRE": "Bronce",
+      "CLIENTES": 10891,
+      "CLV_PROMEDIO": 2685.07,
+      "REVENUE_TOTAL": 29243111.0,
+      "FREQ_PROMEDIO": 12.75
+    },
+    {
+      "NOMBRE": "Plata",
+      "CLIENTES": 36214,
+      "CLV_PROMEDIO": 2681.6,
+      "REVENUE_TOTAL": 97111508.0,
+      "FREQ_PROMEDIO": 12.77
+    },
+    {
+      "NOMBRE": "Sin Nivel",
+      "CLIENTES": 180000,
+      "CLV_PROMEDIO": 2679.48,
+      "REVENUE_TOTAL": 482305689.0,
+      "FREQ_PROMEDIO": 12.76
+    },
+    {
+      "NOMBRE": "Oro",
+      "CLIENTES": 72895,
+      "CLV_PROMEDIO": 2677.16,
+      "REVENUE_TOTAL": 195151746.0,
+      "FREQ_PROMEDIO": 12.76
+    }
+  ],
+  "por_rango_edad": [
+    {
+      "NOMBRE": "56+",
+      "CLIENTES": 104046,
+      "CLV_PROMEDIO": 2682.97,
+      "REVENUE_TOTAL": 279152343.0,
+      "FREQ_PROMEDIO": 12.76
+    },
+    {
+      "NOMBRE": "46-55",
+      "CLIENTES": 49958,
+      "CLV_PROMEDIO": 2682.51,
+      "REVENUE_TOTAL": 134012758.0,
+      "FREQ_PROMEDIO": 12.78
+    },
+    {
+      "NOMBRE": "26-35",
+      "CLIENTES": 49478,
+      "CLV_PROMEDIO": 2680.13,
+      "REVENUE_TOTAL": 132607423.0,
+      "FREQ_PROMEDIO": 12.77
+    },
+    {
+      "NOMBRE": "Menor de 18",
+      "CLIENTES": 6419,
+      "CLV_PROMEDIO": 2677.36,
+      "REVENUE_TOTAL": 17185943.0,
+      "FREQ_PROMEDIO": 12.79
+    },
+    {
+      "NOMBRE": "36-45",
+      "CLIENTES": 50203,
+      "CLV_PROMEDIO": 2674.18,
+      "REVENUE_TOTAL": 134252100.0,
+      "FREQ_PROMEDIO": 12.75
+    },
+    {
+      "NOMBRE": "18-25",
+      "CLIENTES": 39896,
+      "CLV_PROMEDIO": 2671.98,
+      "REVENUE_TOTAL": 106601487.0,
+      "FREQ_PROMEDIO": 12.74
+    }
+  ]
+}

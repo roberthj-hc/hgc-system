@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw_rrhh
+    database: HGC_DW
+    schema: BRONZE_SQLSERVER
+    description: "Gestión del personal, horarios y evaluaciones"
+    tables:
+      - name: departamentos
+      - name: cargos
+      - name: empleados
+      - name: turnos
+      - name: asignacion_turnos
+      - name: asistencia
+      - name: evaluaciones_desempeno

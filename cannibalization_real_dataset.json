@@ -1,0 +1,530 @@
+[
+  {
+    "DISTANCIA_KM": 0.62,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.06,
+    "RIESGO_CANIBALIZACION": 96.62,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Centro"
+  },
+  {
+    "DISTANCIA_KM": 6.1,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.09,
+    "RIESGO_CANIBALIZACION": 94.56,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Calacoto"
+  },
+  {
+    "DISTANCIA_KM": 1.53,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 98.78,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Sopocachi"
+  },
+  {
+    "DISTANCIA_KM": 2.05,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.0,
+    "RIESGO_CANIBALIZACION": 99.85,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC La Ceja"
+  },
+  {
+    "DISTANCIA_KM": 2.95,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 99.23,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Ciudad Sat\u00e9lite"
+  },
+  {
+    "DISTANCIA_KM": 5.92,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.11,
+    "RIESGO_CANIBALIZACION": 93.46,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Rio Seco"
+  },
+  {
+    "DISTANCIA_KM": 232.75,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.0,
+    "RIESGO_CANIBALIZACION": 83.09,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 228.47,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 82.29,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 545.36,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 59.83,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 540.79,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.07,
+    "RIESGO_CANIBALIZACION": 56.83,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 543.04,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.03,
+    "RIESGO_CANIBALIZACION": 58.89,
+    "NOMBRE_A": "HGC Miraflores",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 6.05,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.03,
+    "RIESGO_CANIBALIZACION": 97.89,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Calacoto"
+  },
+  {
+    "DISTANCIA_KM": 1.79,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.04,
+    "RIESGO_CANIBALIZACION": 97.65,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Sopocachi"
+  },
+  {
+    "DISTANCIA_KM": 1.72,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.06,
+    "RIESGO_CANIBALIZACION": 96.54,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC La Ceja"
+  },
+  {
+    "DISTANCIA_KM": 3.04,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.07,
+    "RIESGO_CANIBALIZACION": 95.89,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Ciudad Sat\u00e9lite"
+  },
+  {
+    "DISTANCIA_KM": 6.05,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.05,
+    "RIESGO_CANIBALIZACION": 96.78,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Rio Seco"
+  },
+  {
+    "DISTANCIA_KM": 232.83,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.06,
+    "RIESGO_CANIBALIZACION": 79.75,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 228.56,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.08,
+    "RIESGO_CANIBALIZACION": 78.95,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 545.54,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.05,
+    "RIESGO_CANIBALIZACION": 57.6,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 540.97,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.12,
+    "RIESGO_CANIBALIZACION": 54.04,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 543.22,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 59.43,
+    "NOMBRE_A": "HGC Centro",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 4.7,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.07,
+    "RIESGO_CANIBALIZACION": 95.77,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Sopocachi"
+  },
+  {
+    "DISTANCIA_KM": 7.65,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.09,
+    "RIESGO_CANIBALIZACION": 94.44,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC La Ceja"
+  },
+  {
+    "DISTANCIA_KM": 9.04,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.1,
+    "RIESGO_CANIBALIZACION": 93.79,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Ciudad Sat\u00e9lite"
+  },
+  {
+    "DISTANCIA_KM": 12.02,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 98.02,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Rio Seco"
+  },
+  {
+    "DISTANCIA_KM": 226.85,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.09,
+    "RIESGO_CANIBALIZACION": 78.52,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 222.58,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.11,
+    "RIESGO_CANIBALIZACION": 77.72,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 539.81,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.08,
+    "RIESGO_CANIBALIZACION": 56.35,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 535.21,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.16,
+    "RIESGO_CANIBALIZACION": 52.24,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 537.49,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.06,
+    "RIESGO_CANIBALIZACION": 57.63,
+    "NOMBRE_A": "HGC Calacoto",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 3.5,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 98.63,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC La Ceja"
+  },
+  {
+    "DISTANCIA_KM": 4.44,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.03,
+    "RIESGO_CANIBALIZACION": 98.01,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Ciudad Sat\u00e9lite"
+  },
+  {
+    "DISTANCIA_KM": 7.36,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.09,
+    "RIESGO_CANIBALIZACION": 94.47,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Rio Seco"
+  },
+  {
+    "DISTANCIA_KM": 231.22,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 82.09,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 226.95,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.04,
+    "RIESGO_CANIBALIZACION": 81.29,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 543.82,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 59.94,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 539.26,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.09,
+    "RIESGO_CANIBALIZACION": 55.83,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 541.51,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 59.56,
+    "NOMBRE_A": "HGC Sopocachi",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 1.98,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 99.3,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Ciudad Sat\u00e9lite"
+  },
+  {
+    "DISTANCIA_KM": 4.8,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.11,
+    "RIESGO_CANIBALIZACION": 93.54,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Rio Seco"
+  },
+  {
+    "DISTANCIA_KM": 234.49,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.0,
+    "RIESGO_CANIBALIZACION": 82.97,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 230.22,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 82.17,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 547.25,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 59.69,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 542.68,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.07,
+    "RIESGO_CANIBALIZACION": 56.69,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 544.94,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.03,
+    "RIESGO_CANIBALIZACION": 58.75,
+    "NOMBRE_A": "HGC La Ceja",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 3.01,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.12,
+    "RIESGO_CANIBALIZACION": 93.11,
+    "NOMBRE_A": "HGC Ciudad Sat\u00e9lite",
+    "NOMBRE_B": "HGC Rio Seco"
+  },
+  {
+    "DISTANCIA_KM": 235.65,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 82.33,
+    "NOMBRE_A": "HGC Ciudad Sat\u00e9lite",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 231.37,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 82.64,
+    "NOMBRE_A": "HGC Ciudad Sat\u00e9lite",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 548.13,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 59.07,
+    "NOMBRE_A": "HGC Ciudad Sat\u00e9lite",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 543.58,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.06,
+    "RIESGO_CANIBALIZACION": 57.18,
+    "NOMBRE_A": "HGC Ciudad Sat\u00e9lite",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 545.81,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.05,
+    "RIESGO_CANIBALIZACION": 57.58,
+    "NOMBRE_A": "HGC Ciudad Sat\u00e9lite",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 238.44,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.11,
+    "RIESGO_CANIBALIZACION": 76.57,
+    "NOMBRE_A": "HGC Rio Seco",
+    "NOMBRE_B": "HGC Centro - El Prado"
+  },
+  {
+    "DISTANCIA_KM": 234.16,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.13,
+    "RIESGO_CANIBALIZACION": 75.77,
+    "NOMBRE_A": "HGC Rio Seco",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 550.69,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.1,
+    "RIESGO_CANIBALIZACION": 54.44,
+    "NOMBRE_A": "HGC Rio Seco",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 546.16,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.18,
+    "RIESGO_CANIBALIZACION": 50.33,
+    "NOMBRE_A": "HGC Rio Seco",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 548.37,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.07,
+    "RIESGO_CANIBALIZACION": 56.28,
+    "NOMBRE_A": "HGC Rio Seco",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 4.35,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 98.57,
+    "NOMBRE_A": "HGC Centro - El Prado",
+    "NOMBRE_B": "HGC Zona Norte"
+  },
+  {
+    "DISTANCIA_KM": 318.38,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.01,
+    "RIESGO_CANIBALIZACION": 76.32,
+    "NOMBRE_A": "HGC Centro - El Prado",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 313.01,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.07,
+    "RIESGO_CANIBALIZACION": 73.38,
+    "NOMBRE_A": "HGC Centro - El Prado",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 316.21,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.04,
+    "RIESGO_CANIBALIZACION": 74.81,
+    "NOMBRE_A": "HGC Centro - El Prado",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 322.25,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.03,
+    "RIESGO_CANIBALIZACION": 74.93,
+    "NOMBRE_A": "HGC Zona Norte",
+    "NOMBRE_B": "HGC Av. Monse\u00f1or Rivero"
+  },
+  {
+    "DISTANCIA_KM": 316.91,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.05,
+    "RIESGO_CANIBALIZACION": 74.2,
+    "NOMBRE_A": "HGC Zona Norte",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 320.06,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.05,
+    "RIESGO_CANIBALIZACION": 73.97,
+    "NOMBRE_A": "HGC Zona Norte",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 8.41,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.08,
+    "RIESGO_CANIBALIZACION": 94.94,
+    "NOMBRE_A": "HGC Av. Monse\u00f1or Rivero",
+    "NOMBRE_B": "HGC Plan 3000"
+  },
+  {
+    "DISTANCIA_KM": 2.53,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.02,
+    "RIESGO_CANIBALIZACION": 98.71,
+    "NOMBRE_A": "HGC Av. Monse\u00f1or Rivero",
+    "NOMBRE_B": "HGC Equipetrol"
+  },
+  {
+    "DISTANCIA_KM": 8.38,
+    "PUBLICO_COMPARTIDO": 1.0,
+    "DIFERENCIA_PRECIO": 0.1,
+    "RIESGO_CANIBALIZACION": 93.84,
+    "NOMBRE_A": "HGC Plan 3000",
+    "NOMBRE_B": "HGC Equipetrol"
+  }
+]

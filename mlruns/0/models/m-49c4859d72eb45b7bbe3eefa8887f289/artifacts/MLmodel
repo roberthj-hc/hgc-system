@@ -1,0 +1,23 @@
+artifact_path: file:C:/Users/Windows/OneDrive/Documentos/PROY - hgc/New folder/hgc-system/mlruns/0/models/m-49c4859d72eb45b7bbe3eefa8887f289/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.11.1
+model_id: m-49c4859d72eb45b7bbe3eefa8887f289
+model_size_bytes: 2488
+model_uuid: m-49c4859d72eb45b7bbe3eefa8887f289
+prompts: null
+run_id: d7cb79e67de54253afdbfa361ca2f327
+utc_time_created: '2026-04-26 03:24:40.538505'
